@@ -19,268 +19,142 @@
       --text: #e2e8f0;
       --muted: #94a3b8;
       --border: rgba(77,184,255,0.15);
+      --border-dim: rgba(77,184,255,0.08);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-    }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
 
-    /* HEADER */
+    /* ── HEADER ── */
     header {
       background: linear-gradient(135deg, #0d1b2a 0%, #1a3a5c 50%, #0d2940 100%);
       border-bottom: 1px solid var(--border);
-      padding: 20px 24px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
+      padding: 20px 24px 18px;
+      display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 12px;
     }
-    .header-left h1 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--accent2);
-      letter-spacing: -0.5px;
-    }
-    .header-left p {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-top: 2px;
-    }
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-    .live-dot {
-      width: 8px; height: 8px;
-      background: var(--green);
-      border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%,100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
+    .header-left h1 { font-size: 1.55rem; font-weight: 700; color: var(--accent2); letter-spacing: -.5px; }
+    .header-left .subtitle { font-size: 0.82rem; color: var(--muted); margin-top: 3px; }
+    .header-right { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--muted); padding-top: 4px; }
+    .live-dot { width: 8px; height: 8px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; flex-shrink: 0; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
 
-    /* MAIN LAYOUT */
+    /* ── LAYOUT ── */
     main { max-width: 1200px; margin: 0 auto; padding: 24px 16px; }
 
-    /* KPI CARDS */
-    .kpi-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-    .kpi-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 16px;
-      text-align: center;
-    }
-    .kpi-card .label {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-    .kpi-card .value {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--accent2);
-      line-height: 1;
-    }
-    .kpi-card .unit {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-top: 2px;
-    }
-    .kpi-card.snow .value { color: var(--snow); }
-    .kpi-card.warn .value { color: var(--yellow); }
-
-    /* SECTION TITLE */
     .section-title {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      margin-bottom: 12px;
-      margin-top: 28px;
-      border-left: 3px solid var(--accent);
-      padding-left: 10px;
+      font-size: .78rem; text-transform: uppercase; letter-spacing: .1em;
+      color: var(--accent); margin-bottom: 12px; margin-top: 28px;
+      border-left: 3px solid var(--accent); padding-left: 10px;
     }
 
-    /* CHARTS ROW */
-    .charts-row {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-    @media (max-width: 768px) { .charts-row { grid-template-columns: 1fr; } }
-    .chart-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 16px;
-    }
-    .chart-card h3 {
-      font-size: 0.82rem;
-      color: var(--muted);
-      margin-bottom: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
+    /* ── KPI GRID ── */
+    .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); gap: 12px; margin-bottom: 24px; }
+    .kpi-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; text-align: center; }
+    .kpi-card .label { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 6px; }
+    .kpi-card .value { font-size: 1.8rem; font-weight: 700; color: var(--accent2); line-height: 1; }
+    .kpi-card .unit  { font-size: .85rem; color: var(--muted); margin-top: 2px; }
+    .kpi-card.highlight .value { color: var(--snow); }
+
+    /* ── SNOW REPORT ── */
+    .report-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin-bottom: 24px; }
+    .report-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+    .report-card .rc-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 4px; }
+    .report-card .rc-val   { font-size: 1.4rem; font-weight: 700; color: var(--accent2); }
+    .report-card .rc-sub   { font-size: .75rem; color: var(--muted); }
+    .no-data { color: var(--muted); font-style: italic; font-size: .9rem; }
+
+    /* ── CHARTS ── */
+    .charts-row { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin-bottom: 16px; }
+    @media(max-width:768px){ .charts-row{ grid-template-columns:1fr; } }
+    .chart-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+    .chart-card h3 { font-size: .8rem; color: var(--muted); margin-bottom: 12px; text-transform: uppercase; letter-spacing: .06em; }
     .chart-wrap { position: relative; height: 200px; }
 
-    /* FORECAST TABLE */
-    .table-wrap {
-      overflow-x: auto;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.82rem;
-      min-width: 800px;
-    }
-    thead tr {
-      background: rgba(77,184,255,0.08);
-      border-bottom: 1px solid var(--border);
-    }
-    thead th {
-      padding: 10px 10px;
-      text-align: center;
-      font-weight: 600;
-      color: var(--accent);
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
+    /* ── TABLE ── */
+    .table-wrap { overflow-x: auto; background: var(--card); border: 1px solid var(--border); border-radius: 12px; }
+    table { width: 100%; border-collapse: collapse; font-size: .82rem; min-width: 800px; }
+    thead tr { background: rgba(77,184,255,.08); border-bottom: 1px solid var(--border); }
+    thead th { padding: 10px; text-align: center; font-weight: 600; color: var(--accent); font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; }
     thead th.date-col { text-align: left; padding-left: 14px; }
-    tbody tr {
-      border-bottom: 1px solid var(--border);
-      transition: background 0.15s;
-    }
-    tbody tr:hover { background: rgba(77,184,255,0.04); }
-    tbody tr.has-snow { background: rgba(126,232,255,0.05); }
-    tbody tr.heavy-snow { background: rgba(126,232,255,0.12); }
+    tbody tr { border-bottom: 1px solid var(--border); transition: background .15s; }
+    tbody tr:hover { background: rgba(77,184,255,.04); }
+    tbody tr.has-snow { background: rgba(126,232,255,.05); }
+    tbody tr.heavy-snow { background: rgba(126,232,255,.12); }
     tbody tr:last-child { border-bottom: none; }
-    td {
-      padding: 9px 10px;
-      text-align: center;
-      vertical-align: middle;
-      color: var(--text);
-    }
-    td.date-col {
-      text-align: left;
-      padding-left: 14px;
-      font-weight: 600;
-      min-width: 90px;
-    }
-    .day-name { color: var(--accent2); font-size: 0.9rem; }
-    .day-date { color: var(--muted); font-size: 0.72rem; }
-
+    td { padding: 9px 10px; text-align: center; vertical-align: middle; }
+    td.date-col { text-align: left; padding-left: 14px; font-weight: 600; min-width: 90px; }
+    .day-name { color: var(--accent2); font-size: .9rem; }
+    .day-date { color: var(--muted); font-size: .72rem; }
     .snow-val { color: var(--snow); font-weight: 700; }
-    .snow-val.big { color: #4db8ff; font-size: 1.05rem; }
+    .snow-val.big { color: var(--accent); font-size: 1.05rem; }
     .snow-zero { color: var(--muted); }
-    .temp-range { font-size: 0.78rem; }
     .temp-max { color: var(--yellow); }
     .temp-min { color: #93c5fd; }
-    .wind-val { font-size: 0.8rem; }
-    .wind-dir { font-size: 0.7rem; color: var(--muted); }
-    .freeze-val { font-size: 0.78rem; color: #a78bfa; }
-    .precip-prob { font-size: 0.78rem; }
-    .condition-text { font-size: 0.72rem; color: var(--muted); max-width: 110px; }
+    .freeze-val { font-size: .78rem; color: #a78bfa; }
+    .condition-text { font-size: .72rem; color: var(--muted); max-width: 110px; }
     .cumul-bar-wrap { display: flex; align-items: center; gap: 6px; }
-    .cumul-bar {
-      height: 6px; border-radius: 3px;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      min-width: 2px;
-    }
-    .cumul-val { font-size: 0.75rem; color: var(--accent2); white-space: nowrap; }
+    .cumul-bar { height: 6px; border-radius: 3px; background: linear-gradient(90deg, var(--accent), var(--accent2)); min-width: 2px; }
+    .cumul-val { font-size: .75rem; color: var(--accent2); white-space: nowrap; }
+    .periods { display: flex; gap: 4px; justify-content: center; flex-wrap: wrap; }
+    .period-pill { background: var(--card2); border-radius: 6px; padding: 3px 6px; font-size: .68rem; color: var(--muted); white-space: nowrap; }
+    .period-pill .p-label { color: var(--accent); font-weight: 600; display: block; font-size: .6rem; text-transform: uppercase; }
+    .period-pill .p-snow  { color: var(--snow); font-weight: 600; }
 
-    /* PERIOD PILLS */
-    .periods {
-      display: flex;
-      gap: 4px;
-      justify-content: center;
-      flex-wrap: wrap;
+    /* ── COMPARISON SECTION ── */
+    .compare-section {
+      margin-top: 40px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border-dim);
     }
-    .period-pill {
-      background: var(--card2);
-      border-radius: 6px;
-      padding: 3px 6px;
-      font-size: 0.68rem;
-      color: var(--muted);
-      white-space: nowrap;
+    .compare-header {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 16px;
     }
-    .period-pill .p-label {
-      color: var(--accent);
-      font-weight: 600;
-      display: block;
-      font-size: 0.6rem;
-      text-transform: uppercase;
+    .compare-header .compare-title {
+      font-size: .78rem; text-transform: uppercase; letter-spacing: .1em;
+      color: var(--muted); border-left: 3px solid var(--muted); padding-left: 10px;
     }
-    .period-pill .p-snow { color: var(--snow); font-weight: 600; }
-
-    /* SNOW REPORT CARD */
-    .report-grid {
+    .compare-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 12px;
-      margin-bottom: 24px;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
     }
-    .report-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 16px;
-    }
-    .report-card .rc-label {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-    .report-card .rc-val {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--accent2);
-    }
-    .report-card .rc-sub { font-size: 0.75rem; color: var(--muted); }
-    .no-data { color: var(--muted); font-size: 0.85rem; font-style: italic; }
+    @media(max-width:600px){ .compare-grid{ grid-template-columns:1fr; } }
 
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 24px;
-      color: var(--muted);
-      font-size: 0.75rem;
-      border-top: 1px solid var(--border);
-      margin-top: 32px;
+    .compare-card {
+      background: rgba(26,45,69,0.6);
+      border: 1px solid var(--border-dim);
+      border-radius: 12px;
+      padding: 16px 18px;
     }
+    .compare-card .cc-header {
+      display: flex; align-items: baseline; gap: 8px; margin-bottom: 14px;
+      border-bottom: 1px solid var(--border-dim); padding-bottom: 10px;
+    }
+    .compare-card .cc-name  { font-size: .95rem; font-weight: 700; color: var(--muted); }
+    .compare-card .cc-elev  { font-size: .72rem; color: var(--muted); opacity: .6; }
+
+    .compare-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+    .compare-stat { text-align: center; }
+    .compare-stat .cs-label { font-size: .65rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 3px; opacity: .7; }
+    .compare-stat .cs-val   { font-size: 1.1rem; font-weight: 700; color: var(--muted); }
+    .compare-stat .cs-unit  { font-size: .65rem; color: var(--muted); opacity: .6; }
+
+    .compare-mini-chart {
+      margin-top: 14px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border-dim);
+    }
+    .compare-mini-chart h4 { font-size: .65rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); opacity: .6; margin-bottom: 8px; }
+    .mini-chart-wrap { position: relative; height: 70px; }
+
+    /* ── FOOTER ── */
+    footer { text-align: center; padding: 24px; color: var(--muted); font-size: .75rem; border-top: 1px solid var(--border-dim); margin-top: 40px; }
     footer a { color: var(--accent); text-decoration: none; }
 
-    #loading {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 60vh;
-      font-size: 1.1rem;
-      color: var(--muted);
-    }
+    #loading { display: flex; align-items: center; justify-content: center; height: 60vh; font-size: 1.1rem; color: var(--muted); }
     #app { display: none; }
   </style>
 </head>
@@ -292,7 +166,7 @@
   <header>
     <div class="header-left">
       <h1>❄️ Cerro Catedral — Bariloche</h1>
-      <p id="header-sub">Pronóstico de nieve · 14 días · Open-Meteo + Snow-Forecast</p>
+      <p class="subtitle">Pronóstico de nieve · 14 días · Open-Meteo (ECMWF) + Snow-Forecast.com</p>
     </div>
     <div class="header-right">
       <div class="live-dot"></div>
@@ -302,10 +176,10 @@
 
   <main>
 
-    <!-- KPI CARDS -->
+    <!-- KPI PRINCIPAL -->
     <div class="section-title">Resumen del pronóstico</div>
     <div class="kpi-grid">
-      <div class="kpi-card snow">
+      <div class="kpi-card highlight">
         <div class="label">Nieve nueva (14 días)</div>
         <div class="value" id="kpi-total-snow">—</div>
         <div class="unit">cm acumulados</div>
@@ -330,25 +204,25 @@
         <div class="value" id="kpi-wind">—</div>
         <div class="unit">km/h</div>
       </div>
-      <div class="kpi-card snow">
+      <div class="kpi-card highlight">
         <div class="label">Mejor nevada esperada</div>
         <div class="value" id="kpi-best-day">—</div>
         <div class="unit" id="kpi-best-date">—</div>
       </div>
     </div>
 
-    <!-- SNOW REPORT -->
+    <!-- SNOW REPORT ACTUAL -->
     <div class="section-title">Estado actual del resort</div>
-    <div class="report-grid" id="report-grid">
+    <div class="report-grid">
       <div class="report-card">
         <div class="rc-label">Nieve últimas 24hs</div>
         <div class="rc-val" id="rc-24h">—</div>
-        <div class="rc-sub">reportado por snowforecast.com</div>
+        <div class="rc-sub">snowforecast.com</div>
       </div>
       <div class="report-card">
         <div class="rc-label">Nieve últimos 7 días</div>
         <div class="rc-val" id="rc-7d">—</div>
-        <div class="rc-sub">reportado por snowforecast.com</div>
+        <div class="rc-sub">snowforecast.com</div>
       </div>
       <div class="report-card">
         <div class="rc-label">Base superior</div>
@@ -358,7 +232,7 @@
       <div class="report-card">
         <div class="rc-label">Estado del resort</div>
         <div class="rc-val" id="rc-status" style="font-size:1rem">—</div>
-        <div class="rc-sub" id="rc-opens">—</div>
+        <div class="rc-sub" id="rc-sub-status"></div>
       </div>
     </div>
 
@@ -374,7 +248,7 @@
         <div class="chart-wrap"><canvas id="chartFreeze"></canvas></div>
       </div>
     </div>
-    <div class="chart-card" style="margin-bottom:24px">
+    <div class="chart-card">
       <h3>Temperatura máx / mín (°C)</h3>
       <div class="chart-wrap"><canvas id="chartTemp"></canvas></div>
     </div>
@@ -400,304 +274,310 @@
       </table>
     </div>
 
+    <!-- COMPARISON -->
+    <div class="compare-section">
+      <div class="compare-header">
+        <div class="compare-title">Comparativa regional — referencia</div>
+      </div>
+      <div class="compare-grid" id="compare-grid"></div>
+    </div>
+
   </main>
 
   <footer>
-    Datos meteorológicos: <a href="https://open-meteo.com" target="_blank">Open-Meteo</a> (ECMWF) ·
-    Estado del resort: <a href="https://www.snow-forecast.com/resorts/Catedral" target="_blank">Snow-Forecast.com</a> ·
+    Datos: <a href="https://open-meteo.com" target="_blank">Open-Meteo</a> (ECMWF) ·
+    Estado resort: <a href="https://www.snow-forecast.com" target="_blank">Snow-Forecast.com</a> ·
     Actualizado automáticamente
   </footer>
 </div>
 
 <script>
-const DAYS_ES = ["Dom","Lun","Mar","Mié","Jue","Vie","Sáb"];
+const DAYS_ES   = ["Dom","Lun","Mar","Mié","Jue","Vie","Sáb"];
 const MONTHS_ES = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
 
-function formatDate(dateStr) {
-  const [y, m, d] = dateStr.split("-").map(Number);
-  const dt = new Date(y, m - 1, d);
-  return {
-    dayName: DAYS_ES[dt.getDay()],
-    dayDate: `${d} ${MONTHS_ES[m - 1]}`
-  };
-}
+let mainCharts = {};
+const miniCharts = {};
 
-function snowIcon(cm) {
-  if (cm >= 20) return "🌨️";
-  if (cm >= 10) return "❄️";
-  if (cm > 0)  return "🌦️";
-  return "—";
+function formatDate(s) {
+  const [y,m,d] = s.split("-").map(Number);
+  const dt = new Date(y, m-1, d);
+  return { dayName: DAYS_ES[dt.getDay()], dayDate: `${d} ${MONTHS_ES[m-1]}` };
 }
 
 function conditionIcon(code) {
-  if (code === 0) return "☀️";
-  if (code <= 2)  return "🌤️";
-  if (code === 3) return "☁️";
-  if (code <= 48) return "🌫️";
-  if (code <= 67) return "🌧️";
-  if (code <= 77) return "🌨️";
-  if (code <= 82) return "🌦️";
-  if (code <= 86) return "❄️";
+  if (code===0) return "☀️";
+  if (code<=2)  return "🌤️";
+  if (code===3) return "☁️";
+  if (code<=48) return "🌫️";
+  if (code<=67) return "🌧️";
+  if (code<=77) return "🌨️";
+  if (code<=82) return "🌦️";
+  if (code<=86) return "❄️";
   return "⛈️";
 }
-
-async function loadData() {
-  const r = await fetch("datos.json?t=" + Date.now());
-  return r.json();
+function snowIcon(cm) {
+  if (cm>=20) return "🌨️";
+  if (cm>=10) return "❄️";
+  if (cm>0)   return "🌦️";
+  return "";
 }
 
-function buildKPIs(forecast, snowReport) {
-  const totalSnow = forecast.reduce((s, d) => s + (d.snow_cm || 0), 0);
-  const snowDays = forecast.filter(d => d.snow_cm > 0).length;
-  const minTemp = Math.min(...forecast.map(d => d.temp_min).filter(x => x != null));
-  const maxWind = Math.max(...forecast.map(d => d.wind_max_kmh).filter(x => x != null));
-  const bestDay = forecast.reduce((a, b) => (b.snow_cm > a.snow_cm ? b : a), forecast[0]);
-
-  // freeze level: min from hourly buckets
-  let freezeMins = [];
-  forecast.forEach(d => {
-    ["am","pm","night"].forEach(p => {
-      const f = d.periods[p].freeze_m;
-      if (f != null) freezeMins.push(f);
-    });
-  });
+/* ── CATEDRAL MAIN ── */
+function renderKPIs(forecast) {
+  const totalSnow = forecast.reduce((s,d)=>s+(d.snow_cm||0),0);
+  const snowDays  = forecast.filter(d=>d.snow_cm>0).length;
+  const minTemp   = Math.min(...forecast.map(d=>d.temp_min).filter(x=>x!=null));
+  const maxWind   = Math.max(...forecast.map(d=>d.wind_max_kmh).filter(x=>x!=null));
+  const bestDay   = forecast.reduce((a,b)=>b.snow_cm>a.snow_cm?b:a, forecast[0]);
+  let freezeMins  = [];
+  forecast.forEach(d=>["am","pm","night"].forEach(p=>{
+    const f=d.periods[p].freeze_m; if(f!=null) freezeMins.push(f);
+  }));
   const minFreeze = freezeMins.length ? Math.min(...freezeMins) : null;
 
   document.getElementById("kpi-total-snow").textContent = totalSnow.toFixed(1);
-  document.getElementById("kpi-snow-days").textContent = snowDays;
-  document.getElementById("kpi-min-temp").textContent = minTemp != null ? minTemp.toFixed(1) : "—";
-  document.getElementById("kpi-freeze").textContent = minFreeze != null ? Math.round(minFreeze) : "—";
-  document.getElementById("kpi-wind").textContent = maxWind != null ? Math.round(maxWind) : "—";
-  document.getElementById("kpi-best-day").textContent = bestDay ? bestDay.snow_cm.toFixed(1) + " cm" : "—";
+  document.getElementById("kpi-snow-days").textContent  = snowDays;
+  document.getElementById("kpi-min-temp").textContent   = minTemp!=null ? minTemp.toFixed(1) : "—";
+  document.getElementById("kpi-freeze").textContent     = minFreeze!=null ? Math.round(minFreeze) : "—";
+  document.getElementById("kpi-wind").textContent       = maxWind!=null ? Math.round(maxWind) : "—";
+  document.getElementById("kpi-best-day").textContent   = bestDay ? bestDay.snow_cm.toFixed(1)+" cm" : "—";
   if (bestDay) {
     const fd = formatDate(bestDay.date);
     document.getElementById("kpi-best-date").textContent = `${fd.dayName} ${fd.dayDate}`;
   }
 }
 
-function buildSnowReport(sr) {
-  const fmt = (v, unit) => v != null ? `${v} ${unit}` : '<span class="no-data">Sin datos</span>';
-  document.getElementById("rc-24h").innerHTML = fmt(sr.last_24h_cm, "cm");
-  document.getElementById("rc-7d").innerHTML = fmt(sr.last_7days_cm, "cm");
-  document.getElementById("rc-upper").innerHTML = fmt(sr.upper_snow_cm, "cm");
-  document.getElementById("rc-status").textContent = sr.resort_status || "—";
-  document.getElementById("rc-opens").textContent = sr.error ? "Error al obtener datos" : "";
+function renderSnowReport(sr) {
+  const fmt = (v,u) => v!=null ? `${v} ${u}` : '<span class="no-data">Sin datos</span>';
+  document.getElementById("rc-24h").innerHTML   = fmt(sr.last_24h_cm,"cm");
+  document.getElementById("rc-7d").innerHTML    = fmt(sr.last_7days_cm,"cm");
+  document.getElementById("rc-upper").innerHTML = fmt(sr.upper_snow_cm,"cm");
+  document.getElementById("rc-status").textContent = sr.resort_status||"—";
+  document.getElementById("rc-sub-status").textContent = sr.error?"Error al obtener datos":"";
 }
 
-function buildTable(forecast) {
-  const maxCumul = forecast[forecast.length - 1]?.cumulative_snow_cm || 1;
+function renderTable(forecast) {
+  const maxCumul = forecast[forecast.length-1]?.cumulative_snow_cm||1;
   const tbody = document.getElementById("forecast-tbody");
   tbody.innerHTML = "";
-
-  forecast.forEach(day => {
-    const { dayName, dayDate } = formatDate(day.date);
-    const hasSnow = day.snow_cm > 0;
-    const heavySnow = day.snow_cm >= 10;
-
-    const periodHtml = ["am","pm","night"].map(p => {
-      const pd = day.periods[p];
-      const label = p === "am" ? "Mañana" : p === "pm" ? "Tarde" : "Noche";
-      const snowStr = pd.snow_cm > 0
+  forecast.forEach(day=>{
+    const {dayName,dayDate} = formatDate(day.date);
+    const hasSnow   = day.snow_cm>0;
+    const heavySnow = day.snow_cm>=10;
+    const periodHtml = ["am","pm","night"].map(p=>{
+      const pd    = day.periods[p];
+      const label = p==="am"?"Mañana":p==="pm"?"Tarde":"Noche";
+      const snowStr = pd.snow_cm>0
         ? `<span class="p-snow">${pd.snow_cm.toFixed(1)}cm</span>`
         : `<span style="color:var(--muted)">—</span>`;
       return `<div class="period-pill">
-        <span class="p-label">${label}</span>
-        ${snowStr}
-        <span>${pd.temp_c != null ? pd.temp_c.toFixed(0)+"°" : "—"}</span>
-        <span style="color:var(--muted)">${pd.wind_kmh != null ? pd.wind_kmh.toFixed(0)+"km/h" : "—"}</span>
+        <span class="p-label">${label}</span>${snowStr}
+        <span>${pd.temp_c!=null?pd.temp_c.toFixed(0)+"°":"—"}</span>
+        <span style="color:var(--muted)">${pd.wind_kmh!=null?pd.wind_kmh.toFixed(0)+"km/h":"—"}</span>
       </div>`;
     }).join("");
-
-    const barWidth = maxCumul > 0 ? Math.round((day.cumulative_snow_cm / maxCumul) * 80) : 0;
-
+    const barWidth = maxCumul>0 ? Math.round((day.cumulative_snow_cm/maxCumul)*80) : 0;
     const tr = document.createElement("tr");
     if (heavySnow) tr.classList.add("heavy-snow");
     else if (hasSnow) tr.classList.add("has-snow");
-
     tr.innerHTML = `
-      <td class="date-col">
-        <div class="day-name">${dayName}</div>
-        <div class="day-date">${dayDate}</div>
-      </td>
-      <td>
-        <div>${conditionIcon(day.weathercode)}</div>
-        <div class="condition-text">${day.condition}</div>
-      </td>
-      <td>
-        ${hasSnow
-          ? `<span class="snow-val ${heavySnow ? 'big' : ''}">${snowIcon(day.snow_cm)} ${day.snow_cm.toFixed(1)} cm</span>`
-          : `<span class="snow-zero">—</span>`}
-      </td>
-      <td>
-        <div class="cumul-bar-wrap">
-          <div class="cumul-bar" style="width:${barWidth}px"></div>
-          <span class="cumul-val">${day.cumulative_snow_cm.toFixed(1)} cm</span>
-        </div>
-      </td>
-      <td class="temp-range">
-        <span class="temp-max">${day.temp_max != null ? day.temp_max.toFixed(0)+"°" : "—"}</span>
-        <span style="color:var(--muted)"> / </span>
-        <span class="temp-min">${day.temp_min != null ? day.temp_min.toFixed(0)+"°" : "—"}</span>
-      </td>
-      <td class="wind-val">
-        ${day.wind_max_kmh != null ? Math.round(day.wind_max_kmh) : "—"} km/h
-        <div class="wind-dir">${day.wind_dir}</div>
-      </td>
-      <td class="freeze-val">
-        ${day.periods.am.freeze_m != null ? Math.round(day.periods.am.freeze_m) + " m" : "—"}
-      </td>
-      <td>
-        <span class="precip-prob" style="color:${(day.precip_prob||0) > 60 ? 'var(--accent)' : 'var(--muted)'}">
-          ${day.precip_prob != null ? day.precip_prob + "%" : "—"}
-        </span>
-      </td>
-      <td><div class="periods">${periodHtml}</div></td>
-    `;
+      <td class="date-col"><div class="day-name">${dayName}</div><div class="day-date">${dayDate}</div></td>
+      <td><div>${conditionIcon(day.weathercode)}</div><div class="condition-text">${day.condition}</div></td>
+      <td>${hasSnow?`<span class="snow-val ${heavySnow?"big":""}">${snowIcon(day.snow_cm)} ${day.snow_cm.toFixed(1)} cm</span>`:`<span class="snow-zero">—</span>`}</td>
+      <td><div class="cumul-bar-wrap"><div class="cumul-bar" style="width:${barWidth}px"></div><span class="cumul-val">${day.cumulative_snow_cm.toFixed(1)} cm</span></div></td>
+      <td><span class="temp-max">${day.temp_max!=null?day.temp_max.toFixed(0)+"°":"—"}</span><span style="color:var(--muted)"> / </span><span class="temp-min">${day.temp_min!=null?day.temp_min.toFixed(0)+"°":"—"}</span></td>
+      <td style="font-size:.8rem">${day.wind_max_kmh!=null?Math.round(day.wind_max_kmh):"—"} km/h<div style="font-size:.7rem;color:var(--muted)">${day.wind_dir}</div></td>
+      <td class="freeze-val">${day.periods.am.freeze_m!=null?Math.round(day.periods.am.freeze_m)+" m":"—"}</td>
+      <td><span class="precip-prob" style="color:${(day.precip_prob||0)>60?"var(--accent)":"var(--muted)"}">${day.precip_prob!=null?day.precip_prob+"%":"—"}</span></td>
+      <td><div class="periods">${periodHtml}</div></td>`;
     tbody.appendChild(tr);
   });
 }
 
-function buildCharts(forecast) {
-  const labels = forecast.map(d => {
-    const { dayName, dayDate } = formatDate(d.date);
-    return `${dayName} ${dayDate}`;
-  });
+function destroyMainCharts() {
+  Object.values(mainCharts).forEach(c=>c.destroy());
+  mainCharts = {};
+}
 
-  // Snow chart
-  new Chart(document.getElementById("chartSnow"), {
-    data: {
-      labels,
-      datasets: [
-        {
-          type: "bar",
-          label: "Nieve nueva (cm)",
-          data: forecast.map(d => d.snow_cm),
-          backgroundColor: "rgba(77,184,255,0.6)",
-          borderColor: "#4db8ff",
-          borderWidth: 1,
-          yAxisID: "y",
-        },
-        {
-          type: "line",
-          label: "Nieve acumulada (cm)",
-          data: forecast.map(d => d.cumulative_snow_cm),
-          borderColor: "#7ee8ff",
-          backgroundColor: "rgba(126,232,255,0.08)",
-          fill: true,
-          tension: 0.4,
-          pointRadius: 3,
-          yAxisID: "y2",
-        }
-      ]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      interaction: { mode: "index", intersect: false },
-      plugins: { legend: { labels: { color: "#94a3b8", font: { size: 11 } } } },
-      scales: {
-        x: { ticks: { color: "#64748b", font: { size: 10 }, maxRotation: 45 }, grid: { color: "rgba(255,255,255,0.04)" } },
-        y: { position: "left", ticks: { color: "#94a3b8", font: { size: 10 } }, grid: { color: "rgba(255,255,255,0.06)" }, title: { display: true, text: "Nieve nueva (cm)", color: "#64748b", font: { size: 10 } } },
-        y2: { position: "right", ticks: { color: "#7ee8ff", font: { size: 10 } }, grid: { display: false }, title: { display: true, text: "Acumulada (cm)", color: "#7ee8ff", font: { size: 10 } } },
+function renderMainCharts(forecast) {
+  destroyMainCharts();
+  const labels = forecast.map(d=>{ const {dayName,dayDate}=formatDate(d.date); return `${dayName} ${dayDate}`; });
+
+  mainCharts.snow = new Chart(document.getElementById("chartSnow"),{
+    data:{ labels, datasets:[
+      { type:"bar", label:"Nieve nueva (cm)", data:forecast.map(d=>d.snow_cm),
+        backgroundColor:"rgba(77,184,255,0.6)", borderColor:"#4db8ff", borderWidth:1, yAxisID:"y" },
+      { type:"line", label:"Nieve acumulada (cm)", data:forecast.map(d=>d.cumulative_snow_cm),
+        borderColor:"#7ee8ff", backgroundColor:"rgba(126,232,255,0.08)", fill:true, tension:.4, pointRadius:3, yAxisID:"y2" }
+    ]},
+    options:{ responsive:true, maintainAspectRatio:false,
+      interaction:{mode:"index",intersect:false},
+      plugins:{legend:{labels:{color:"#94a3b8",font:{size:11}}}},
+      scales:{
+        x:{ticks:{color:"#64748b",font:{size:10},maxRotation:45},grid:{color:"rgba(255,255,255,0.04)"}},
+        y:{position:"left",ticks:{color:"#94a3b8",font:{size:10}},grid:{color:"rgba(255,255,255,0.06)"},title:{display:true,text:"cm nuevos",color:"#64748b",font:{size:10}}},
+        y2:{position:"right",ticks:{color:"#7ee8ff",font:{size:10}},grid:{display:false},title:{display:true,text:"acumulada",color:"#7ee8ff",font:{size:10}}}
       }
     }
   });
 
-  // Freeze level chart
-  const freezeData = forecast.map(d => {
-    const vals = ["am","pm","night"].map(p => d.periods[p].freeze_m).filter(x => x != null);
-    return vals.length ? Math.round(vals.reduce((a,b) => a+b, 0) / vals.length) : null;
+  const freezeData = forecast.map(d=>{
+    const vals=["am","pm","night"].map(p=>d.periods[p].freeze_m).filter(x=>x!=null);
+    return vals.length ? Math.round(vals.reduce((a,b)=>a+b,0)/vals.length) : null;
   });
-  new Chart(document.getElementById("chartFreeze"), {
-    type: "line",
-    data: {
-      labels,
-      datasets: [{
-        label: "Freeze level (msnm)",
-        data: freezeData,
-        borderColor: "#a78bfa",
-        backgroundColor: "rgba(167,139,250,0.1)",
-        fill: true,
-        tension: 0.4,
-        pointRadius: 3,
-      }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { labels: { color: "#94a3b8", font: { size: 11 } } } },
-      scales: {
-        x: { ticks: { color: "#64748b", font: { size: 9 }, maxRotation: 45 }, grid: { color: "rgba(255,255,255,0.04)" } },
-        y: {
-          ticks: { color: "#94a3b8", font: { size: 10 } },
-          grid: { color: "rgba(255,255,255,0.06)" },
-          // reference line at Catedral summit
-          afterDataLimits: scale => { scale.max = Math.max(scale.max, 2500); }
-        }
+  mainCharts.freeze = new Chart(document.getElementById("chartFreeze"),{
+    type:"line",
+    data:{ labels, datasets:[{label:"Freeze level (msnm)",data:freezeData,
+      borderColor:"#a78bfa",backgroundColor:"rgba(167,139,250,0.1)",fill:true,tension:.4,pointRadius:3}]},
+    options:{ responsive:true, maintainAspectRatio:false,
+      plugins:{legend:{labels:{color:"#94a3b8",font:{size:11}}}},
+      scales:{
+        x:{ticks:{color:"#64748b",font:{size:9},maxRotation:45},grid:{color:"rgba(255,255,255,0.04)"}},
+        y:{ticks:{color:"#94a3b8",font:{size:10}},grid:{color:"rgba(255,255,255,0.06)"}}
       }
     }
   });
 
-  // Temperature chart
-  new Chart(document.getElementById("chartTemp"), {
-    type: "line",
-    data: {
-      labels,
-      datasets: [
-        {
-          label: "Temp. máx (°C)",
-          data: forecast.map(d => d.temp_max),
-          borderColor: "#facc15",
-          backgroundColor: "rgba(250,204,21,0.06)",
-          fill: false,
-          tension: 0.4,
-          pointRadius: 3,
-        },
-        {
-          label: "Temp. mín (°C)",
-          data: forecast.map(d => d.temp_min),
-          borderColor: "#93c5fd",
-          backgroundColor: "rgba(147,197,253,0.1)",
-          fill: "-1",
-          tension: 0.4,
-          pointRadius: 3,
-        }
-      ]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      interaction: { mode: "index", intersect: false },
-      plugins: {
-        legend: { labels: { color: "#94a3b8", font: { size: 11 } } },
-        annotation: { annotations: {
-          zero: { type: "line", yMin: 0, yMax: 0, borderColor: "rgba(147,197,253,0.3)", borderWidth: 1, borderDash: [4,4] }
-        }}
-      },
-      scales: {
-        x: { ticks: { color: "#64748b", font: { size: 10 }, maxRotation: 45 }, grid: { color: "rgba(255,255,255,0.04)" } },
-        y: { ticks: { color: "#94a3b8", font: { size: 10 } }, grid: { color: "rgba(255,255,255,0.06)" } }
+  mainCharts.temp = new Chart(document.getElementById("chartTemp"),{
+    type:"line",
+    data:{ labels, datasets:[
+      {label:"Temp. máx (°C)",data:forecast.map(d=>d.temp_max),borderColor:"#facc15",fill:false,tension:.4,pointRadius:3},
+      {label:"Temp. mín (°C)",data:forecast.map(d=>d.temp_min),borderColor:"#93c5fd",backgroundColor:"rgba(147,197,253,0.1)",fill:"-1",tension:.4,pointRadius:3}
+    ]},
+    options:{ responsive:true, maintainAspectRatio:false,
+      interaction:{mode:"index",intersect:false},
+      plugins:{legend:{labels:{color:"#94a3b8",font:{size:11}}}},
+      scales:{
+        x:{ticks:{color:"#64748b",font:{size:10},maxRotation:45},grid:{color:"rgba(255,255,255,0.04)"}},
+        y:{ticks:{color:"#94a3b8",font:{size:10}},grid:{color:"rgba(255,255,255,0.06)"}}
       }
     }
   });
 }
 
+/* ── COMPARISON CARDS ── */
+function buildCompareCard(resortId, data) {
+  const forecast = data.forecast;
+  const totalSnow = forecast.reduce((s,d)=>s+(d.snow_cm||0),0);
+  const snowDays  = forecast.filter(d=>d.snow_cm>0).length;
+  const bestDay   = forecast.reduce((a,b)=>b.snow_cm>a.snow_cm?b:a, forecast[0]);
+  const minTemp   = Math.min(...forecast.map(d=>d.temp_min).filter(x=>x!=null));
+  const maxWind   = Math.max(...forecast.map(d=>d.wind_max_kmh).filter(x=>x!=null));
+  let freezeMins  = [];
+  forecast.forEach(d=>["am","pm","night"].forEach(p=>{
+    const f=d.periods[p].freeze_m; if(f!=null) freezeMins.push(f);
+  }));
+  const minFreeze = freezeMins.length ? Math.min(...freezeMins) : null;
+
+  const flag = resortId==="vallenevado" ? "🇨🇱" : "🇦🇷";
+  const canvasId = `miniChart-${resortId}`;
+
+  const card = document.createElement("div");
+  card.className = "compare-card";
+  card.innerHTML = `
+    <div class="cc-header">
+      <span class="cc-name">${flag} ${data.name}</span>
+      <span class="cc-elev">${data.elevation_m} msnm</span>
+    </div>
+    <div class="compare-stats">
+      <div class="compare-stat">
+        <div class="cs-label">Nieve 14d</div>
+        <div class="cs-val">${totalSnow.toFixed(0)}</div>
+        <div class="cs-unit">cm</div>
+      </div>
+      <div class="compare-stat">
+        <div class="cs-label">Días nevada</div>
+        <div class="cs-val">${snowDays}</div>
+        <div class="cs-unit">días</div>
+      </div>
+      <div class="compare-stat">
+        <div class="cs-label">Mejor día</div>
+        <div class="cs-val">${bestDay?bestDay.snow_cm.toFixed(0):"0"}</div>
+        <div class="cs-unit">cm</div>
+      </div>
+      <div class="compare-stat">
+        <div class="cs-label">Temp. mín</div>
+        <div class="cs-val">${minTemp!=null?minTemp.toFixed(0):"—"}</div>
+        <div class="cs-unit">°C</div>
+      </div>
+      <div class="compare-stat">
+        <div class="cs-label">Freeze mín</div>
+        <div class="cs-val">${minFreeze!=null?Math.round(minFreeze):"—"}</div>
+        <div class="cs-unit">m</div>
+      </div>
+      <div class="compare-stat">
+        <div class="cs-label">Viento máx</div>
+        <div class="cs-val">${maxWind!=null?Math.round(maxWind):"—"}</div>
+        <div class="cs-unit">km/h</div>
+      </div>
+    </div>
+    <div class="compare-mini-chart">
+      <h4>Nieve nueva por día</h4>
+      <div class="mini-chart-wrap"><canvas id="${canvasId}"></canvas></div>
+    </div>`;
+  return { card, canvasId, forecast };
+}
+
+function renderCompare(resorts) {
+  const grid = document.getElementById("compare-grid");
+  grid.innerHTML = "";
+  Object.values(miniCharts).forEach(c=>c.destroy());
+
+  const compareResorts = Object.entries(resorts).filter(([id])=>id!=="catedral");
+
+  compareResorts.forEach(([resortId, data])=>{
+    const { card, canvasId, forecast } = buildCompareCard(resortId, data);
+    grid.appendChild(card);
+
+    // mini chart after DOM insertion
+    requestAnimationFrame(()=>{
+      const labels = forecast.map(d=>{ const {dayName}=formatDate(d.date); return dayName; });
+      miniCharts[resortId] = new Chart(document.getElementById(canvasId),{
+        type:"bar",
+        data:{ labels, datasets:[{
+          label:"cm",
+          data: forecast.map(d=>d.snow_cm),
+          backgroundColor: forecast.map(d=>d.snow_cm>=10?"rgba(77,184,255,0.7)":"rgba(77,184,255,0.3)"),
+          borderColor:"transparent", borderRadius:2,
+        }]},
+        options:{
+          responsive:true, maintainAspectRatio:false,
+          plugins:{ legend:{display:false}, tooltip:{
+            callbacks:{ label: ctx=>`${ctx.raw} cm` }
+          }},
+          scales:{
+            x:{ ticks:{color:"#475569",font:{size:8}}, grid:{display:false} },
+            y:{ ticks:{color:"#475569",font:{size:8},maxTicksLimit:3}, grid:{color:"rgba(255,255,255,0.03)"} }
+          }
+        }
+      });
+    });
+  });
+}
+
+/* ── INIT ── */
 async function init() {
   try {
-    const data = await loadData();
+    const r = await fetch("datos.json?t="+Date.now());
+    const data = await r.json();
 
     document.getElementById("loading").style.display = "none";
     document.getElementById("app").style.display = "block";
 
-    // header
     const genDate = new Date(data.generated_at);
     document.getElementById("updated-at").textContent =
-      "Actualizado: " + genDate.toLocaleString("es-AR", { dateStyle: "short", timeStyle: "short" });
+      "Actualizado: "+genDate.toLocaleString("es-AR",{dateStyle:"short",timeStyle:"short"});
 
-    buildKPIs(data.forecast, data.snow_report);
-    buildSnowReport(data.snow_report || {});
-    buildTable(data.forecast);
-    buildCharts(data.forecast);
+    const catedral = data.resorts.catedral;
+    renderKPIs(catedral.forecast);
+    renderSnowReport(catedral.snow_report||{});
+    renderTable(catedral.forecast);
+    renderMainCharts(catedral.forecast);
+    renderCompare(data.resorts);
 
-  } catch (e) {
-    document.getElementById("loading").textContent = "Error al cargar datos. Ejecutá el script Python primero.";
+  } catch(e) {
+    document.getElementById("loading").textContent =
+      "Error al cargar datos. Ejecutá fetch_forecast.py primero.";
     console.error(e);
   }
 }
