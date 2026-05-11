@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-11T21:25:54.961903+00:00",
+  "generated_at": "2026-05-11T21:35:15.752163+00:00",
   "webcams": [
     {
       "name": "Punta Princesa",
@@ -43,7 +43,7 @@
         "last_7days_cm": null,
         "last_24h_cm": null,
         "resort_status": "Resort Closed",
-        "scraped_at": "2026-05-11T21:25:57.205348+00:00"
+        "scraped_at": "2026-05-11T21:35:18.564157+00:00"
       },
       "forecast": [
         {
@@ -793,7 +793,8 @@
             222.0,
             225.0
           ],
-          "total": 225.0
+          "total": 225.0,
+          "is_current": false
         },
         {
           "year": 2022,
@@ -952,7 +953,8 @@
             558.0,
             558.0
           ],
-          "total": 558.0
+          "total": 558.0,
+          "is_current": false
         },
         {
           "year": 2023,
@@ -1111,7 +1113,8 @@
             434.8,
             434.8
           ],
-          "total": 434.8
+          "total": 434.8,
+          "is_current": false
         },
         {
           "year": 2024,
@@ -1270,7 +1273,8 @@
             444.9,
             457.4
           ],
-          "total": 457.4
+          "total": 457.4,
+          "is_current": false
         },
         {
           "year": 2025,
@@ -1429,7 +1433,25 @@
             191.4,
             191.4
           ],
-          "total": 191.4
+          "total": 191.4,
+          "is_current": false
+        },
+        {
+          "year": 2026,
+          "cumulative": [
+            2.2,
+            2.2,
+            2.2,
+            2.2,
+            2.2,
+            2.2,
+            2.2,
+            2.6,
+            2.6,
+            2.6
+          ],
+          "total": 2.6,
+          "is_current": true
         }
       ]
     },
@@ -1443,7 +1465,7 @@
         "last_7days_cm": null,
         "last_24h_cm": null,
         "resort_status": "Resort Closed",
-        "scraped_at": "2026-05-11T21:26:03.579802+00:00"
+        "scraped_at": "2026-05-11T21:35:25.498935+00:00"
       },
       "forecast": [
         {
@@ -2046,7 +2068,7 @@
         "last_7days_cm": null,
         "last_24h_cm": null,
         "resort_status": "Resort Closed",
-        "scraped_at": "2026-05-11T21:26:05.831308+00:00"
+        "scraped_at": "2026-05-11T21:35:27.735600+00:00"
       },
       "forecast": [
         {

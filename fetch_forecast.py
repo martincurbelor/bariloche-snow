@@ -7,7 +7,17 @@ from datetime import datetime, timezone
 from bs4 import BeautifulSoup
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-OUTPUT_FILE = os.path.join(BASE_DIR, "docs", "datos.json")
+OUTPUT_FILE   = os.path.join(BASE_DIR, "docs", "datos.json")
+CAMERAS_DIR   = os.path.join(BASE_DIR, "docs", "cameras")
+
+WEBCAMS = [
+    {"name": "Punta Princesa",         "url": "https://varitech.ar/cameras/cam001/latest.jpg", "file": "cam001.jpg"},
+    {"name": "Playpark",               "url": "https://varitech.ar/cameras/cam002/latest.jpg", "file": "cam002.jpg"},
+    {"name": "Plaza Catalina Reynal",  "url": "https://varitech.ar/cameras/cam003/latest.jpg", "file": "cam003.jpg"},
+    {"name": "Cable Carril Inferior",  "url": "https://varitech.ar/cameras/cam004/latest.jpg", "file": "cam004.jpg"},
+    {"name": "Pista Eventos",          "url": "https://varitech.ar/cameras/cam005/latest.jpg", "file": "cam005.jpg"},
+    {"name": "Centro Superior",        "url": "https://varitech.ar/cameras/cam006/latest.jpg", "file": "cam006.jpg"},
+]
 GIT_EXE = r"C:\Program Files\Git\bin\git.exe"
 
 RESORTS = [
@@ -183,6 +193,63 @@ def fetch_snow_report(resort):
         return {"scraped_at": datetime.now(timezone.utc).isoformat(), "error": str(e)}
 
 
+def fetch_historical_seasons(resort, num_years=5):
+    from datetime import date, timedelta
+    today = date.today()
+    current_year = today.year
+    end_year = current_year - 1
+    start_year = end_year - num_years + 1
+    seasons = []
+
+    # Past completed seasons
+    for year in range(start_year, end_year + 1):
+        try:
+            url = (
+                "https://archive-api.open-meteo.com/v1/archive"
+                f"?latitude={resort['lat']}&longitude={resort['lon']}"
+                f"&start_date={year}-05-01&end_date={year}-09-30"
+                "&daily=snowfall_sum"
+                f"&timezone={requests.utils.quote(resort['timezone'])}"
+            )
+            r = requests.get(url, timeout=20)
+            r.raise_for_status()
+            daily = r.json()["daily"]["snowfall_sum"]
+            cumulative, total = [], 0.0
+            for v in daily:
+                total += v or 0
+                cumulative.append(round(total, 1))
+            seasons.append({"year": year, "cumulative": cumulative, "total": round(total, 1), "is_current": False})
+            print(f"  [{year}] {round(total, 1)} cm")
+        except Exception as e:
+            print(f"  [{year}] Error: {e}")
+
+    # Current season: May 1 to yesterday
+    season_start = date(current_year, 5, 1)
+    if today > season_start:
+        try:
+            end_date = (today - timedelta(days=1)).strftime("%Y-%m-%d")
+            url = (
+                "https://archive-api.open-meteo.com/v1/archive"
+                f"?latitude={resort['lat']}&longitude={resort['lon']}"
+                f"&start_date={current_year}-05-01&end_date={end_date}"
+                "&daily=snowfall_sum"
+                f"&timezone={requests.utils.quote(resort['timezone'])}"
+            )
+            r = requests.get(url, timeout=20)
+            r.raise_for_status()
+            daily = r.json()["daily"]["snowfall_sum"]
+            cumulative, total = [], 0.0
+            for v in daily:
+                total += v or 0
+                cumulative.append(round(total, 1))
+            seasons.append({"year": current_year, "cumulative": cumulative, "total": round(total, 1), "is_current": True})
+            print(f"  [{current_year}] {round(total, 1)} cm (en curso, {len(cumulative)} días)")
+        except Exception as e:
+            print(f"  [{current_year}] Error: {e}")
+
+    return seasons
+
+
 def weathercode_to_label(code):
     mapping = {
         0: "Despejado", 1: "Mayormente despejado", 2: "Parcialmente nublado",
@@ -198,9 +265,28 @@ def weathercode_to_label(code):
     return mapping.get(code, f"Codigo {code}")
 
 
+def fetch_webcams():
+    os.makedirs(CAMERAS_DIR, exist_ok=True)
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+    results = []
+    for cam in WEBCAMS:
+        dest = os.path.join(CAMERAS_DIR, cam["file"])
+        try:
+            r = requests.get(cam["url"], headers=headers, timeout=15)
+            r.raise_for_status()
+            with open(dest, "wb") as f:
+                f.write(r.content)
+            results.append({"name": cam["name"], "file": f"cameras/{cam['file']}", "ok": True})
+            print(f"  [{cam['name']}] OK ({len(r.content)//1024} KB)")
+        except Exception as e:
+            print(f"  [{cam['name']}] Error: {e}")
+            results.append({"name": cam["name"], "file": f"cameras/{cam['file']}", "ok": False})
+    return results
+
+
 def git_push():
     cmds = [
-        [GIT_EXE, "-C", BASE_DIR, "add", "docs/datos.json"],
+        [GIT_EXE, "-C", BASE_DIR, "add", "docs/datos.json", "docs/cameras/"],
         [GIT_EXE, "-C", BASE_DIR, "commit", "-m",
          f"update: forecast {datetime.now().strftime('%Y-%m-%d %H:%M')}"],
         [GIT_EXE, "-C", BASE_DIR, "push"],
@@ -211,8 +297,12 @@ def git_push():
 
 
 def main():
+    print("Downloading webcam images...")
+    webcams = fetch_webcams()
+
     output = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
+        "webcams": webcams,
         "resorts": {},
     }
 
@@ -225,13 +315,19 @@ def main():
         print(f"[{resort['name']}] Fetching snow report...")
         snow_report = fetch_snow_report(resort)
 
-        output["resorts"][resort["id"]] = {
+        resort_data = {
             "name":        resort["name"],
             "country":     resort["country"],
             "elevation_m": resort["elevation_m"],
             "snow_report": snow_report,
             "forecast":    forecast_days,
         }
+
+        if resort["id"] == "catedral":
+            print(f"[{resort['name']}] Fetching historical seasons...")
+            resort_data["historical_seasons"] = fetch_historical_seasons(resort)
+
+        output["resorts"][resort["id"]] = resort_data
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)

@@ -323,6 +323,9 @@
     .cs .cs-unit  { font-size: 11px; color: var(--text-3); }
     .mini-chart-wrap { position: relative; height: 70px; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line-soft); }
 
+    /* ── HISTORICAL ── */
+    .hist-chart-wrap { position: relative; height: 280px; }
+
     /* ── FOOTER ── */
     .footer {
       margin-top: 36px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
@@ -432,6 +435,15 @@
       </div>
     </div>
     <div class="chart-wrap"><canvas id="chartTemp"></canvas></div>
+  </div>
+
+  <!-- HISTORICAL SEASONS -->
+  <div class="section-h">
+    <h2>Histórico de temporadas</h2>
+    <span class="meta">Cerro Catedral · nieve acumulada May–Sep</span>
+  </div>
+  <div class="chart-card">
+    <div class="hist-chart-wrap"><canvas id="chartHistorical"></canvas></div>
   </div>
 
   <!-- TABLE -->
@@ -787,6 +799,96 @@ function closeLightbox() {
 }
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeLightbox(); });
 
+/* ── HISTORICAL SEASONS ── */
+function renderHistorical(seasons) {
+  if (!seasons || !seasons.length) return;
+
+  // Build X-axis labels: one per day May 1 – Sep 30 (153 days)
+  const labels = [];
+  const months = ["May","Jun","Jul","Ago","Sep"];
+  const mDays  = [31, 30, 31, 31, 30];
+  for (let m = 0; m < months.length; m++) {
+    for (let d = 1; d <= mDays[m]; d++) {
+      labels.push(d === 1 || d === 15 ? `${d} ${months[m]}` : "");
+    }
+  }
+
+  // Blues/grays for past seasons (dashed), bright solid for current year
+  const pastColors = [
+    "#4b5563",  // gray-600  — 2021
+    "#374f7a",  // dark blue — 2022
+    "#4a72a8",  // mid blue  — 2023
+    "#6096cc",  // blue      — 2024
+    "#88b4e0",  // light blue— 2025
+  ];
+
+  const datasets = seasons.map((s, i) => {
+    const isCurrent = !!s.is_current;
+    return {
+      label: String(s.year),
+      data: s.cumulative,
+      borderColor: isCurrent ? "#e2f0ff" : pastColors[i] || pastColors[pastColors.length - 1],
+      backgroundColor: "transparent",
+      borderWidth: isCurrent ? 3 : 1.5,
+      borderDash: isCurrent ? [] : [5, 4],
+      pointRadius: 0,
+      tension: 0.35,
+      spanGaps: false,
+      order: isCurrent ? 0 : 1,
+    };
+  });
+
+  const ctx = document.getElementById("chartHistorical").getContext("2d");
+  new Chart(ctx, {
+    type: "line",
+    data: { labels, datasets },
+    options: {
+      animation: false,
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: "index", intersect: false },
+      plugins: {
+        legend: {
+          display: true,
+          position: "top",
+          labels: {
+            color: getComputedStyle(document.body).getPropertyValue("--text-3").trim(),
+            boxWidth: 24,
+            boxHeight: 2,
+            padding: 16,
+            font: { size: 12 },
+          },
+        },
+        tooltip: {
+          callbacks: {
+            label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y} cm`,
+          },
+        },
+      },
+      scales: {
+        x: {
+          ticks: {
+            color: getComputedStyle(document.body).getPropertyValue("--text-3").trim(),
+            font: { size: 11 },
+            maxRotation: 0,
+            autoSkip: false,
+          },
+          grid: { color: getComputedStyle(document.body).getPropertyValue("--line-soft").trim() },
+        },
+        y: {
+          min: 0,
+          ticks: {
+            color: getComputedStyle(document.body).getPropertyValue("--text-3").trim(),
+            font: { size: 11 },
+            callback: v => v + " cm",
+          },
+          grid: { color: getComputedStyle(document.body).getPropertyValue("--line-soft").trim() },
+        },
+      },
+    },
+  });
+}
+
 /* ── INIT ── */
 async function init() {
   try {
@@ -808,6 +910,7 @@ async function init() {
     buildWebcams(data.webcams || []);
     setInterval(() => refreshWebcams(data.webcams || []), WEBCAM_REFRESH_MS);
     renderCompare(data.resorts);
+    renderHistorical(catedral.historical_seasons);
 
   } catch(e) {
     document.getElementById("loading").textContent =
