@@ -62,6 +62,53 @@
     .report-card .rc-sub   { font-size: .75rem; color: var(--muted); }
     .no-data { color: var(--muted); font-style: italic; font-size: .9rem; }
 
+    /* ── WEBCAMS ── */
+    .webcam-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    @media(max-width: 768px) { .webcam-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media(max-width: 480px) { .webcam-grid { grid-template-columns: 1fr; } }
+
+    .webcam-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform .15s, border-color .15s;
+    }
+    .webcam-card:hover { transform: translateY(-2px); border-color: var(--accent); }
+    .webcam-card img {
+      width: 100%; aspect-ratio: 16/9; object-fit: cover;
+      display: block; background: #0a1628;
+    }
+    .webcam-card .wc-footer {
+      padding: 7px 10px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .webcam-card .wc-name  { font-size: .72rem; color: var(--muted); }
+    .webcam-card .wc-badge {
+      font-size: .6rem; text-transform: uppercase; letter-spacing: .06em;
+      background: rgba(74,222,128,.12); color: var(--green);
+      padding: 2px 6px; border-radius: 4px;
+    }
+
+    /* LIGHTBOX */
+    .lightbox {
+      display: none; position: fixed; inset: 0; z-index: 999;
+      background: rgba(0,0,0,.88); align-items: center; justify-content: center;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 92vw; max-height: 88vh; border-radius: 8px; }
+    .lightbox-close {
+      position: absolute; top: 18px; right: 22px;
+      font-size: 1.8rem; color: var(--muted); cursor: pointer; line-height: 1;
+    }
+    .lightbox-close:hover { color: var(--text); }
+
     /* ── CHARTS ── */
     .charts-row { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin-bottom: 16px; }
     @media(max-width:768px){ .charts-row{ grid-template-columns:1fr; } }
@@ -272,6 +319,18 @@
         </thead>
         <tbody id="forecast-tbody"></tbody>
       </table>
+    </div>
+
+    <!-- WEBCAMS -->
+    <div class="compare-section" style="border-top:none; padding-top:0; margin-top:28px;">
+      <div class="section-title">Cámaras en vivo — Cerro Catedral</div>
+      <div class="webcam-grid" id="webcam-grid"></div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <span class="lightbox-close" onclick="closeLightbox()">&#x2715;</span>
+      <img id="lightbox-img" src="" alt="Webcam" onclick="event.stopPropagation()" />
     </div>
 
     <!-- COMPARISON -->
@@ -555,6 +614,54 @@ function renderCompare(resorts) {
   });
 }
 
+/* ── WEBCAMS ── */
+const WEBCAMS = [
+  { url: "https://varitech.ar/uploads/cameras/cam005/cam001.jpg", name: "Cam 1" },
+  { url: "https://varitech.ar/uploads/cameras/cam005/cam002.jpg", name: "Cam 2" },
+  { url: "https://varitech.ar/uploads/cameras/cam005/cam003.jpg", name: "Cam 3" },
+  { url: "https://varitech.ar/uploads/cameras/cam005/cam004.jpg", name: "Cam 4" },
+  { url: "https://varitech.ar/uploads/cameras/cam005/cam005.jpg", name: "Cam 5" },
+  { url: "https://varitech.ar/uploads/cameras/cam005/cam006.jpg", name: "Cam 6" },
+];
+const WEBCAM_REFRESH_MS = 5 * 60 * 1000; // 5 minutos
+
+function buildWebcams() {
+  const grid = document.getElementById("webcam-grid");
+  grid.innerHTML = "";
+  WEBCAMS.forEach((cam, i) => {
+    const card = document.createElement("div");
+    card.className = "webcam-card";
+    card.innerHTML = `
+      <img id="wcimg-${i}" src="${cam.url}?t=${Date.now()}" alt="${cam.name}"
+           referrerpolicy="no-referrer" crossorigin="anonymous"
+           onerror="this.style.opacity='.2'" />
+      <div class="wc-footer">
+        <span class="wc-name">${cam.name}</span>
+        <span class="wc-badge">LIVE</span>
+      </div>`;
+    card.querySelector("img").addEventListener("click", () => openLightbox(cam.url));
+    grid.appendChild(card);
+  });
+}
+
+function refreshWebcams() {
+  WEBCAMS.forEach((cam, i) => {
+    const img = document.getElementById(`wcimg-${i}`);
+    if (img) img.src = cam.url + "?t=" + Date.now();
+  });
+}
+
+function openLightbox(url) {
+  document.getElementById("lightbox-img").src = url + "?t=" + Date.now();
+  document.getElementById("lightbox").classList.add("open");
+}
+function closeLightbox() {
+  document.getElementById("lightbox").classList.remove("open");
+  document.getElementById("lightbox-img").src = "";
+}
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeLightbox(); });
+setInterval(refreshWebcams, WEBCAM_REFRESH_MS);
+
 /* ── INIT ── */
 async function init() {
   try {
@@ -571,6 +678,7 @@ async function init() {
     const catedral = data.resorts.catedral;
     renderKPIs(catedral.forecast);
     renderSnowReport(catedral.snow_report||{});
+    buildWebcams();
     renderTable(catedral.forecast);
     renderMainCharts(catedral.forecast);
     renderCompare(data.resorts);
