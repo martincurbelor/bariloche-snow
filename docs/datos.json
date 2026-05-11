@@ -1,5 +1,37 @@
 {
-  "generated_at": "2026-05-11T16:48:00.960081+00:00",
+  "generated_at": "2026-05-11T16:56:18.807366+00:00",
+  "webcams": [
+    {
+      "name": "Cam 1",
+      "file": "cameras/cam001.jpg",
+      "ok": true
+    },
+    {
+      "name": "Cam 2",
+      "file": "cameras/cam002.jpg",
+      "ok": true
+    },
+    {
+      "name": "Cam 3",
+      "file": "cameras/cam003.jpg",
+      "ok": true
+    },
+    {
+      "name": "Cam 4",
+      "file": "cameras/cam004.jpg",
+      "ok": true
+    },
+    {
+      "name": "Cam 5",
+      "file": "cameras/cam005.jpg",
+      "ok": true
+    },
+    {
+      "name": "Cam 6",
+      "file": "cameras/cam006.jpg",
+      "ok": true
+    }
+  ],
   "resorts": {
     "catedral": {
       "name": "Cerro Catedral",
@@ -11,7 +43,7 @@
         "last_7days_cm": null,
         "last_24h_cm": null,
         "resort_status": "Resort Closed",
-        "scraped_at": "2026-05-11T16:48:03.104346+00:00"
+        "scraped_at": "2026-05-11T16:56:20.938077+00:00"
       },
       "forecast": [
         {
@@ -614,7 +646,7 @@
         "last_7days_cm": null,
         "last_24h_cm": null,
         "resort_status": "Resort Closed",
-        "scraped_at": "2026-05-11T16:48:05.406576+00:00"
+        "scraped_at": "2026-05-11T16:56:23.070775+00:00"
       },
       "forecast": [
         {
@@ -1217,7 +1249,7 @@
         "last_7days_cm": null,
         "last_24h_cm": null,
         "resort_status": "Resort Closed",
-        "scraped_at": "2026-05-11T16:48:07.610875+00:00"
+        "scraped_at": "2026-05-11T16:56:24.701945+00:00"
       },
       "forecast": [
         {
