@@ -463,17 +463,16 @@ function renderMainCharts(forecast) {
   mainCharts.snow = new Chart(document.getElementById("chartSnow"),{
     data:{ labels, datasets:[
       { type:"bar", label:"Nieve nueva (cm)", data:forecast.map(d=>d.snow_cm),
-        backgroundColor:"rgba(77,184,255,0.6)", borderColor:"#4db8ff", borderWidth:1, yAxisID:"y" },
+        backgroundColor:"rgba(77,184,255,0.6)", borderColor:"#4db8ff", borderWidth:1 },
       { type:"line", label:"Nieve acumulada (cm)", data:forecast.map(d=>d.cumulative_snow_cm),
-        borderColor:"#7ee8ff", backgroundColor:"rgba(126,232,255,0.08)", fill:true, tension:.4, pointRadius:3, yAxisID:"y2" }
+        borderColor:"#7ee8ff", backgroundColor:"rgba(126,232,255,0.08)", fill:true, tension:.4, pointRadius:3 }
     ]},
     options:{ responsive:true, maintainAspectRatio:false,
       interaction:{mode:"index",intersect:false},
       plugins:{legend:{labels:{color:"#94a3b8",font:{size:11}}}},
       scales:{
         x:{ticks:{color:"#64748b",font:{size:10},maxRotation:45},grid:{color:"rgba(255,255,255,0.04)"}},
-        y:{position:"left",ticks:{color:"#94a3b8",font:{size:10}},grid:{color:"rgba(255,255,255,0.06)"},title:{display:true,text:"cm nuevos",color:"#64748b",font:{size:10}}},
-        y2:{position:"right",ticks:{color:"#7ee8ff",font:{size:10}},grid:{display:false},title:{display:true,text:"acumulada",color:"#7ee8ff",font:{size:10}}}
+        y:{min:0,ticks:{color:"#94a3b8",font:{size:10}},grid:{color:"rgba(255,255,255,0.06)"},title:{display:true,text:"cm",color:"#64748b",font:{size:10}}}
       }
     }
   });
