@@ -3,351 +3,488 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cerro Catedral — Pronóstico de Nieve 14 Días</title>
+  <title>Bariloche Snow — Cerro Catedral</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <style>
+    /* ── TOKENS ── */
     :root {
-      --bg: #0d1b2a;
-      --card: #1a2d45;
-      --card2: #1e3554;
-      --accent: #4db8ff;
-      --accent2: #7ee8ff;
-      --snow: #e8f4ff;
-      --green: #4ade80;
-      --yellow: #facc15;
-      --red: #f87171;
-      --purple: #a78bfa;
-      --text: #e2e8f0;
-      --muted: #94a3b8;
-      --border: rgba(77,184,255,0.15);
-      --border-dim: rgba(77,184,255,0.08);
+      --bg:       oklch(0.16 0.025 240);
+      --bg-2:     oklch(0.20 0.028 240);
+      --surface:  oklch(0.23 0.030 240);
+      --surface-2:oklch(0.27 0.032 240);
+      --line:     oklch(0.34 0.030 240);
+      --line-soft:oklch(0.30 0.025 240 / 0.6);
+      --text:     oklch(0.97 0.015 240);
+      --text-2:   oklch(0.78 0.025 240);
+      --text-3:   oklch(0.60 0.020 240);
+      --ice:      oklch(0.82 0.12 230);
+      --ice-2:    oklch(0.70 0.15 235);
+      --ice-deep: oklch(0.55 0.18 245);
+      --warn:     oklch(0.78 0.16 65);
+      --hot:      oklch(0.70 0.18 30);
+      --good:     oklch(0.78 0.14 155);
+      --shadow:   0 1px 0 oklch(1 0 0 / 0.04) inset, 0 10px 30px oklch(0 0 0 / 0.35);
+      --radius:   14px;
+      --radius-sm:10px;
     }
-    body.light {
-      --bg: #f0f4f8;
-      --card: #ffffff;
-      --card2: #e8edf3;
-      --accent: #1a6fb0;
-      --accent2: #0d5a9a;
-      --snow: #1a3a5c;
-      --green: #16a34a;
-      --yellow: #b45309;
-      --red: #dc2626;
-      --purple: #7c3aed;
-      --text: #1e293b;
-      --muted: #64748b;
-      --border: rgba(26,111,176,0.18);
-      --border-dim: rgba(26,111,176,0.08);
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; transition: background .2s, color .2s; }
-
-    /* ── HEADER ── */
-    header {
-      background: linear-gradient(135deg, #0d1b2a 0%, #1a3a5c 50%, #0d2940 100%);
-      border-bottom: 1px solid var(--border);
-      padding: 20px 24px 18px;
-      display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 12px;
-    }
-    body.light header { background: linear-gradient(135deg, #1a3a5c 0%, #1e4a7a 50%, #1a3a5c 100%); }
-    .header-left h1 { font-size: 1.55rem; font-weight: 700; color: var(--accent2); letter-spacing: -.5px; }
-    .header-left .subtitle { font-size: 0.82rem; color: rgba(255,255,255,.6); margin-top: 3px; }
-    .header-right { display: flex; align-items: center; gap: 10px; font-size: 0.8rem; color: rgba(255,255,255,.6); padding-top: 4px; }
-    .live-dot { width: 8px; height: 8px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; flex-shrink: 0; }
-    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
-
-    .theme-toggle {
-      background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2);
-      color: #fff; border-radius: 8px; padding: 5px 10px; cursor: pointer;
-      font-size: .8rem; line-height: 1; transition: background .15s;
-    }
-    .theme-toggle:hover { background: rgba(255,255,255,.2); }
-
-    /* ── LAYOUT ── */
-    main { max-width: 1200px; margin: 0 auto; padding: 24px 16px; }
-
-    .section-title {
-      font-size: .78rem; text-transform: uppercase; letter-spacing: .1em;
-      color: var(--accent); margin-bottom: 12px; margin-top: 28px;
-      border-left: 3px solid var(--accent); padding-left: 10px;
+    .theme-light {
+      --bg:       oklch(0.985 0.005 240);
+      --bg-2:     oklch(0.96  0.008 240);
+      --surface:  oklch(1 0 0);
+      --surface-2:oklch(0.97  0.008 240);
+      --line:     oklch(0.88  0.012 240);
+      --line-soft:oklch(0.92  0.010 240 / 0.8);
+      --text:     oklch(0.20  0.025 240);
+      --text-2:   oklch(0.42  0.020 240);
+      --text-3:   oklch(0.58  0.018 240);
+      --ice:      oklch(0.55  0.16  235);
+      --ice-2:    oklch(0.62  0.16  235);
+      --ice-deep: oklch(0.48  0.18  245);
+      --shadow:   0 1px 0 oklch(1 0 0 / 1) inset, 0 8px 24px oklch(0 0 0 / 0.06);
     }
 
-    /* ── KPI GRID ── */
-    .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); gap: 12px; margin-bottom: 16px; }
-    .kpi-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; text-align: center; }
-    .kpi-card .label { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 6px; }
-    .kpi-card .value { font-size: 1.8rem; font-weight: 700; color: var(--accent2); line-height: 1; }
-    .kpi-card .unit  { font-size: .85rem; color: var(--muted); margin-top: 2px; }
-
-    /* ── MEJOR VENTANA ── */
-    .best-window {
-      background: linear-gradient(135deg, rgba(77,184,255,.12) 0%, rgba(126,232,255,.06) 100%);
-      border: 1px solid rgba(77,184,255,.35);
-      border-radius: 14px; padding: 18px 22px;
-      display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
-      margin-bottom: 24px;
+    /* ── BASE ── */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); }
+    body {
+      font-family: "Inter Tight", "Inter", system-ui, sans-serif;
+      font-feature-settings: "ss01","cv11";
+      font-size: 15px; line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      transition: background .2s, color .2s;
     }
-    .bw-eyebrow { font-size: .68rem; text-transform: uppercase; letter-spacing: .1em; color: var(--accent); margin-bottom: 4px; }
-    .bw-date { font-size: 1.25rem; font-weight: 700; color: var(--accent2); white-space: nowrap; }
-    .bw-divider { width: 1px; background: var(--border); align-self: stretch; flex-shrink: 0; }
-    .bw-stats { display: flex; gap: 24px; flex-wrap: wrap; }
-    .bw-stat { text-align: center; }
-    .bw-stat .bw-val { font-size: 1.5rem; font-weight: 700; color: var(--snow); line-height: 1; }
-    .bw-stat .bw-unit { font-size: .7rem; color: var(--muted); margin-top: 3px; }
-    @media(max-width: 480px) { .best-window { gap: 14px; } .bw-divider { display: none; } }
+    .num  { font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
+    .mono { font-family: "JetBrains Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
 
-    /* ── SNOW REPORT ── */
-    .report-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin-bottom: 24px; }
-    .report-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
-    .report-card .rc-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 4px; }
-    .report-card .rc-val   { font-size: 1.4rem; font-weight: 700; color: var(--accent2); }
-    .report-card .rc-sub   { font-size: .75rem; color: var(--muted); }
-    .no-data { color: var(--muted); font-style: italic; font-size: .9rem; }
+    .app { max-width: 1320px; margin: 0 auto; padding: 28px 28px 80px; }
+    @media(max-width:640px){ .app{ padding:16px 14px 60px; } }
 
-    /* ── WEBCAMS ── */
-    .webcam-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 24px; }
-    @media(max-width: 768px) { .webcam-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media(max-width: 480px) { .webcam-grid { grid-template-columns: 1fr; } }
-    .webcam-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; cursor: pointer; transition: transform .15s, border-color .15s; }
-    .webcam-card:hover { transform: translateY(-2px); border-color: var(--accent); }
-    .webcam-card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #0a1628; }
-    .webcam-card .wc-footer { padding: 7px 10px; display: flex; align-items: center; justify-content: space-between; }
-    .webcam-card .wc-name  { font-size: .72rem; color: var(--muted); }
-    .webcam-card .wc-badge { font-size: .6rem; text-transform: uppercase; letter-spacing: .06em; background: rgba(74,222,128,.12); color: var(--green); padding: 2px 6px; border-radius: 4px; }
+    /* ── TOPBAR ── */
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 6px 0 22px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-mark {
+      width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
+      background: radial-gradient(circle at 30% 30%, oklch(0.92 0.05 230), oklch(0.55 0.18 245) 70%);
+      position: relative; overflow: hidden;
+    }
+    .brand-mark::after {
+      content: ""; position: absolute; inset: 0;
+      background: repeating-linear-gradient(45deg, oklch(1 0 0 / 0.10) 0 2px, transparent 2px 6px);
+    }
+    .brand-name { font-weight: 600; letter-spacing: -0.01em; }
+    .brand-sub  { color: var(--text-3); font-size: 12px; margin-top: 1px; }
+    .topbar-right { display: flex; align-items: center; gap: 10px; color: var(--text-3); font-size: 13px; }
+    .pulse {
+      width: 8px; height: 8px; border-radius: 999px; background: var(--good); flex-shrink: 0;
+      box-shadow: 0 0 0 0 oklch(0.78 0.14 155 / 0.6);
+      animation: pulse 2s ease-out infinite;
+    }
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 0 0   oklch(0.78 0.14 155 / 0.55); }
+      100% { box-shadow: 0 0 0 10px oklch(0.78 0.14 155 / 0); }
+    }
+    .theme-btn {
+      background: oklch(1 0 0 / 0.07); border: 1px solid var(--line);
+      color: var(--text-2); border-radius: 8px; padding: 5px 11px;
+      cursor: pointer; font-size: 12px; font-family: inherit; transition: background .15s;
+    }
+    .theme-btn:hover { background: oklch(1 0 0 / 0.12); }
 
-    /* LIGHTBOX */
-    .lightbox { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(0,0,0,.88); align-items: center; justify-content: center; }
-    .lightbox.open { display: flex; }
-    .lightbox img { max-width: 92vw; max-height: 88vh; border-radius: 8px; }
-    .lightbox-close { position: absolute; top: 18px; right: 22px; font-size: 1.8rem; color: var(--muted); cursor: pointer; line-height: 1; }
-    .lightbox-close:hover { color: var(--text); }
+    /* ── SECTION HEADER ── */
+    .section-h {
+      display: flex; align-items: center; justify-content: space-between;
+      margin: 32px 2px 14px;
+    }
+    .section-h h2 {
+      margin: 0; font-size: 13px; font-weight: 500;
+      color: var(--text-3); text-transform: uppercase; letter-spacing: 0.08em;
+    }
+    .section-h .meta { color: var(--text-3); font-size: 12px; }
+
+    /* ── HERO ── */
+    .hero { display: grid; grid-template-columns: 1.4fr 1fr; gap: 18px; margin-bottom: 18px; }
+    @media(max-width:980px){ .hero{ grid-template-columns:1fr; } }
+
+    .hero-main {
+      background:
+        radial-gradient(1200px 320px at 80% -40%, oklch(0.55 0.18 245 / 0.35), transparent 60%),
+        radial-gradient(800px 400px at 0% 110%, oklch(0.45 0.15 220 / 0.30), transparent 60%),
+        linear-gradient(180deg, var(--surface), var(--surface-2));
+      border: 1px solid var(--line); border-radius: 22px;
+      padding: 28px 30px 24px; position: relative; overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .hero-main::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.55;
+      background-image:
+        radial-gradient(circle at 18% 22%, oklch(1 0 0 / 0.45) 0.6px, transparent 1.5px),
+        radial-gradient(circle at 78% 14%, oklch(1 0 0 / 0.35) 0.6px, transparent 1.5px),
+        radial-gradient(circle at 32% 70%, oklch(1 0 0 / 0.35) 0.6px, transparent 1.5px),
+        radial-gradient(circle at 64% 84%, oklch(1 0 0 / 0.40) 0.6px, transparent 1.5px),
+        radial-gradient(circle at 90% 52%, oklch(1 0 0 / 0.30) 0.6px, transparent 1.5px),
+        radial-gradient(circle at 8%  88%, oklch(1 0 0 / 0.30) 0.6px, transparent 1.5px);
+      background-size: 240px 240px;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-3);
+      padding: 6px 10px; background: oklch(1 0 0 / 0.04);
+      border: 1px solid var(--line); border-radius: 999px;
+    }
+    .hero h1 { margin: 14px 0 4px; font-size: 38px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.05; }
+    .hero h1 .sub { font-weight: 400; color: var(--text-3); font-size: 22px; }
+    @media(max-width:640px){ .hero h1{ font-size: 28px; } .hero h1 .sub{ font-size:17px; } }
+
+    .hero-metric { display: flex; align-items: baseline; gap: 14px; margin-top: 22px; flex-wrap: wrap; }
+    .hero-metric .big {
+      font-size: 92px; font-weight: 600; letter-spacing: -0.04em; line-height: 0.9;
+      background: linear-gradient(180deg, oklch(0.98 0.02 240), var(--ice-2));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    @media(max-width:640px){ .hero-metric .big{ font-size: 64px; } }
+    .hero-metric .unit { color: var(--text-2); font-size: 22px; font-weight: 500; }
+    .hero-metric .caption { color: var(--text-3); font-size: 13px; margin-left: 6px; max-width: 200px; }
+
+    .hero-strip {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+      margin-top: 26px; padding-top: 22px; border-top: 1px dashed var(--line-soft);
+    }
+    .hero-stat .k { color: var(--text-3); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .hero-stat .v { font-size: 22px; font-weight: 600; letter-spacing: -0.01em; margin-top: 4px; }
+    .hero-stat .v small { color: var(--text-3); font-weight: 400; font-size: 13px; margin-left: 4px; }
+
+    /* best window card */
+    .best {
+      background: linear-gradient(160deg, oklch(0.30 0.10 235), oklch(0.22 0.05 245));
+      border: 1px solid oklch(0.55 0.14 235 / 0.5); border-radius: 22px;
+      padding: 22px 22px 20px; position: relative; overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .best::before {
+      content: ""; position: absolute; inset: -1px; pointer-events: none;
+      background: linear-gradient(135deg, transparent 40%, oklch(0.85 0.15 230 / 0.18) 50%, transparent 60%);
+    }
+    .best-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+      color: oklch(0.95 0.06 230); background: oklch(1 0 0 / 0.08);
+      padding: 6px 10px; border-radius: 999px; border: 1px solid oklch(1 0 0 / 0.12);
+    }
+    .best h3 { margin: 12px 0 2px; font-size: 18px; font-weight: 500; color: oklch(0.97 0.02 240); }
+    .best .when { font-size: 34px; font-weight: 600; letter-spacing: -0.02em; color: #fff; margin: 2px 0 14px; }
+    .best-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 8px; }
+    .best-cell { background: oklch(1 0 0 / 0.06); border: 1px solid oklch(1 0 0 / 0.10); border-radius: 10px; padding: 10px 12px; }
+    .best-cell .k { font-size: 11px; color: oklch(0.85 0.04 240); text-transform: uppercase; letter-spacing: 0.05em; }
+    .best-cell .v { font-size: 18px; font-weight: 600; margin-top: 2px; color: #fff; }
+    .best-note { margin-top: 14px; font-size: 12.5px; color: oklch(0.88 0.04 240); line-height: 1.5; }
+
+    /* ── RESORT STATUS ── */
+    .resort-status { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    @media(max-width:980px){ .resort-status{ grid-template-columns:repeat(2,1fr); } }
+    .stat {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 16px 16px 14px;
+    }
+    .stat .label { font-size: 12px; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.06em; }
+    .stat .value { font-size: 28px; font-weight: 600; letter-spacing: -0.02em; margin-top: 6px; }
+    .stat .value small { color: var(--text-3); font-weight: 400; font-size: 14px; margin-left: 3px; }
+    .stat .delta { margin-top: 8px; font-size: 12px; color: var(--text-3); }
 
     /* ── CHARTS ── */
-    .chart-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-bottom: 16px; }
-    .chart-card h3 { font-size: .8rem; color: var(--muted); margin-bottom: 12px; text-transform: uppercase; letter-spacing: .06em; }
+    .chart-card {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 18px 18px 12px; margin-bottom: 12px;
+    }
+    .chart-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 14px; }
+    .chart-head h3 { margin: 0; font-size: 14px; font-weight: 500; color: var(--text-2); }
+    .chart-legend { display: flex; gap: 14px; font-size: 12px; color: var(--text-3); flex-wrap: wrap; }
+    .chart-legend .sw { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
     .chart-wrap { position: relative; height: 220px; }
 
     /* ── TABLE ── */
-    .table-wrap { overflow-x: auto; background: var(--card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 16px; }
-    table { width: 100%; border-collapse: collapse; font-size: .82rem; min-width: 640px; }
-    thead tr { background: rgba(77,184,255,.08); border-bottom: 1px solid var(--border); }
-    thead th { padding: 10px; text-align: center; font-weight: 600; color: var(--accent); font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; }
-    thead th.date-col { text-align: left; padding-left: 14px; }
-    tbody tr { border-bottom: 1px solid var(--border); transition: background .15s; }
-    tbody tr:hover { background: rgba(77,184,255,.04); }
-    tbody tr.has-snow { background: rgba(126,232,255,.05); }
-    tbody tr.heavy-snow { background: rgba(126,232,255,.12); }
-    tbody tr.best-day { background: rgba(77,184,255,.15) !important; outline: 1px solid rgba(77,184,255,.4); outline-offset: -1px; }
-    tbody tr:last-child { border-bottom: none; }
-    td { padding: 9px 10px; text-align: center; vertical-align: middle; }
-    td.date-col { text-align: left; padding-left: 14px; font-weight: 600; min-width: 90px; }
-    .day-name { color: var(--accent2); font-size: .9rem; }
-    .day-date { color: var(--muted); font-size: .72rem; }
-    .best-badge { display: inline-block; font-size: .55rem; text-transform: uppercase; letter-spacing: .06em; background: var(--accent); color: #0d1b2a; padding: 1px 5px; border-radius: 4px; margin-left: 5px; vertical-align: middle; font-weight: 700; }
-    .snow-val { color: var(--snow); font-weight: 700; }
-    .snow-val.big { color: var(--accent); font-size: 1.05rem; }
-    .snow-zero { color: var(--muted); }
-    .temp-max { color: var(--yellow); }
-    .temp-min { color: #93c5fd; }
-    .freeze-val { font-size: .78rem; color: var(--purple); }
-    .condition-text { font-size: .72rem; color: var(--muted); max-width: 110px; }
-    .cumul-bar-wrap { display: flex; align-items: center; gap: 6px; }
-    .cumul-bar { height: 6px; border-radius: 3px; background: linear-gradient(90deg, var(--accent), var(--accent2)); min-width: 2px; }
-    .cumul-val { font-size: .75rem; color: var(--accent2); white-space: nowrap; }
-    .periods { display: flex; gap: 4px; justify-content: center; flex-wrap: wrap; }
-    .period-pill { background: var(--card2); border-radius: 6px; padding: 3px 7px; font-size: .7rem; color: var(--muted); white-space: nowrap; text-align: center; min-width: 44px; }
-    .period-pill .p-sym   { font-size: .85rem; display: block; line-height: 1.2; }
-    .period-pill .p-snow  { color: var(--snow); font-weight: 600; }
+    .table-wrap {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--radius); overflow: hidden; margin-bottom: 12px;
+    }
+    table.forecast { width: 100%; border-collapse: collapse; }
+    .forecast thead th {
+      text-align: left; font-size: 11px; font-weight: 500;
+      color: var(--text-3); text-transform: uppercase; letter-spacing: 0.06em;
+      padding: 12px 14px; background: var(--surface-2);
+      border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 1;
+    }
+    .forecast tbody td { padding: 13px 14px; border-bottom: 1px solid var(--line-soft); font-size: 14px; vertical-align: middle; }
+    .forecast tbody tr:last-child td { border-bottom: none; }
+    .forecast tbody tr.is-best { background: oklch(0.30 0.08 235 / 0.18); }
+    .forecast tbody tr:hover { background: oklch(1 0 0 / 0.025); }
+    .is-best-badge {
+      display: inline-block; margin-left: 6px; font-size: 10px; padding: 2px 6px;
+      background: oklch(0.78 0.14 155 / 0.18); color: oklch(0.85 0.14 155);
+      border: 1px solid oklch(0.78 0.14 155 / 0.4); border-radius: 999px;
+      text-transform: uppercase; letter-spacing: 0.06em;
+    }
+    .cell-day { width: 110px; }
+    .cell-day .dow { font-weight: 600; }
+    .cell-day .date { color: var(--text-3); font-size: 12px; margin-top: 2px; }
+    .snow-bar-wrap { display: flex; align-items: center; gap: 10px; }
+    .snow-bar { flex: 1; height: 8px; background: oklch(1 0 0 / 0.05); border-radius: 999px; overflow: hidden; border: 1px solid var(--line-soft); }
+    .snow-bar > i { display: block; height: 100%; background: linear-gradient(90deg, var(--ice), var(--ice-2)); border-radius: 999px; }
+    .snow-val { font-weight: 600; min-width: 42px; text-align: right; color: var(--ice); }
+    .snow-zero { color: var(--text-3); }
+    .temp-range { display: inline-flex; align-items: center; gap: 6px; }
+    .temp-range .max { color: var(--warn); }
+    .temp-range .min { color: var(--ice); }
+    .temp-range .sep { color: var(--text-3); }
+    .freeze-val { color: oklch(0.75 0.12 290); }
+    .precip-pill {
+      display: inline-block; padding: 3px 8px; font-size: 12px;
+      background: oklch(0.55 0.16 235 / 0.18); border: 1px solid oklch(0.55 0.16 235 / 0.35);
+      color: oklch(0.92 0.07 235); border-radius: 999px;
+    }
+    .precip-pill.low { background: oklch(1 0 0 / 0.03); border-color: var(--line); color: var(--text-3); }
+    /* period badges */
+    .periods { display: inline-flex; gap: 4px; }
+    .period {
+      width: 22px; height: 28px; border-radius: 6px;
+      display: inline-flex; align-items: center; justify-content: center;
+      background: oklch(1 0 0 / 0.04); border: 1px solid var(--line-soft);
+      font-size: 12px; color: var(--text-2);
+    }
+    .period.snow  { background: oklch(0.55 0.16 235 / 0.30); color: oklch(0.95 0.04 235); border-color: oklch(0.55 0.16 235 / 0.55); }
+    .period.rain  { background: oklch(0.45 0.12 230 / 0.22); color: oklch(0.88 0.05 230); border-color: oklch(0.45 0.12 230 / 0.45); }
+    .period.sleet { background: oklch(0.50 0.08 250 / 0.22); color: oklch(0.88 0.04 250); }
+    .period.sun   { background: oklch(0.75 0.14 70  / 0.20); color: oklch(0.88 0.10 70);  border-color: oklch(0.75 0.14 70 / 0.40); }
+    .period.cloud { background: oklch(1 0 0 / 0.05); color: var(--text-2); }
 
-    /* Mobile: hide secondary columns */
-    @media(max-width: 640px) {
-      .col-hide-mobile { display: none; }
-      table { min-width: 0; }
-      .period-pill { min-width: 36px; padding: 3px 5px; }
+    /* mobile hide */
+    @media(max-width:640px){
+      .col-hide { display: none; }
+      .forecast thead th, .forecast tbody td { padding: 10px 8px; font-size: 12px; }
     }
 
-    /* ── COMPARISON SECTION ── */
-    .compare-section { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--border-dim); }
-    .compare-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
-    .compare-header .compare-title { font-size: .78rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); border-left: 3px solid var(--muted); padding-left: 10px; }
+    /* ── WEBCAMS ── */
+    .cams { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    @media(max-width:980px){ .cams{ grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:480px){ .cams{ grid-template-columns:1fr; } }
+    .cam {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--radius); overflow: hidden; cursor: pointer;
+      transition: transform .15s ease, border-color .15s ease;
+    }
+    .cam:hover { transform: translateY(-2px); border-color: oklch(0.55 0.18 245 / 0.6); }
+    .cam-img {
+      aspect-ratio: 16 / 9; position: relative;
+      background: linear-gradient(180deg, oklch(0.32 0.04 230), oklch(0.18 0.03 240));
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .cam-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+    .cam-live {
+      position: absolute; top: 10px; left: 10px; z-index: 1;
+      display: inline-flex; align-items: center; gap: 6px;
+      background: oklch(0 0 0 / 0.5); backdrop-filter: blur(6px);
+      padding: 3px 8px; border-radius: 999px;
+      font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+      color: oklch(0.98 0.04 25);
+    }
+    .cam-live::before { content: ""; width: 6px; height: 6px; border-radius: 999px; background: oklch(0.65 0.22 25); box-shadow: 0 0 6px oklch(0.65 0.22 25); }
+    .cam-meta { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; font-size: 13px; }
+    .cam-meta .cam-name { font-weight: 500; }
+    .cam-meta .cam-time { color: var(--text-3); font-size: 11px; }
+
+    /* LIGHTBOX */
+    .lightbox { display: none; position: fixed; inset: 0; z-index: 999; background: oklch(0 0 0 / 0.82); backdrop-filter: blur(8px); align-items: center; justify-content: center; padding: 40px; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 92vw; max-height: 85vh; border-radius: 12px; }
+    .lightbox-close { position: absolute; top: 18px; right: 22px; font-size: 1.6rem; color: var(--text-3); cursor: pointer; }
+    .lightbox-close:hover { color: var(--text); }
+
+    /* ── COMPARISON ── */
     .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     @media(max-width:600px){ .compare-grid{ grid-template-columns:1fr; } }
-    .compare-card { background: rgba(26,45,69,0.6); border: 1px solid var(--border-dim); border-radius: 12px; padding: 16px 18px; }
-    body.light .compare-card { background: var(--card); }
-    .compare-card .cc-header { display: flex; align-items: baseline; gap: 8px; margin-bottom: 14px; border-bottom: 1px solid var(--border-dim); padding-bottom: 10px; }
-    .compare-card .cc-name  { font-size: .95rem; font-weight: 700; color: var(--muted); }
-    .compare-card .cc-elev  { font-size: .72rem; color: var(--muted); opacity: .6; }
-    .compare-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-    .compare-stat { text-align: center; }
-    .compare-stat .cs-label { font-size: .65rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 3px; opacity: .7; }
-    .compare-stat .cs-val   { font-size: 1.1rem; font-weight: 700; color: var(--muted); }
-    .compare-stat .cs-unit  { font-size: .65rem; color: var(--muted); opacity: .6; }
-    .compare-mini-chart { margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--border-dim); }
-    .compare-mini-chart h4 { font-size: .65rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); opacity: .6; margin-bottom: 8px; }
-    .mini-chart-wrap { position: relative; height: 70px; }
+    .compare-card {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 18px;
+    }
+    .cc-header { display: flex; align-items: baseline; gap: 8px; margin-bottom: 14px; border-bottom: 1px solid var(--line-soft); padding-bottom: 12px; }
+    .cc-name { font-size: 15px; font-weight: 600; }
+    .cc-elev { font-size: 12px; color: var(--text-3); }
+    .compare-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .cs { text-align: center; }
+    .cs .cs-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-3); margin-bottom: 3px; }
+    .cs .cs-val   { font-size: 18px; font-weight: 600; letter-spacing: -0.01em; }
+    .cs .cs-unit  { font-size: 11px; color: var(--text-3); }
+    .mini-chart-wrap { position: relative; height: 70px; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line-soft); }
 
     /* ── FOOTER ── */
-    footer { text-align: center; padding: 24px; color: var(--muted); font-size: .75rem; border-top: 1px solid var(--border-dim); margin-top: 40px; }
-    footer a { color: var(--accent); text-decoration: none; }
+    .footer {
+      margin-top: 36px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
+      color: var(--text-3); font-size: 12px; padding-top: 18px; border-top: 1px solid var(--line-soft);
+    }
+    .footer a { color: var(--ice); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
 
-    #loading { display: flex; align-items: center; justify-content: center; height: 60vh; font-size: 1.1rem; color: var(--muted); }
+    #loading { display: flex; align-items: center; justify-content: center; height: 60vh; font-size: 1.1rem; color: var(--text-3); }
     #app { display: none; }
   </style>
 </head>
 <body>
 
-<div id="loading">Cargando pronóstico...</div>
+<div id="loading">Cargando pronóstico…</div>
 
-<div id="app">
-  <header>
-    <div class="header-left">
-      <h1>Cerro Catedral — Bariloche</h1>
-      <p class="subtitle">Pronóstico de nieve · 14 días · Open-Meteo (ECMWF) + Snow-Forecast.com</p>
-    </div>
-    <div class="header-right">
-      <div class="live-dot"></div>
-      <span id="updated-at">—</span>
-      <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">☀ Claro</button>
-    </div>
-  </header>
+<div class="app" id="app">
 
-  <main>
-
-    <!-- KPI PRINCIPAL -->
-    <div class="section-title">Resumen del pronóstico</div>
-    <div class="kpi-grid">
-      <div class="kpi-card">
-        <div class="label">Nieve nueva (14 días)</div>
-        <div class="value" id="kpi-total-snow">—</div>
-        <div class="unit">cm acumulados</div>
-      </div>
-      <div class="kpi-card">
-        <div class="label">Días con nevada</div>
-        <div class="value" id="kpi-snow-days">—</div>
-        <div class="unit">de 14 días</div>
-      </div>
-      <div class="kpi-card">
-        <div class="label">Temp. mínima</div>
-        <div class="value" id="kpi-min-temp">—</div>
-        <div class="unit">°C</div>
-      </div>
-      <div class="kpi-card">
-        <div class="label">Freeze level mín.</div>
-        <div class="value" id="kpi-freeze">—</div>
-        <div class="unit">msnm</div>
-      </div>
-      <div class="kpi-card">
-        <div class="label">Viento máx.</div>
-        <div class="value" id="kpi-wind">—</div>
-        <div class="unit">km/h</div>
-      </div>
-    </div>
-
-    <!-- MEJOR VENTANA -->
-    <div class="best-window" id="best-window">
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="brand">
+      <div class="brand-mark"></div>
       <div>
-        <div class="bw-eyebrow">Mejor ventana de nevada</div>
-        <div class="bw-date" id="bw-date">—</div>
-      </div>
-      <div class="bw-divider"></div>
-      <div class="bw-stats">
-        <div class="bw-stat">
-          <div class="bw-val" id="bw-snow">—</div>
-          <div class="bw-unit">cm nieve</div>
-        </div>
-        <div class="bw-stat">
-          <div class="bw-val" id="bw-freeze">—</div>
-          <div class="bw-unit">m freeze</div>
-        </div>
-        <div class="bw-stat">
-          <div class="bw-val" id="bw-wind">—</div>
-          <div class="bw-unit">km/h viento</div>
-        </div>
+        <div class="brand-name">Bariloche Snow</div>
+        <div class="brand-sub">Pronóstico Cerro Catedral · 14 días</div>
       </div>
     </div>
+    <div class="topbar-right">
+      <span class="pulse"></span>
+      Actualizado · <span id="updated-at">—</span>
+      <button class="theme-btn" id="theme-btn" onclick="toggleTheme()">☀ Claro</button>
+    </div>
+  </div>
 
-    <!-- SNOW REPORT ACTUAL -->
-    <div class="section-title">Estado actual del resort</div>
-    <div class="report-grid">
-      <div class="report-card">
-        <div class="rc-label">Nieve últimas 24hs</div>
-        <div class="rc-val" id="rc-24h">—</div>
-        <div class="rc-sub">snowforecast.com</div>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-main">
+      <span class="hero-eyebrow">❄ Pronóstico · 14 días · ECMWF</span>
+      <h1>Cerro Catedral<br><span class="sub">Bariloche · Río Negro</span></h1>
+      <div class="hero-metric">
+        <span class="big num" id="kpi-total-snow">—</span>
+        <span class="unit">cm de nieve</span>
+        <span class="caption">acumulados en los próximos 14 días</span>
       </div>
-      <div class="report-card">
-        <div class="rc-label">Nieve últimos 7 días</div>
-        <div class="rc-val" id="rc-7d">—</div>
-        <div class="rc-sub">snowforecast.com</div>
-      </div>
-      <div class="report-card">
-        <div class="rc-label">Base superior</div>
-        <div class="rc-val" id="rc-upper">—</div>
-        <div class="rc-sub">cuando el resort reporta</div>
-      </div>
-      <div class="report-card">
-        <div class="rc-label">Estado del resort</div>
-        <div class="rc-val" id="rc-status" style="font-size:1rem">—</div>
-        <div class="rc-sub" id="rc-sub-status"></div>
+      <div class="hero-strip">
+        <div class="hero-stat">
+          <div class="k">Días con nevada</div>
+          <div class="v"><span class="num" id="kpi-snow-days">—</span><small>/ 14</small></div>
+        </div>
+        <div class="hero-stat">
+          <div class="k">Temp mínima</div>
+          <div class="v"><span class="num" id="kpi-min-temp">—</span><small>°C</small></div>
+        </div>
+        <div class="hero-stat">
+          <div class="k">Viento máximo</div>
+          <div class="v"><span class="num" id="kpi-wind">—</span><small>km/h</small></div>
+        </div>
       </div>
     </div>
+    <div class="best">
+      <span class="best-eyebrow">❄ Mejor ventana</span>
+      <h3>Mayor nevada esperada</h3>
+      <div class="when mono" id="bw-date">—</div>
+      <div class="best-row">
+        <div class="best-cell"><div class="k">Nieve</div><div class="v num" id="bw-snow">—</div></div>
+        <div class="best-cell"><div class="k">Freeze</div><div class="v num" id="bw-freeze">—</div></div>
+        <div class="best-cell"><div class="k">Viento</div><div class="v num" id="bw-wind">—</div></div>
+      </div>
+      <div class="best-note" id="bw-note"></div>
+    </div>
+  </div>
 
-    <!-- CHARTS -->
-    <div class="section-title">Evolución del pronóstico</div>
-    <div class="chart-card">
-      <h3>Nieve nueva (cm) · Acumulada (cm) · Freeze level (m)</h3>
-      <div class="chart-wrap"><canvas id="chartSnow"></canvas></div>
+  <!-- RESORT STATUS -->
+  <div class="section-h">
+    <h2>Estado actual del resort</h2>
+    <span class="meta">Fuente: snowforecast.com</span>
+  </div>
+  <div class="resort-status">
+    <div class="stat"><div class="label">Nieve últimas 24h</div><div class="value num" id="rc-24h">—</div><div class="delta">snowforecast.com</div></div>
+    <div class="stat"><div class="label">Nieve últimos 7 días</div><div class="value num" id="rc-7d">—</div><div class="delta">snowforecast.com</div></div>
+    <div class="stat"><div class="label">Base superior</div><div class="value num" id="rc-upper">—</div><div class="delta">reporte del resort</div></div>
+    <div class="stat"><div class="label">Estado del resort</div><div class="value" id="rc-status" style="font-size:1.1rem;letter-spacing:0">—</div><div class="delta" id="rc-sub"></div></div>
+  </div>
+
+  <!-- CHARTS -->
+  <div class="section-h">
+    <h2>Evolución 14 días</h2>
+    <span class="meta">ECMWF · resolución 25 km</span>
+  </div>
+  <div class="chart-card">
+    <div class="chart-head">
+      <h3>Nieve nueva · Acumulada · Freeze level</h3>
+      <div class="chart-legend">
+        <span><i class="sw" style="background:rgba(77,184,255,0.6)"></i>Nieve nueva</span>
+        <span><i class="sw" style="background:oklch(0.70 0.15 235);border-radius:999px;height:3px;margin-top:4px"></i>Acumulada</span>
+        <span><i class="sw" style="background:oklch(0.75 0.12 290);border-radius:999px;height:3px;margin-top:4px"></i>Freeze</span>
+      </div>
     </div>
-    <div class="chart-card">
+    <div class="chart-wrap"><canvas id="chartSnow"></canvas></div>
+  </div>
+  <div class="chart-card">
+    <div class="chart-head">
       <h3>Temperatura máx / mín (°C)</h3>
-      <div class="chart-wrap"><canvas id="chartTemp"></canvas></div>
-    </div>
-
-    <!-- FORECAST TABLE -->
-    <div class="section-title">Pronóstico día a día</div>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th class="date-col">Día</th>
-            <th>Condición</th>
-            <th>Nieve</th>
-            <th class="col-hide-mobile">Acumulada</th>
-            <th>Temp</th>
-            <th>Viento</th>
-            <th class="col-hide-mobile">Freeze</th>
-            <th class="col-hide-mobile">Precip %</th>
-            <th>Períodos</th>
-          </tr>
-        </thead>
-        <tbody id="forecast-tbody"></tbody>
-      </table>
-    </div>
-
-    <!-- WEBCAMS -->
-    <div class="section-title" style="margin-top:40px">Cámaras en vivo — Cerro Catedral</div>
-    <div class="webcam-grid" id="webcam-grid"></div>
-
-    <!-- LIGHTBOX -->
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-      <span class="lightbox-close" onclick="closeLightbox()">&#x2715;</span>
-      <img id="lightbox-img" src="" alt="Webcam" onclick="event.stopPropagation()" />
-    </div>
-
-    <!-- COMPARISON -->
-    <div class="compare-section">
-      <div class="compare-header">
-        <div class="compare-title">Comparativa regional — referencia</div>
+      <div class="chart-legend">
+        <span><i class="sw" style="background:oklch(0.78 0.16 65);border-radius:999px;height:3px;margin-top:4px"></i>Máx</span>
+        <span><i class="sw" style="background:oklch(0.70 0.15 235);border-radius:999px;height:3px;margin-top:4px"></i>Mín</span>
       </div>
-      <div class="compare-grid" id="compare-grid"></div>
     </div>
+    <div class="chart-wrap"><canvas id="chartTemp"></canvas></div>
+  </div>
 
-  </main>
+  <!-- TABLE -->
+  <div class="section-h">
+    <h2>Pronóstico día a día</h2>
+    <span class="meta">Cerro Catedral · base 1.030 m · cima 2.405 m</span>
+  </div>
+  <div class="table-wrap">
+    <table class="forecast">
+      <thead>
+        <tr>
+          <th class="cell-day">Día</th>
+          <th></th>
+          <th>Nieve nueva</th>
+          <th class="col-hide">Acum.</th>
+          <th>Temp</th>
+          <th>Viento</th>
+          <th class="col-hide">Freeze</th>
+          <th class="col-hide">Precip</th>
+          <th>AM · PM · Noche</th>
+        </tr>
+      </thead>
+      <tbody id="forecast-tbody"></tbody>
+    </table>
+  </div>
 
-  <footer>
-    Datos: <a href="https://open-meteo.com" target="_blank">Open-Meteo</a> (ECMWF) ·
-    Estado resort: <a href="https://www.snow-forecast.com" target="_blank">Snow-Forecast.com</a> ·
-    Actualizado automáticamente
-  </footer>
-</div>
+  <!-- WEBCAMS -->
+  <div class="section-h">
+    <h2>Cámaras en vivo</h2>
+    <span class="meta">Catedral Alta Patagonia</span>
+  </div>
+  <div class="cams" id="webcam-grid"></div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close" onclick="closeLightbox()">&#x2715;</span>
+    <img id="lightbox-img" src="" alt="Webcam" onclick="event.stopPropagation()" />
+  </div>
+
+  <!-- COMPARISON -->
+  <div class="section-h">
+    <h2>Comparativa regional</h2>
+    <span class="meta">Referencia · pronóstico 14 días</span>
+  </div>
+  <div class="compare-grid" id="compare-grid"></div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div>Datos: <a href="https://open-meteo.com" target="_blank">Open-Meteo</a> (ECMWF) · Estado resort: <a href="https://www.snow-forecast.com" target="_blank">Snow-Forecast.com</a></div>
+    <div>Bariloche Snow · actualizado automáticamente</div>
+  </div>
+
+</div><!-- /app -->
 
 <script>
 const DAYS_ES   = ["Dom","Lun","Mar","Mié","Jue","Vie","Sáb"];
@@ -363,238 +500,246 @@ function formatDate(s) {
 }
 
 function conditionIcon(code) {
-  if (code===0) return "☀️";
-  if (code<=2)  return "🌤️";
-  if (code===3) return "☁️";
-  if (code<=48) return "🌫️";
-  if (code<=67) return "🌧️";
-  if (code<=77) return "🌨️";
-  if (code<=82) return "🌦️";
-  if (code<=86) return "❄️";
+  if (code===0)  return "☀️";
+  if (code<=2)   return "🌤️";
+  if (code===3)  return "☁️";
+  if (code<=48)  return "🌫️";
+  if (code<=67)  return "🌧️";
+  if (code<=77)  return "🌨️";
+  if (code<=82)  return "🌦️";
+  if (code<=86)  return "❄️";
   return "⛈️";
 }
-function snowIcon(cm) {
-  if (cm>=20) return "🌨️";
-  if (cm>=10) return "❄️";
-  if (cm>0)   return "🌦️";
-  return "";
+
+function periodClass(pd) {
+  if (pd.snow_cm > 0.1) return "snow";
+  if ((pd.rain_mm||0) > 0.5 && (pd.temp_c||0) <= 0) return "sleet";
+  if ((pd.rain_mm||0) > 0.5) return "rain";
+  return "cloud";
 }
-function periodSymbol(p) {
-  if (p==="am")    return "☀";
-  if (p==="pm")    return "⛅";
-  if (p==="night") return "☾";
-  return p;
+
+function periodChar(cls) {
+  return { snow:"❄", rain:"·", sleet:"·", sun:"☀", cloud:"·", clear:"·" }[cls] || "·";
 }
 
 /* ── THEME ── */
 function toggleTheme() {
-  const isLight = document.body.classList.toggle("light");
+  const isLight = document.body.classList.toggle("theme-light");
   document.getElementById("theme-btn").textContent = isLight ? "☾ Oscuro" : "☀ Claro";
   localStorage.setItem("theme", isLight ? "light" : "dark");
 }
-(function() {
-  if (localStorage.getItem("theme") === "light") {
-    document.body.classList.add("light");
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("theme-btn");
-      if (btn) btn.textContent = "☾ Oscuro";
-    });
-  }
-})();
+if (localStorage.getItem("theme") === "light") {
+  document.body.classList.add("theme-light");
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("theme-btn");
+    if (btn) btn.textContent = "☾ Oscuro";
+  });
+}
 
-/* ── KPIs + MEJOR VENTANA ── */
+/* ── HERO + MEJOR VENTANA ── */
 function renderKPIs(forecast) {
   const totalSnow = forecast.reduce((s,d)=>s+(d.snow_cm||0),0);
   const snowDays  = forecast.filter(d=>d.snow_cm>0).length;
   const minTemp   = Math.min(...forecast.map(d=>d.temp_min).filter(x=>x!=null));
   const maxWind   = Math.max(...forecast.map(d=>d.wind_max_kmh).filter(x=>x!=null));
   const bestDay   = forecast.reduce((a,b)=>b.snow_cm>a.snow_cm?b:a, forecast[0]);
-  let freezeMins  = [];
-  forecast.forEach(d=>["am","pm","night"].forEach(p=>{
-    const f=d.periods[p].freeze_m; if(f!=null) freezeMins.push(f);
-  }));
-  const minFreeze = freezeMins.length ? Math.min(...freezeMins) : null;
 
   document.getElementById("kpi-total-snow").textContent = totalSnow.toFixed(1);
   document.getElementById("kpi-snow-days").textContent  = snowDays;
   document.getElementById("kpi-min-temp").textContent   = minTemp!=null ? minTemp.toFixed(1) : "—";
-  document.getElementById("kpi-freeze").textContent     = minFreeze!=null ? Math.round(minFreeze) : "—";
   document.getElementById("kpi-wind").textContent       = maxWind!=null ? Math.round(maxWind) : "—";
 
-  if (bestDay) {
+  if (bestDay && bestDay.snow_cm > 0) {
     const fd = formatDate(bestDay.date);
     document.getElementById("bw-date").textContent  = `${fd.dayName} ${fd.dayDate}`;
     document.getElementById("bw-snow").textContent  = bestDay.snow_cm.toFixed(1)+" cm";
     const bfreezes = ["am","pm","night"].map(p=>bestDay.periods[p].freeze_m).filter(x=>x!=null);
-    const bfreeze  = bfreezes.length ? Math.round(bfreezes.reduce((a,b)=>a+b,0)/bfreezes.length) : null;
-    document.getElementById("bw-freeze").textContent = bfreeze!=null ? bfreeze+" m" : "—";
+    const bfreeze  = bfreezes.length ? Math.round(bfreezes.reduce((a,b)=>a+b)/bfreezes.length) : null;
+    document.getElementById("bw-freeze").textContent = bfreeze!=null ? bfreeze.toLocaleString()+" m" : "—";
     document.getElementById("bw-wind").textContent   = bestDay.wind_max_kmh!=null ? Math.round(bestDay.wind_max_kmh)+" km/h" : "—";
+    const noteEl = document.getElementById("bw-note");
+    if (bfreeze && bfreeze < 1500)
+      noteEl.textContent = "Freeze level por debajo de la base del resort. Calidad de nieve seca esperada.";
+    else if (bfreeze && bfreeze < 2000)
+      noteEl.textContent = "Condiciones favorables en altura. Buena calidad de nieve por encima de los 1.500 m.";
+    else
+      noteEl.textContent = "";
+  } else {
+    document.getElementById("bw-date").textContent   = "Sin nevadas previstas";
+    document.getElementById("bw-snow").textContent   = "0 cm";
+    document.getElementById("bw-freeze").textContent = "—";
+    document.getElementById("bw-wind").textContent   = "—";
   }
 }
 
 function renderSnowReport(sr) {
-  const fmt = (v,u) => v!=null ? `${v} ${u}` : '<span class="no-data">Sin datos</span>';
+  const fmt = (v,u) => v!=null ? `${v}<small style="font-size:14px;font-weight:400;margin-left:4px;color:var(--text-3)">${u}</small>` : '<span style="font-size:1rem;color:var(--text-3)">Sin datos</span>';
   document.getElementById("rc-24h").innerHTML   = fmt(sr.last_24h_cm,"cm");
   document.getElementById("rc-7d").innerHTML    = fmt(sr.last_7days_cm,"cm");
   document.getElementById("rc-upper").innerHTML = fmt(sr.upper_snow_cm,"cm");
   document.getElementById("rc-status").textContent = sr.resort_status||"—";
-  document.getElementById("rc-sub-status").textContent = sr.error?"Error al obtener datos":"";
+  document.getElementById("rc-sub").textContent    = sr.error ? "Error al obtener datos" : "";
 }
 
+/* ── TABLE ── */
 function renderTable(forecast) {
-  const maxCumul  = forecast[forecast.length-1]?.cumulative_snow_cm||1;
-  const bestIdx   = forecast.reduce((bi,d,i)=>d.snow_cm>forecast[bi].snow_cm?i:bi, 0);
-  const tbody = document.getElementById("forecast-tbody");
+  const maxSnow  = Math.max(...forecast.map(d=>d.snow_cm), 1);
+  const bestIdx  = forecast.reduce((bi,d,i)=>d.snow_cm>forecast[bi].snow_cm?i:bi, 0);
+  const tbody    = document.getElementById("forecast-tbody");
   tbody.innerHTML = "";
-  forecast.forEach((day, idx)=>{
-    const {dayName,dayDate} = formatDate(day.date);
-    const hasSnow   = day.snow_cm>0;
-    const heavySnow = day.snow_cm>=10;
-    const isBest    = idx===bestIdx && day.snow_cm>0;
 
-    const periodHtml = ["am","pm","night"].map(p=>{
-      const pd = day.periods[p];
-      const snowStr = pd.snow_cm>0
-        ? `<span class="p-snow">${pd.snow_cm.toFixed(1)}cm</span>`
-        : `<span style="color:var(--muted)">—</span>`;
-      return `<div class="period-pill">
-        <span class="p-sym">${periodSymbol(p)}</span>
-        ${snowStr}
-        <span>${pd.temp_c!=null?pd.temp_c.toFixed(0)+"°":"—"}</span>
-      </div>`;
+  forecast.forEach((day, idx) => {
+    const {dayName,dayDate} = formatDate(day.date);
+    const hasSnow  = day.snow_cm > 0;
+    const isBest   = idx === bestIdx && hasSnow;
+
+    const periodHtml = ["am","pm","night"].map(p => {
+      const pd  = day.periods[p];
+      const cls = periodClass(pd);
+      const ch  = periodChar(cls);
+      return `<div class="period ${cls}" title="${p==='am'?'Mañana':p==='pm'?'Tarde':'Noche'}: ${pd.snow_cm>0?pd.snow_cm.toFixed(1)+'cm nieve':'sin nieve'}, ${pd.temp_c!=null?pd.temp_c.toFixed(0)+'°C':''}">${ch}</div>`;
     }).join("");
 
-    const barWidth = maxCumul>0 ? Math.round((day.cumulative_snow_cm/maxCumul)*80) : 0;
+    const barPct = hasSnow ? Math.max(4, Math.round((day.snow_cm/maxSnow)*100)) : 0;
+
     const tr = document.createElement("tr");
-    if (isBest)          tr.classList.add("best-day");
-    else if (heavySnow)  tr.classList.add("heavy-snow");
-    else if (hasSnow)    tr.classList.add("has-snow");
+    if (isBest) tr.classList.add("is-best");
 
     tr.innerHTML = `
-      <td class="date-col">
-        <div class="day-name">${dayName}${isBest?'<span class="best-badge">Mejor</span>':''}</div>
-        <div class="day-date">${dayDate}</div>
+      <td class="cell-day">
+        <div class="dow">${dayName}${isBest?'<span class="is-best-badge">Mejor</span>':''}</div>
+        <div class="date mono">${dayDate}</div>
       </td>
-      <td><div>${conditionIcon(day.weathercode)}</div><div class="condition-text">${day.condition}</div></td>
-      <td>${hasSnow?`<span class="snow-val ${heavySnow?"big":""}">${snowIcon(day.snow_cm)} ${day.snow_cm.toFixed(1)} cm</span>`:`<span class="snow-zero">—</span>`}</td>
-      <td class="col-hide-mobile"><div class="cumul-bar-wrap"><div class="cumul-bar" style="width:${barWidth}px"></div><span class="cumul-val">${day.cumulative_snow_cm.toFixed(1)} cm</span></div></td>
-      <td><span class="temp-max">${day.temp_max!=null?day.temp_max.toFixed(0)+"°":"—"}</span><span style="color:var(--muted)"> / </span><span class="temp-min">${day.temp_min!=null?day.temp_min.toFixed(0)+"°":"—"}</span></td>
-      <td style="font-size:.8rem">${day.wind_max_kmh!=null?Math.round(day.wind_max_kmh):"—"} km/h<div style="font-size:.7rem;color:var(--muted)">${day.wind_dir}</div></td>
-      <td class="freeze-val col-hide-mobile">${day.periods.am.freeze_m!=null?Math.round(day.periods.am.freeze_m)+" m":"—"}</td>
-      <td class="col-hide-mobile"><span style="color:${(day.precip_prob||0)>60?"var(--accent)":"var(--muted)"}">${day.precip_prob!=null?day.precip_prob+"%":"—"}</span></td>
+      <td style="font-size:1.2rem">${conditionIcon(day.weathercode)}</td>
+      <td>
+        <div class="snow-bar-wrap">
+          <div class="snow-bar"><i style="width:${barPct}%"></i></div>
+          <span class="snow-val num">${hasSnow ? day.snow_cm.toFixed(1)+' cm' : '<span class="snow-zero">—</span>'}</span>
+        </div>
+      </td>
+      <td class="col-hide num" style="color:var(--text-2);font-size:13px">${day.cumulative_snow_cm.toFixed(1)} cm</td>
+      <td>
+        <span class="temp-range">
+          <span class="max num">${day.temp_max!=null?day.temp_max.toFixed(0)+"°":"—"}</span>
+          <span class="sep">/</span>
+          <span class="min num">${day.temp_min!=null?day.temp_min.toFixed(0)+"°":"—"}</span>
+        </span>
+      </td>
+      <td class="num" style="font-size:13px;color:${(day.wind_max_kmh||0)>60?"var(--hot)":(day.wind_max_kmh||0)>40?"var(--warn)":"var(--text-2)"}">${day.wind_max_kmh!=null?Math.round(day.wind_max_kmh):"-"}<small style="color:var(--text-3);font-size:11px;margin-left:2px">km/h</small></td>
+      <td class="freeze-val col-hide num" style="font-size:13px">${day.periods.am.freeze_m!=null?Math.round(day.periods.am.freeze_m).toLocaleString()+" m":"—"}</td>
+      <td class="col-hide">
+        <span class="precip-pill ${(day.precip_prob||0)<30?'low':''} num">${day.precip_prob!=null?day.precip_prob+"%":"—"}</span>
+      </td>
       <td><div class="periods">${periodHtml}</div></td>`;
     tbody.appendChild(tr);
   });
 }
 
+/* ── CHARTS ── */
 function destroyMainCharts() {
   Object.values(mainCharts).forEach(c=>c.destroy());
   mainCharts = {};
 }
+
+const CHART_GRID  = "oklch(1 0 0 / 0.05)";
+const CHART_TICK  = "oklch(0.55 0.02 240)";
 
 function renderMainCharts(forecast) {
   destroyMainCharts();
   const labels = forecast.map(d=>{ const {dayName,dayDate}=formatDate(d.date); return `${dayName} ${dayDate}`; });
 
   const freezeData = forecast.map(d=>{
-    const vals=["am","pm","night"].map(p=>d.periods[p].freeze_m).filter(x=>x!=null);
-    return vals.length ? Math.round(vals.reduce((a,b)=>a+b,0)/vals.length) : null;
+    const vals = ["am","pm","night"].map(p=>d.periods[p].freeze_m).filter(x=>x!=null);
+    return vals.length ? Math.round(vals.reduce((a,b)=>a+b)/vals.length) : null;
   });
 
-  mainCharts.snow = new Chart(document.getElementById("chartSnow"),{
-    data:{ labels, datasets:[
+  mainCharts.snow = new Chart(document.getElementById("chartSnow"), {
+    data: { labels, datasets: [
       { type:"bar", label:"Nieve nueva (cm)", data:forecast.map(d=>d.snow_cm),
-        backgroundColor:"rgba(77,184,255,0.6)", borderColor:"#4db8ff", borderWidth:1, yAxisID:"ySnow", order:2 },
-      { type:"line", label:"Nieve acumulada (cm)", data:forecast.map(d=>d.cumulative_snow_cm),
-        borderColor:"#7ee8ff", backgroundColor:"rgba(126,232,255,0.06)", fill:true, tension:.4, pointRadius:2, yAxisID:"ySnow", order:1 },
+        backgroundColor:"rgba(77,184,255,0.55)", borderColor:"oklch(0.82 0.12 230)", borderWidth:1, yAxisID:"ySnow", order:2, borderRadius:3 },
+      { type:"line", label:"Acumulada (cm)", data:forecast.map(d=>d.cumulative_snow_cm),
+        borderColor:"oklch(0.70 0.15 235)", backgroundColor:"oklch(0.55 0.18 245 / 0.06)", fill:true, tension:.4, pointRadius:2, borderWidth:2, yAxisID:"ySnow", order:1 },
       { type:"line", label:"Freeze level (m)", data:freezeData,
-        borderColor:"#a78bfa", backgroundColor:"rgba(167,139,250,0.08)", fill:false, tension:.4, pointRadius:2, borderDash:[4,3], yAxisID:"yFreeze", order:0 }
+        borderColor:"oklch(0.75 0.12 290)", backgroundColor:"transparent", fill:false,
+        tension:.4, pointRadius:2, borderWidth:1.5, borderDash:[5,4], yAxisID:"yFreeze", order:0 }
     ]},
-    options:{ responsive:true, maintainAspectRatio:false,
+    options: { responsive:true, maintainAspectRatio:false,
       interaction:{mode:"index",intersect:false},
-      plugins:{legend:{labels:{color:"#94a3b8",font:{size:11}}}},
+      plugins:{legend:{display:false}},
       scales:{
-        x:{ticks:{color:"#64748b",font:{size:10},maxRotation:45},grid:{color:"rgba(255,255,255,0.04)"}},
-        ySnow:{position:"left",min:0,ticks:{color:"#7eb8d8",font:{size:10}},grid:{color:"rgba(255,255,255,0.06)"},title:{display:true,text:"cm nieve",color:"#64748b",font:{size:10}}},
-        yFreeze:{position:"right",ticks:{color:"#a78bfa",font:{size:10}},grid:{display:false},title:{display:true,text:"freeze (m)",color:"#a78bfa",font:{size:10}}}
+        x:{ticks:{color:CHART_TICK,font:{size:10},maxRotation:45},grid:{color:CHART_GRID}},
+        ySnow:{position:"left",min:0,ticks:{color:CHART_TICK,font:{size:10}},grid:{color:CHART_GRID},title:{display:true,text:"cm",color:CHART_TICK,font:{size:10}}},
+        yFreeze:{position:"right",ticks:{color:"oklch(0.75 0.12 290)",font:{size:10}},grid:{display:false},title:{display:true,text:"freeze (m)",color:"oklch(0.75 0.12 290)",font:{size:10}}}
       }
     }
   });
 
-  mainCharts.temp = new Chart(document.getElementById("chartTemp"),{
+  mainCharts.temp = new Chart(document.getElementById("chartTemp"), {
     type:"line",
     data:{ labels, datasets:[
-      {label:"Temp. máx (°C)",data:forecast.map(d=>d.temp_max),borderColor:"#facc15",fill:false,tension:.4,pointRadius:3},
-      {label:"Temp. mín (°C)",data:forecast.map(d=>d.temp_min),borderColor:"#93c5fd",backgroundColor:"rgba(147,197,253,0.1)",fill:"-1",tension:.4,pointRadius:3}
+      {label:"Máx (°C)",data:forecast.map(d=>d.temp_max),borderColor:"oklch(0.78 0.16 65)",fill:false,tension:.4,pointRadius:2,borderWidth:2},
+      {label:"Mín (°C)",data:forecast.map(d=>d.temp_min),borderColor:"oklch(0.70 0.15 235)",backgroundColor:"oklch(0.55 0.18 245 / 0.08)",fill:"-1",tension:.4,pointRadius:2,borderWidth:2}
     ]},
     options:{ responsive:true, maintainAspectRatio:false,
       interaction:{mode:"index",intersect:false},
-      plugins:{legend:{labels:{color:"#94a3b8",font:{size:11}}}},
+      plugins:{legend:{display:false}},
       scales:{
-        x:{ticks:{color:"#64748b",font:{size:10},maxRotation:45},grid:{color:"rgba(255,255,255,0.04)"}},
-        y:{ticks:{color:"#94a3b8",font:{size:10}},grid:{color:"rgba(255,255,255,0.06)"}}
+        x:{ticks:{color:CHART_TICK,font:{size:10},maxRotation:45},grid:{color:CHART_GRID}},
+        y:{ticks:{color:CHART_TICK,font:{size:10}},grid:{color:CHART_GRID}}
       }
     }
   });
 }
 
-/* ── COMPARISON CARDS ── */
-function buildCompareCard(resortId, data) {
-  const forecast = data.forecast;
-  const totalSnow = forecast.reduce((s,d)=>s+(d.snow_cm||0),0);
-  const snowDays  = forecast.filter(d=>d.snow_cm>0).length;
-  const bestDay   = forecast.reduce((a,b)=>b.snow_cm>a.snow_cm?b:a, forecast[0]);
-  const minTemp   = Math.min(...forecast.map(d=>d.temp_min).filter(x=>x!=null));
-  const maxWind   = Math.max(...forecast.map(d=>d.wind_max_kmh).filter(x=>x!=null));
-  let freezeMins  = [];
-  forecast.forEach(d=>["am","pm","night"].forEach(p=>{
-    const f=d.periods[p].freeze_m; if(f!=null) freezeMins.push(f);
-  }));
-  const minFreeze = freezeMins.length ? Math.min(...freezeMins) : null;
-  const flag = resortId==="vallenevado" ? "🇨🇱" : "🇦🇷";
-  const canvasId = `miniChart-${resortId}`;
-  const card = document.createElement("div");
-  card.className = "compare-card";
-  card.innerHTML = `
-    <div class="cc-header">
-      <span class="cc-name">${flag} ${data.name}</span>
-      <span class="cc-elev">${data.elevation_m} msnm</span>
-    </div>
-    <div class="compare-stats">
-      <div class="compare-stat"><div class="cs-label">Nieve 14d</div><div class="cs-val">${totalSnow.toFixed(0)}</div><div class="cs-unit">cm</div></div>
-      <div class="compare-stat"><div class="cs-label">Días nevada</div><div class="cs-val">${snowDays}</div><div class="cs-unit">días</div></div>
-      <div class="compare-stat"><div class="cs-label">Mejor día</div><div class="cs-val">${bestDay?bestDay.snow_cm.toFixed(0):"0"}</div><div class="cs-unit">cm</div></div>
-      <div class="compare-stat"><div class="cs-label">Temp. mín</div><div class="cs-val">${minTemp!=null?minTemp.toFixed(0):"—"}</div><div class="cs-unit">°C</div></div>
-      <div class="compare-stat"><div class="cs-label">Freeze mín</div><div class="cs-val">${minFreeze!=null?Math.round(minFreeze):"—"}</div><div class="cs-unit">m</div></div>
-      <div class="compare-stat"><div class="cs-label">Viento máx</div><div class="cs-val">${maxWind!=null?Math.round(maxWind):"—"}</div><div class="cs-unit">km/h</div></div>
-    </div>
-    <div class="compare-mini-chart">
-      <h4>Nieve nueva por día</h4>
-      <div class="mini-chart-wrap"><canvas id="${canvasId}"></canvas></div>
-    </div>`;
-  return { card, canvasId, forecast };
-}
-
+/* ── COMPARISON ── */
 function renderCompare(resorts) {
   const grid = document.getElementById("compare-grid");
   grid.innerHTML = "";
   Object.values(miniCharts).forEach(c=>c.destroy());
-  const compareResorts = Object.entries(resorts).filter(([id])=>id!=="catedral");
-  compareResorts.forEach(([resortId, data])=>{
-    const { card, canvasId, forecast } = buildCompareCard(resortId, data);
+
+  Object.entries(resorts).filter(([id])=>id!=="catedral").forEach(([resortId, data])=>{
+    const fc = data.forecast;
+    const totalSnow = fc.reduce((s,d)=>s+(d.snow_cm||0),0);
+    const snowDays  = fc.filter(d=>d.snow_cm>0).length;
+    const bestDay   = fc.reduce((a,b)=>b.snow_cm>a.snow_cm?b:a, fc[0]);
+    const minTemp   = Math.min(...fc.map(d=>d.temp_min).filter(x=>x!=null));
+    let freezeMins  = [];
+    fc.forEach(d=>["am","pm","night"].forEach(p=>{ const f=d.periods[p].freeze_m; if(f!=null) freezeMins.push(f); }));
+    const minFreeze = freezeMins.length ? Math.min(...freezeMins) : null;
+    const maxWind   = Math.max(...fc.map(d=>d.wind_max_kmh).filter(x=>x!=null));
+    const flag      = resortId==="vallenevado" ? "🇨🇱" : "🇦🇷";
+    const cid       = `mini-${resortId}`;
+
+    const card = document.createElement("div");
+    card.className = "compare-card";
+    card.innerHTML = `
+      <div class="cc-header">
+        <span class="cc-name">${flag} ${data.name}</span>
+        <span class="cc-elev">${data.elevation_m} msnm</span>
+      </div>
+      <div class="compare-stats">
+        <div class="cs"><div class="cs-label">Nieve 14d</div><div class="cs-val num">${totalSnow.toFixed(0)}</div><div class="cs-unit">cm</div></div>
+        <div class="cs"><div class="cs-label">Días nevada</div><div class="cs-val num">${snowDays}</div><div class="cs-unit">días</div></div>
+        <div class="cs"><div class="cs-label">Mejor día</div><div class="cs-val num">${bestDay?bestDay.snow_cm.toFixed(0):"0"}</div><div class="cs-unit">cm</div></div>
+        <div class="cs"><div class="cs-label">Temp. mín</div><div class="cs-val num">${minTemp!=null?minTemp.toFixed(0):"—"}</div><div class="cs-unit">°C</div></div>
+        <div class="cs"><div class="cs-label">Freeze mín</div><div class="cs-val num">${minFreeze!=null?Math.round(minFreeze):"—"}</div><div class="cs-unit">m</div></div>
+        <div class="cs"><div class="cs-label">Viento máx</div><div class="cs-val num">${maxWind!=null?Math.round(maxWind):"—"}</div><div class="cs-unit">km/h</div></div>
+      </div>
+      <div class="mini-chart-wrap"><canvas id="${cid}"></canvas></div>`;
     grid.appendChild(card);
+
     requestAnimationFrame(()=>{
-      const labels = forecast.map(d=>{ const {dayName}=formatDate(d.date); return dayName; });
-      miniCharts[resortId] = new Chart(document.getElementById(canvasId),{
+      const labels = fc.map(d=>{ const {dayName}=formatDate(d.date); return dayName; });
+      miniCharts[resortId] = new Chart(document.getElementById(cid),{
         type:"bar",
-        data:{ labels, datasets:[{ label:"cm", data:forecast.map(d=>d.snow_cm),
-          backgroundColor:forecast.map(d=>d.snow_cm>=10?"rgba(77,184,255,0.7)":"rgba(77,184,255,0.3)"),
+        data:{ labels, datasets:[{ label:"cm", data:fc.map(d=>d.snow_cm),
+          backgroundColor:fc.map(d=>d.snow_cm>=10?"rgba(77,184,255,0.7)":"rgba(77,184,255,0.3)"),
           borderColor:"transparent", borderRadius:2 }]},
         options:{ responsive:true, maintainAspectRatio:false,
-          plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.raw} cm`}}},
+          plugins:{legend:{display:false}},
           scales:{
-            x:{ticks:{color:"#475569",font:{size:8}},grid:{display:false}},
-            y:{ticks:{color:"#475569",font:{size:8},maxTicksLimit:3},grid:{color:"rgba(255,255,255,0.03)"}}
+            x:{ticks:{color:CHART_TICK,font:{size:8}},grid:{display:false}},
+            y:{min:0,ticks:{color:CHART_TICK,font:{size:8},maxTicksLimit:3},grid:{color:CHART_GRID}}
           }
         }
       });
@@ -611,12 +756,14 @@ function buildWebcams(webcams) {
   webcams.forEach((cam, i) => {
     const src = cam.file + "?t=" + Date.now();
     const card = document.createElement("div");
-    card.className = "webcam-card";
+    card.className = "cam";
     card.innerHTML = `
-      <img id="wcimg-${i}" src="${src}" alt="${cam.name}" onerror="this.style.opacity='.15'" />
-      <div class="wc-footer">
-        <span class="wc-name">${cam.name}</span>
-        <span class="wc-badge">LIVE</span>
+      <div class="cam-img">
+        <span class="cam-live">En vivo</span>
+        <img id="wcimg-${i}" src="${src}" alt="${cam.name}" onerror="this.style.opacity='.1'" />
+      </div>
+      <div class="cam-meta">
+        <span class="cam-name">${cam.name}</span>
       </div>`;
     card.querySelector("img").addEventListener("click", () => openLightbox(cam.file));
     grid.appendChild(card);
@@ -643,19 +790,19 @@ document.addEventListener("keydown", e => { if (e.key === "Escape") closeLightbo
 /* ── INIT ── */
 async function init() {
   try {
-    const r = await fetch("datos.json?t="+Date.now());
+    const r    = await fetch("datos.json?t=" + Date.now());
     const data = await r.json();
 
     document.getElementById("loading").style.display = "none";
-    document.getElementById("app").style.display = "block";
+    document.getElementById("app").style.display     = "block";
 
     const genDate = new Date(data.generated_at);
     document.getElementById("updated-at").textContent =
-      "Actualizado: "+genDate.toLocaleString("es-AR",{dateStyle:"short",timeStyle:"short"});
+      genDate.toLocaleString("es-AR", {dateStyle:"short", timeStyle:"short"});
 
     const catedral = data.resorts.catedral;
     renderKPIs(catedral.forecast);
-    renderSnowReport(catedral.snow_report||{});
+    renderSnowReport(catedral.snow_report || {});
     renderTable(catedral.forecast);
     renderMainCharts(catedral.forecast);
     buildWebcams(data.webcams || []);
