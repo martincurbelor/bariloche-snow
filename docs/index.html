@@ -283,6 +283,16 @@
       </div>
     </div>
 
+    <!-- WEBCAMS -->
+    <div class="section-title">Cámaras en vivo — Cerro Catedral</div>
+    <div class="webcam-grid" id="webcam-grid"></div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <span class="lightbox-close" onclick="closeLightbox()">&#x2715;</span>
+      <img id="lightbox-img" src="" alt="Webcam" onclick="event.stopPropagation()" />
+    </div>
+
     <!-- CHARTS -->
     <div class="section-title">Evolución del pronóstico</div>
     <div class="charts-row">
@@ -319,18 +329,6 @@
         </thead>
         <tbody id="forecast-tbody"></tbody>
       </table>
-    </div>
-
-    <!-- WEBCAMS -->
-    <div class="compare-section" style="border-top:none; padding-top:0; margin-top:28px;">
-      <div class="section-title">Cámaras en vivo — Cerro Catedral</div>
-      <div class="webcam-grid" id="webcam-grid"></div>
-    </div>
-
-    <!-- LIGHTBOX -->
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-      <span class="lightbox-close" onclick="closeLightbox()">&#x2715;</span>
-      <img id="lightbox-img" src="" alt="Webcam" onclick="event.stopPropagation()" />
     </div>
 
     <!-- COMPARISON -->
@@ -615,39 +613,31 @@ function renderCompare(resorts) {
 }
 
 /* ── WEBCAMS ── */
-const WEBCAMS = [
-  { url: "https://varitech.ar/uploads/cameras/cam005/cam001.jpg", name: "Cam 1" },
-  { url: "https://varitech.ar/uploads/cameras/cam005/cam002.jpg", name: "Cam 2" },
-  { url: "https://varitech.ar/uploads/cameras/cam005/cam003.jpg", name: "Cam 3" },
-  { url: "https://varitech.ar/uploads/cameras/cam005/cam004.jpg", name: "Cam 4" },
-  { url: "https://varitech.ar/uploads/cameras/cam005/cam005.jpg", name: "Cam 5" },
-  { url: "https://varitech.ar/uploads/cameras/cam005/cam006.jpg", name: "Cam 6" },
-];
-const WEBCAM_REFRESH_MS = 5 * 60 * 1000; // 5 minutos
+const WEBCAM_REFRESH_MS = 5 * 60 * 1000;
 
-function buildWebcams() {
+function buildWebcams(webcams) {
   const grid = document.getElementById("webcam-grid");
   grid.innerHTML = "";
-  WEBCAMS.forEach((cam, i) => {
+  webcams.forEach((cam, i) => {
+    const src = cam.file + "?t=" + Date.now();
     const card = document.createElement("div");
     card.className = "webcam-card";
     card.innerHTML = `
-      <img id="wcimg-${i}" src="${cam.url}?t=${Date.now()}" alt="${cam.name}"
-           referrerpolicy="no-referrer" crossorigin="anonymous"
-           onerror="this.style.opacity='.2'" />
+      <img id="wcimg-${i}" src="${src}" alt="${cam.name}"
+           onerror="this.style.opacity='.15'" />
       <div class="wc-footer">
         <span class="wc-name">${cam.name}</span>
         <span class="wc-badge">LIVE</span>
       </div>`;
-    card.querySelector("img").addEventListener("click", () => openLightbox(cam.url));
+    card.querySelector("img").addEventListener("click", () => openLightbox(cam.file));
     grid.appendChild(card);
   });
 }
 
-function refreshWebcams() {
-  WEBCAMS.forEach((cam, i) => {
+function refreshWebcams(webcams) {
+  webcams.forEach((cam, i) => {
     const img = document.getElementById(`wcimg-${i}`);
-    if (img) img.src = cam.url + "?t=" + Date.now();
+    if (img) img.src = cam.file + "?t=" + Date.now();
   });
 }
 
@@ -660,7 +650,6 @@ function closeLightbox() {
   document.getElementById("lightbox-img").src = "";
 }
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeLightbox(); });
-setInterval(refreshWebcams, WEBCAM_REFRESH_MS);
 
 /* ── INIT ── */
 async function init() {
@@ -678,7 +667,8 @@ async function init() {
     const catedral = data.resorts.catedral;
     renderKPIs(catedral.forecast);
     renderSnowReport(catedral.snow_report||{});
-    buildWebcams();
+    buildWebcams(data.webcams || []);
+    setInterval(() => refreshWebcams(data.webcams || []), WEBCAM_REFRESH_MS);
     renderTable(catedral.forecast);
     renderMainCharts(catedral.forecast);
     renderCompare(data.resorts);
