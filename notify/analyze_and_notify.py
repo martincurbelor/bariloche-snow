@@ -10,10 +10,10 @@ from dotenv import load_dotenv
 
 load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 
-ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"]
-GMAIL_USER        = os.environ["GMAIL_USER"]
-GMAIL_APP_PASSWORD= os.environ["GMAIL_APP_PASSWORD"]
-TO_EMAIL          = os.environ["TO_EMAIL"]
+ANTHROPIC_API_KEY = os.environ["ANTHROPIC_API_KEY"].strip()
+GMAIL_USER        = os.environ["GMAIL_USER"].strip()
+GMAIL_APP_PASSWORD= os.environ["GMAIL_APP_PASSWORD"].strip()
+TO_EMAIL          = os.environ["TO_EMAIL"].strip()
 
 DATOS_JSON  = os.path.join(os.path.dirname(__file__), "..", "docs", "datos.json")
 DASHBOARD_URL = "https://martincurbelor.github.io/bariloche-snow"
