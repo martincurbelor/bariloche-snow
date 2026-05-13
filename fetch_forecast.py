@@ -3,8 +3,23 @@ import json
 import re
 import subprocess
 import os
+import time
 from datetime import datetime, timezone
 from bs4 import BeautifulSoup
+
+
+def http_get(url, headers=None, timeout=30, retries=3, backoff=2):
+    last = None
+    for attempt in range(retries):
+        try:
+            r = requests.get(url, headers=headers, timeout=timeout)
+            r.raise_for_status()
+            return r
+        except (requests.Timeout, requests.ConnectionError, requests.HTTPError) as e:
+            last = e
+            if attempt < retries - 1:
+                time.sleep(backoff ** attempt)
+    raise last
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_FILE   = os.path.join(BASE_DIR, "docs", "datos.json")
@@ -78,8 +93,7 @@ def deg_to_cardinal(deg):
 
 def fetch_open_meteo(resort):
     url = build_meteo_url(resort["lat"], resort["lon"], resort["timezone"])
-    r = requests.get(url, timeout=15)
-    r.raise_for_status()
+    r = http_get(url)
     data = r.json()
 
     daily = data["daily"]
@@ -211,8 +225,7 @@ def fetch_historical_seasons(resort, num_years=5):
                 "&daily=snowfall_sum"
                 f"&timezone={requests.utils.quote(resort['timezone'])}"
             )
-            r = requests.get(url, timeout=20)
-            r.raise_for_status()
+            r = http_get(url, timeout=30)
             daily = r.json()["daily"]["snowfall_sum"]
             cumulative, total = [], 0.0
             for v in daily:
@@ -235,8 +248,7 @@ def fetch_historical_seasons(resort, num_years=5):
                 "&daily=snowfall_sum"
                 f"&timezone={requests.utils.quote(resort['timezone'])}"
             )
-            r = requests.get(url, timeout=20)
-            r.raise_for_status()
+            r = http_get(url, timeout=30)
             daily = r.json()["daily"]["snowfall_sum"]
             cumulative, total = [], 0.0
             for v in daily:
