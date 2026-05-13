@@ -334,9 +334,12 @@ def main():
 
     print(f"Saved -> {OUTPUT_FILE}")
 
-    print("Pushing to GitHub...")
-    git_push()
-    print("Done.")
+    if os.environ.get("GITHUB_ACTIONS") == "true":
+        print("Skipping git_push (running in GitHub Actions; workflow handles commit).")
+    else:
+        print("Pushing to GitHub...")
+        git_push()
+        print("Done.")
 
 
 if __name__ == "__main__":
