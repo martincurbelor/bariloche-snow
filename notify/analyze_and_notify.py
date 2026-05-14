@@ -63,7 +63,7 @@ Hoy es {datetime.now(timezone.utc).strftime('%Y-%m-%d')}. Analizá los datos y e
 
 Los puntos 2 y 3 tiene sentido incluirlos en el comentario cada cierto tiempo, pongamos una vez cada 10 dias.
 
-Tono cómico pero coherente. Máximo 125 palabras. Solo texto plano, sin markdown, sin líneas en blanco entre párrafos.
+Tono cómico pero coherente. Máximo 60 palabras. Solo texto plano, sin markdown, sin líneas en blanco entre párrafos.
 
 Datos:
 {summary_text}
