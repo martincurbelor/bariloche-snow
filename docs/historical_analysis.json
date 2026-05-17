@@ -1,0 +1,700 @@
+{
+  "phase": 1,
+  "focus": "Estado del manto al inicio de la semana 4-jul (target primario)",
+  "snapshot_date": "2026-05-15",
+  "n_historical_years": 25,
+  "year_range": [
+    2001,
+    2025
+  ],
+  "primary_targets": [
+    "snow_depth_jul4_m",
+    "snow_cum_jul3_cm"
+  ],
+  "secondary_targets": [
+    "week_jul4_10_snow_cm",
+    "week_jul4_10_depth_end_m"
+  ],
+  "descriptive_stats": {
+    "snow_cum_jul3_cm": {
+      "label": "Acumulado al 3-jul (cm) — base que llega al inicio de la semana",
+      "n": 25,
+      "mean": 171.34,
+      "median": 163.1,
+      "stdev": 80.73,
+      "min": 15.5,
+      "max": 361.1,
+      "p10": 84.02,
+      "p25": 106.9,
+      "p75": 205.3,
+      "p90": 259.06
+    },
+    "snow_depth_jul4_m": {
+      "label": "Espesor manto al 4-jul (m) — la pista al arrancar",
+      "n": 25,
+      "mean": 0.63,
+      "median": 0.66,
+      "stdev": 0.36,
+      "min": 0.03,
+      "max": 1.33,
+      "p10": 0.18,
+      "p25": 0.33,
+      "p75": 0.85,
+      "p90": 1.1
+    },
+    "week_jul4_10_snow_cm": {
+      "label": "Nevada DURANTE la semana 4-10 jul (cm) — bonus",
+      "n": 25,
+      "mean": 29.03,
+      "median": 25.4,
+      "stdev": 24.78,
+      "min": 0.3,
+      "max": 88.1,
+      "p10": 1.74,
+      "p25": 6.7,
+      "p75": 44.8,
+      "p90": 63.56
+    },
+    "week_jul4_10_depth_max_m": {
+      "label": "Pico de manto durante la semana (m)",
+      "n": 25,
+      "mean": 0.73,
+      "median": 0.67,
+      "stdev": 0.36,
+      "min": 0.06,
+      "max": 1.33,
+      "p10": 0.33,
+      "p25": 0.47,
+      "p75": 0.99,
+      "p90": 1.27
+    },
+    "week_jul4_10_depth_end_m": {
+      "label": "Manto al CERRAR la semana 10-jul (m)",
+      "n": 25,
+      "mean": 0.68,
+      "median": 0.59,
+      "stdev": 0.35,
+      "min": 0.06,
+      "max": 1.28,
+      "p10": 0.31,
+      "p25": 0.43,
+      "p75": 0.94,
+      "p90": 1.19
+    },
+    "snow_cum_may15_cm": {
+      "label": "Acumulado al 15-may (cm) — estado actual de comparación",
+      "n": 25,
+      "mean": 11.4,
+      "median": 2.2,
+      "stdev": 23.14,
+      "min": 0,
+      "max": 107.4,
+      "p10": 0.14,
+      "p25": 0.4,
+      "p75": 10.4,
+      "p90": 20.38
+    },
+    "season_total_snow_cm": {
+      "label": "Acumulado total temporada (cm)",
+      "n": 25,
+      "mean": 434.1,
+      "median": 456.2,
+      "stdev": 99.38,
+      "min": 191.4,
+      "max": 610.3,
+      "p10": 298.48,
+      "p25": 410.8,
+      "p75": 483.2,
+      "p90": 548.44
+    },
+    "peak_snow_depth_m": {
+      "label": "Pico de espesor temporada (m)",
+      "n": 25,
+      "mean": 1.27,
+      "median": 1.3,
+      "stdev": 0.36,
+      "min": 0.39,
+      "max": 1.87,
+      "p10": 0.87,
+      "p25": 0.97,
+      "p75": 1.58,
+      "p90": 1.63
+    }
+  },
+  "manto_probabilities": {
+    "P(manto al 4-jul >= 0.30 m)": 0.8,
+    "P(manto al 4-jul >= 0.50 m)": 0.6,
+    "P(manto al 4-jul >= 0.70 m)": 0.48,
+    "P(manto al 4-jul >= 1.00 m)": 0.16,
+    "P(manto al 4-jul <= 0.20 m)": 0.16,
+    "P(cum al 3-jul >= 100 cm)": 0.84,
+    "P(cum al 3-jul >= 150 cm)": 0.6,
+    "P(cum al 3-jul >= 200 cm)": 0.4
+  },
+  "correlations": {
+    "may15_snow -> jul4_depth": 0.503,
+    "may15_snow -> jul3_cum": 0.443,
+    "may15_precip -> jul4_depth": 0.224,
+    "may15_precip -> jul3_cum": 0.207,
+    "jul3_cum -> jul4_depth": 0.882,
+    "jul4_depth -> season_total": 0.552,
+    "jul4_depth -> peak_depth": 0.488
+  },
+  "current_season_snapshot": {
+    "as_of": "2026-05-15",
+    "snow_cum_cm": 2.6,
+    "precip_cum_mm": 61.7,
+    "snow_depth_m": 0.0,
+    "rank_among_years_at_same_cutoff": "14/26 (1 = menos nieve)"
+  },
+  "predictive_models": {
+    "empirical": {
+      "name": "Empírico — climatología cruda (sin condicionar)",
+      "targets": {
+        "snow_depth_jul4_m": {
+          "median": 0.66,
+          "mean": 0.63,
+          "ic50": [
+            0.33,
+            0.85
+          ],
+          "ic80": [
+            0.18,
+            1.1
+          ],
+          "range": [
+            0.03,
+            1.33
+          ]
+        },
+        "snow_cum_jul3_cm": {
+          "median": 163.1,
+          "mean": 171.34,
+          "ic50": [
+            106.9,
+            205.3
+          ],
+          "ic80": [
+            84.02,
+            259.06
+          ],
+          "range": [
+            15.5,
+            361.1
+          ]
+        },
+        "week_jul4_10_snow_cm": {
+          "median": 25.4,
+          "mean": 29.03,
+          "ic50": [
+            6.7,
+            44.8
+          ],
+          "ic80": [
+            1.74,
+            63.56
+          ],
+          "range": [
+            0.3,
+            88.1
+          ]
+        }
+      },
+      "interpretation": "Distribución bruta de los 25 años. Es la mejor estimación SIN usar info de 2026 (i.e. lo que predeciríamos en marzo)."
+    },
+    "analog": {
+      "name": "Top-5 análogos por (snow+precip) al 15-may",
+      "current_state": {
+        "snow_may15_cm": 2.6,
+        "precip_may15_mm": 61.7
+      },
+      "analog_years": [
+        {
+          "year": 2021,
+          "may15_snow_cm": 4.1,
+          "may15_precip_mm": 48.9,
+          "jul4_depth_m": 0.2,
+          "jul3_cum_cm": 57.0,
+          "week_snow_cm": 31.1,
+          "season_total_cm": 225.1
+        },
+        {
+          "year": 2012,
+          "may15_snow_cm": 8.2,
+          "may15_precip_mm": 54.8,
+          "jul4_depth_m": 0.85,
+          "jul3_cum_cm": 210.0,
+          "week_snow_cm": 30.2,
+          "season_total_cm": 410.8
+        },
+        {
+          "year": 2010,
+          "may15_snow_cm": 7.8,
+          "may15_precip_mm": 47.2,
+          "jul4_depth_m": 0.79,
+          "jul3_cum_cm": 189.6,
+          "week_snow_cm": 70.2,
+          "season_total_cm": 483.2
+        },
+        {
+          "year": 2008,
+          "may15_snow_cm": 0.2,
+          "may15_precip_mm": 41.4,
+          "jul4_depth_m": 0.11,
+          "jul3_cum_cm": 82.9,
+          "week_snow_cm": 38.4,
+          "season_total_cm": 456.2
+        },
+        {
+          "year": 2018,
+          "may15_snow_cm": 1.8,
+          "may15_precip_mm": 39.0,
+          "jul4_depth_m": 0.78,
+          "jul3_cum_cm": 160.7,
+          "week_snow_cm": 8.1,
+          "season_total_cm": 358.3
+        }
+      ],
+      "predictions": {
+        "snow_depth_jul4_m": {
+          "median": 0.78,
+          "mean": 0.55,
+          "range": [
+            0.11,
+            0.85
+          ],
+          "n": 5
+        },
+        "snow_cum_jul3_cm": {
+          "median": 160.7,
+          "mean": 140.04,
+          "range": [
+            57.0,
+            210.0
+          ],
+          "n": 5
+        },
+        "week_jul4_10_snow_cm": {
+          "median": 31.1,
+          "mean": 35.6,
+          "range": [
+            8.1,
+            70.2
+          ],
+          "n": 5
+        },
+        "season_total_cm": {
+          "median": 410.8,
+          "mean": 386.72,
+          "range": [
+            225.1,
+            483.2
+          ],
+          "n": 5
+        }
+      },
+      "interpretation": "Los K años con estado más parecido al actual al 15-may (acumulado de nieve + precip), distancia euclidiana en z-scores."
+    },
+    "regression": {
+      "name": "Regresión lineal: target ~ may15_cumulative",
+      "snow_cum_jul3_cm": {
+        "formula": "y = 153.74 + 1.544 · x_may15",
+        "r2": 0.196,
+        "residual_se": 73.95,
+        "prediction": 157.8,
+        "ic_68": [
+          83.8,
+          231.7
+        ]
+      },
+      "snow_depth_jul4_m": {
+        "formula": "y = 0.54 + 0.008 · x_may15",
+        "r2": 0.253,
+        "residual_se": 0.32,
+        "prediction": 0.561,
+        "ic_68": [
+          0.241,
+          0.881
+        ]
+      },
+      "interpretation": "R² bajo (esperable: 50 días separan may15 de jul4, mucha varianza intermedia)."
+    }
+  },
+  "per_year_table": [
+    {
+      "year": 2001,
+      "snow_cum_may15_cm": 0.6,
+      "precip_cum_may15_mm": 8.5,
+      "snow_cum_jul3_cm": 337.0,
+      "snow_depth_jul4_m": 1.2,
+      "week_jul4_10_snow_cm": 44.8,
+      "week_jul4_10_precip_mm": 80.5,
+      "week_jul4_10_depth_max_m": 1.3,
+      "week_jul4_10_depth_end_m": 1.28,
+      "season_total_snow_cm": 610.3,
+      "season_total_precip_mm": 1181.4,
+      "peak_snow_depth_m": 1.65,
+      "peak_snow_depth_date": "2001-08-01"
+    },
+    {
+      "year": 2002,
+      "snow_cum_may15_cm": 11.6,
+      "precip_cum_may15_mm": 120.8,
+      "snow_cum_jul3_cm": 163.1,
+      "snow_depth_jul4_m": 0.53,
+      "week_jul4_10_snow_cm": 1.8,
+      "week_jul4_10_precip_mm": 2.1,
+      "week_jul4_10_depth_max_m": 0.53,
+      "week_jul4_10_depth_end_m": 0.48,
+      "season_total_snow_cm": 390.2,
+      "season_total_precip_mm": 897.7,
+      "peak_snow_depth_m": 0.83,
+      "peak_snow_depth_date": "2002-08-23"
+    },
+    {
+      "year": 2003,
+      "snow_cum_may15_cm": 0.3,
+      "precip_cum_may15_mm": 16.7,
+      "snow_cum_jul3_cm": 203.3,
+      "snow_depth_jul4_m": 0.5,
+      "week_jul4_10_snow_cm": 31.4,
+      "week_jul4_10_precip_mm": 44.9,
+      "week_jul4_10_depth_max_m": 0.67,
+      "week_jul4_10_depth_end_m": 0.64,
+      "season_total_snow_cm": 469.8,
+      "season_total_precip_mm": 1019.7,
+      "peak_snow_depth_m": 1.01,
+      "peak_snow_depth_date": "2003-07-20"
+    },
+    {
+      "year": 2004,
+      "snow_cum_may15_cm": 2.2,
+      "precip_cum_may15_mm": 15.3,
+      "snow_cum_jul3_cm": 239.5,
+      "snow_depth_jul4_m": 0.95,
+      "week_jul4_10_snow_cm": 18.9,
+      "week_jul4_10_precip_mm": 31.5,
+      "week_jul4_10_depth_max_m": 0.95,
+      "week_jul4_10_depth_end_m": 0.83,
+      "season_total_snow_cm": 425.9,
+      "season_total_precip_mm": 922.7,
+      "peak_snow_depth_m": 0.97,
+      "peak_snow_depth_date": "2004-07-02"
+    },
+    {
+      "year": 2005,
+      "snow_cum_may15_cm": 54.9,
+      "precip_cum_may15_mm": 163.4,
+      "snow_cum_jul3_cm": 361.1,
+      "snow_depth_jul4_m": 1.14,
+      "week_jul4_10_snow_cm": 6.6,
+      "week_jul4_10_precip_mm": 17.0,
+      "week_jul4_10_depth_max_m": 1.14,
+      "week_jul4_10_depth_end_m": 1.04,
+      "season_total_snow_cm": 571.6,
+      "season_total_precip_mm": 1135.0,
+      "peak_snow_depth_m": 1.61,
+      "peak_snow_depth_date": "2005-08-30"
+    },
+    {
+      "year": 2006,
+      "snow_cum_may15_cm": 0,
+      "precip_cum_may15_mm": 15.9,
+      "snow_cum_jul3_cm": 205.1,
+      "snow_depth_jul4_m": 0.44,
+      "week_jul4_10_snow_cm": 25.4,
+      "week_jul4_10_precip_mm": 55.5,
+      "week_jul4_10_depth_max_m": 0.53,
+      "week_jul4_10_depth_end_m": 0.53,
+      "season_total_snow_cm": 534.1,
+      "season_total_precip_mm": 1093.2,
+      "peak_snow_depth_m": 1.45,
+      "peak_snow_depth_date": "2006-08-13"
+    },
+    {
+      "year": 2007,
+      "snow_cum_may15_cm": 7.6,
+      "precip_cum_may15_mm": 35.4,
+      "snow_cum_jul3_cm": 158.9,
+      "snow_depth_jul4_m": 0.87,
+      "week_jul4_10_snow_cm": 53.1,
+      "week_jul4_10_precip_mm": 76.5,
+      "week_jul4_10_depth_max_m": 0.99,
+      "week_jul4_10_depth_end_m": 0.94,
+      "season_total_snow_cm": 458.4,
+      "season_total_precip_mm": 709.4,
+      "peak_snow_depth_m": 1.6,
+      "peak_snow_depth_date": "2007-09-05"
+    },
+    {
+      "year": 2008,
+      "snow_cum_may15_cm": 0.2,
+      "precip_cum_may15_mm": 41.4,
+      "snow_cum_jul3_cm": 82.9,
+      "snow_depth_jul4_m": 0.11,
+      "week_jul4_10_snow_cm": 38.4,
+      "week_jul4_10_precip_mm": 75.5,
+      "week_jul4_10_depth_max_m": 0.31,
+      "week_jul4_10_depth_end_m": 0.31,
+      "season_total_snow_cm": 456.2,
+      "season_total_precip_mm": 1029.8,
+      "peak_snow_depth_m": 1.56,
+      "peak_snow_depth_date": "2008-09-01"
+    },
+    {
+      "year": 2009,
+      "snow_cum_may15_cm": 21.3,
+      "precip_cum_may15_mm": 86.1,
+      "snow_cum_jul3_cm": 119.8,
+      "snow_depth_jul4_m": 0.39,
+      "week_jul4_10_snow_cm": 48.9,
+      "week_jul4_10_precip_mm": 74.8,
+      "week_jul4_10_depth_max_m": 0.55,
+      "week_jul4_10_depth_end_m": 0.53,
+      "season_total_snow_cm": 379.2,
+      "season_total_precip_mm": 1030.3,
+      "peak_snow_depth_m": 1.08,
+      "peak_snow_depth_date": "2009-08-24"
+    },
+    {
+      "year": 2010,
+      "snow_cum_may15_cm": 7.8,
+      "precip_cum_may15_mm": 47.2,
+      "snow_cum_jul3_cm": 189.6,
+      "snow_depth_jul4_m": 0.79,
+      "week_jul4_10_snow_cm": 70.2,
+      "week_jul4_10_precip_mm": 103.3,
+      "week_jul4_10_depth_max_m": 1.03,
+      "week_jul4_10_depth_end_m": 1.03,
+      "season_total_snow_cm": 483.2,
+      "season_total_precip_mm": 857.9,
+      "peak_snow_depth_m": 1.73,
+      "peak_snow_depth_date": "2010-08-28"
+    },
+    {
+      "year": 2011,
+      "snow_cum_may15_cm": 0.4,
+      "precip_cum_may15_mm": 11.8,
+      "snow_cum_jul3_cm": 106.9,
+      "snow_depth_jul4_m": 0.29,
+      "week_jul4_10_snow_cm": 21.4,
+      "week_jul4_10_precip_mm": 39.1,
+      "week_jul4_10_depth_max_m": 0.35,
+      "week_jul4_10_depth_end_m": 0.32,
+      "season_total_snow_cm": 492.5,
+      "season_total_precip_mm": 875.1,
+      "peak_snow_depth_m": 1.47,
+      "peak_snow_depth_date": "2011-09-11"
+    },
+    {
+      "year": 2012,
+      "snow_cum_may15_cm": 8.2,
+      "precip_cum_may15_mm": 54.8,
+      "snow_cum_jul3_cm": 210.0,
+      "snow_depth_jul4_m": 0.85,
+      "week_jul4_10_snow_cm": 30.2,
+      "week_jul4_10_precip_mm": 45.5,
+      "week_jul4_10_depth_max_m": 0.94,
+      "week_jul4_10_depth_end_m": 0.88,
+      "season_total_snow_cm": 410.8,
+      "season_total_precip_mm": 922.3,
+      "peak_snow_depth_m": 1.0,
+      "peak_snow_depth_date": "2012-08-31"
+    },
+    {
+      "year": 2013,
+      "snow_cum_may15_cm": 10.4,
+      "precip_cum_may15_mm": 99.5,
+      "snow_cum_jul3_cm": 206.7,
+      "snow_depth_jul4_m": 0.7,
+      "week_jul4_10_snow_cm": 5.0,
+      "week_jul4_10_precip_mm": 21.6,
+      "week_jul4_10_depth_max_m": 0.7,
+      "week_jul4_10_depth_end_m": 0.59,
+      "season_total_snow_cm": 476.7,
+      "season_total_precip_mm": 1082.7,
+      "peak_snow_depth_m": 1.26,
+      "peak_snow_depth_date": "2013-08-21"
+    },
+    {
+      "year": 2014,
+      "snow_cum_may15_cm": 14.3,
+      "precip_cum_may15_mm": 92.7,
+      "snow_cum_jul3_cm": 149.3,
+      "snow_depth_jul4_m": 0.46,
+      "week_jul4_10_snow_cm": 14.8,
+      "week_jul4_10_precip_mm": 21.2,
+      "week_jul4_10_depth_max_m": 0.47,
+      "week_jul4_10_depth_end_m": 0.43,
+      "season_total_snow_cm": 412.6,
+      "season_total_precip_mm": 936.5,
+      "peak_snow_depth_m": 0.96,
+      "peak_snow_depth_date": "2014-08-05"
+    },
+    {
+      "year": 2015,
+      "snow_cum_may15_cm": 1.3,
+      "precip_cum_may15_mm": 38.1,
+      "snow_cum_jul3_cm": 104.7,
+      "snow_depth_jul4_m": 0.17,
+      "week_jul4_10_snow_cm": 56.9,
+      "week_jul4_10_precip_mm": 87.4,
+      "week_jul4_10_depth_max_m": 0.51,
+      "week_jul4_10_depth_end_m": 0.49,
+      "season_total_snow_cm": 477.7,
+      "season_total_precip_mm": 1158.1,
+      "peak_snow_depth_m": 1.2,
+      "peak_snow_depth_date": "2015-08-29"
+    },
+    {
+      "year": 2016,
+      "snow_cum_may15_cm": 0.1,
+      "precip_cum_may15_mm": 14.9,
+      "snow_cum_jul3_cm": 15.5,
+      "snow_depth_jul4_m": 0.03,
+      "week_jul4_10_snow_cm": 12.2,
+      "week_jul4_10_precip_mm": 34.0,
+      "week_jul4_10_depth_max_m": 0.06,
+      "week_jul4_10_depth_end_m": 0.06,
+      "season_total_snow_cm": 258.6,
+      "season_total_precip_mm": 504.9,
+      "peak_snow_depth_m": 0.85,
+      "peak_snow_depth_date": "2016-08-19"
+    },
+    {
+      "year": 2017,
+      "snow_cum_may15_cm": 2.2,
+      "precip_cum_may15_mm": 109.6,
+      "snow_cum_jul3_cm": 105.1,
+      "snow_depth_jul4_m": 0.33,
+      "week_jul4_10_snow_cm": 6.7,
+      "week_jul4_10_precip_mm": 12.0,
+      "week_jul4_10_depth_max_m": 0.34,
+      "week_jul4_10_depth_end_m": 0.33,
+      "season_total_snow_cm": 411.9,
+      "season_total_precip_mm": 889.7,
+      "peak_snow_depth_m": 1.44,
+      "peak_snow_depth_date": "2017-09-01"
+    },
+    {
+      "year": 2018,
+      "snow_cum_may15_cm": 1.8,
+      "precip_cum_may15_mm": 39.0,
+      "snow_cum_jul3_cm": 160.7,
+      "snow_depth_jul4_m": 0.78,
+      "week_jul4_10_snow_cm": 8.1,
+      "week_jul4_10_precip_mm": 11.9,
+      "week_jul4_10_depth_max_m": 0.78,
+      "week_jul4_10_depth_end_m": 0.67,
+      "season_total_snow_cm": 358.3,
+      "season_total_precip_mm": 871.2,
+      "peak_snow_depth_m": 0.93,
+      "peak_snow_depth_date": "2018-09-30"
+    },
+    {
+      "year": 2019,
+      "snow_cum_may15_cm": 0.4,
+      "precip_cum_may15_mm": 115.6,
+      "snow_cum_jul3_cm": 140.7,
+      "snow_depth_jul4_m": 0.66,
+      "week_jul4_10_snow_cm": 1.7,
+      "week_jul4_10_precip_mm": 13.3,
+      "week_jul4_10_depth_max_m": 0.66,
+      "week_jul4_10_depth_end_m": 0.53,
+      "season_total_snow_cm": 416.1,
+      "season_total_precip_mm": 959.5,
+      "peak_snow_depth_m": 1.3,
+      "peak_snow_depth_date": "2019-08-29"
+    },
+    {
+      "year": 2020,
+      "snow_cum_may15_cm": 19.0,
+      "precip_cum_may15_mm": 136.4,
+      "snow_cum_jul3_cm": 205.3,
+      "snow_depth_jul4_m": 0.83,
+      "week_jul4_10_snow_cm": 68.0,
+      "week_jul4_10_precip_mm": 98.6,
+      "week_jul4_10_depth_max_m": 1.27,
+      "week_jul4_10_depth_end_m": 1.26,
+      "season_total_snow_cm": 491.8,
+      "season_total_precip_mm": 990.5,
+      "peak_snow_depth_m": 1.58,
+      "peak_snow_depth_date": "2020-07-26"
+    },
+    {
+      "year": 2021,
+      "snow_cum_may15_cm": 4.1,
+      "precip_cum_may15_mm": 48.9,
+      "snow_cum_jul3_cm": 57.0,
+      "snow_depth_jul4_m": 0.2,
+      "week_jul4_10_snow_cm": 31.1,
+      "week_jul4_10_precip_mm": 64.3,
+      "week_jul4_10_depth_max_m": 0.38,
+      "week_jul4_10_depth_end_m": 0.38,
+      "season_total_snow_cm": 225.1,
+      "season_total_precip_mm": 695.3,
+      "peak_snow_depth_m": 0.9,
+      "peak_snow_depth_date": "2021-08-28"
+    },
+    {
+      "year": 2022,
+      "snow_cum_may15_cm": 0.2,
+      "precip_cum_may15_mm": 14.8,
+      "snow_cum_jul3_cm": 198.4,
+      "snow_depth_jul4_m": 1.04,
+      "week_jul4_10_snow_cm": 88.1,
+      "week_jul4_10_precip_mm": 126.3,
+      "week_jul4_10_depth_max_m": 1.27,
+      "week_jul4_10_depth_end_m": 1.18,
+      "season_total_snow_cm": 558.0,
+      "season_total_precip_mm": 1022.5,
+      "peak_snow_depth_m": 1.87,
+      "peak_snow_depth_date": "2022-08-17"
+    },
+    {
+      "year": 2023,
+      "snow_cum_may15_cm": 0,
+      "precip_cum_may15_mm": 6.5,
+      "snow_cum_jul3_cm": 205.0,
+      "snow_depth_jul4_m": 0.81,
+      "week_jul4_10_snow_cm": 41.0,
+      "week_jul4_10_precip_mm": 62.6,
+      "week_jul4_10_depth_max_m": 0.9,
+      "week_jul4_10_depth_end_m": 0.86,
+      "season_total_snow_cm": 434.8,
+      "season_total_precip_mm": 1198.5,
+      "peak_snow_depth_m": 1.55,
+      "peak_snow_depth_date": "2023-09-16"
+    },
+    {
+      "year": 2024,
+      "snow_cum_may15_cm": 107.4,
+      "precip_cum_may15_mm": 159.4,
+      "snow_cum_jul3_cm": 272.1,
+      "snow_depth_jul4_m": 1.33,
+      "week_jul4_10_snow_cm": 0.3,
+      "week_jul4_10_precip_mm": 0.4,
+      "week_jul4_10_depth_max_m": 1.33,
+      "week_jul4_10_depth_end_m": 1.2,
+      "season_total_snow_cm": 457.4,
+      "season_total_precip_mm": 890.6,
+      "peak_snow_depth_m": 1.61,
+      "peak_snow_depth_date": "2024-09-30"
+    },
+    {
+      "year": 2025,
+      "snow_cum_may15_cm": 8.6,
+      "precip_cum_may15_mm": 96.4,
+      "snow_cum_jul3_cm": 85.7,
+      "snow_depth_jul4_m": 0.32,
+      "week_jul4_10_snow_cm": 0.8,
+      "week_jul4_10_precip_mm": 2.9,
+      "week_jul4_10_depth_max_m": 0.32,
+      "week_jul4_10_depth_end_m": 0.24,
+      "season_total_snow_cm": 191.4,
+      "season_total_precip_mm": 693.0,
+      "peak_snow_depth_m": 0.39,
+      "peak_snow_depth_date": "2025-07-28"
+    }
+  ]
+}

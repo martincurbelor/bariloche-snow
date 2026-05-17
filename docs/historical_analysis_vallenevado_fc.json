@@ -1,0 +1,581 @@
+{
+  "method": "analog matching, snapshot expanded with Open-Meteo 16d forecast",
+  "current_state_2026": {
+    "snapshot_end_date": "2026-05-31",
+    "actuals_through": "2026-05-15",
+    "forecast_days_added": 16,
+    "cum_snow_cm": 24.1,
+    "cum_precip_mm": 35.4,
+    "window_temp_min_mean_c": -6.64,
+    "window_temp_max_mean_c": 2.15,
+    "window_freezing_level_mean_m": 3437.88,
+    "window_snow_days_>=1cm": 2,
+    "window_total_forecast_snow_cm": 9.4
+  },
+  "rankings": {
+    "convention": "rank 1 = mejor temporada (más nieve acumulada al corte)",
+    "today": {
+      "cutoff_date": "2026-05-16",
+      "cum_snow_2026_cm": 14.7,
+      "rank": "12/26",
+      "median_historical": 8.0
+    },
+    "projected_with_forecast": {
+      "cutoff_date": "2026-05-31",
+      "cum_snow_2026_cm": 24.1,
+      "rank": "20/26",
+      "median_historical": 42.6,
+      "years_worse_than_2026": [
+        {
+          "year": 2011,
+          "cum_snow_cm": 4.1
+        },
+        {
+          "year": 2015,
+          "cum_snow_cm": 6.6
+        },
+        {
+          "year": 2022,
+          "cum_snow_cm": 12.9
+        },
+        {
+          "year": 2004,
+          "cum_snow_cm": 13.3
+        },
+        {
+          "year": 2020,
+          "cum_snow_cm": 16.5
+        },
+        {
+          "year": 2021,
+          "cum_snow_cm": 21.7
+        }
+      ]
+    }
+  },
+  "analog_weights": {
+    "cum_snow_cm": 2.0,
+    "cum_precip_mm": 1.0,
+    "window_temp_min_mean_c": 1.0,
+    "window_freezing_level_mean_m": 1.0
+  },
+  "feature_stdevs_historical": {
+    "cum_snow_cm": 40.1,
+    "cum_precip_mm": 74.2,
+    "window_temp_min_mean_c": 2.29,
+    "window_temp_max_mean_c": 2.64,
+    "window_freezing_level_mean_m": null
+  },
+  "analog_years_top_k": [
+    {
+      "year": 2021,
+      "distance_z": 0.068,
+      "cutoff_date": "2021-05-31",
+      "cum_snow_cm": 21.7,
+      "cum_precip_mm": 31.0,
+      "window_temp_min_mean_c": -6.44,
+      "window_temp_max_mean_c": 0.66,
+      "window_freezing_level_mean_m": null,
+      "window_snow_days_>=1cm": 3,
+      "snow_depth_jul4_m": 0.47,
+      "snow_cum_jul3_cm": 76.2,
+      "week_jul4_10_snow_cm": 1.2,
+      "season_total_cm": 193.3,
+      "peak_snow_depth_m": 1.5
+    },
+    {
+      "year": 2009,
+      "distance_z": 0.273,
+      "cutoff_date": "2009-05-31",
+      "cum_snow_cm": 28.4,
+      "cum_precip_mm": 62.6,
+      "window_temp_min_mean_c": -5.78,
+      "window_temp_max_mean_c": 0.92,
+      "window_freezing_level_mean_m": null,
+      "window_snow_days_>=1cm": 3,
+      "snow_depth_jul4_m": 1.25,
+      "snow_cum_jul3_cm": 144.1,
+      "week_jul4_10_snow_cm": 6.0,
+      "season_total_cm": 418.9,
+      "peak_snow_depth_m": 2.71
+    },
+    {
+      "year": 2006,
+      "distance_z": 0.302,
+      "cutoff_date": "2006-05-31",
+      "cum_snow_cm": 32.8,
+      "cum_precip_mm": 54.8,
+      "window_temp_min_mean_c": -5.61,
+      "window_temp_max_mean_c": 0.5,
+      "window_freezing_level_mean_m": null,
+      "window_snow_days_>=1cm": 8,
+      "snow_depth_jul4_m": 0.78,
+      "snow_cum_jul3_cm": 114.5,
+      "week_jul4_10_snow_cm": 62.6,
+      "season_total_cm": 478.4,
+      "peak_snow_depth_m": 2.91
+    },
+    {
+      "year": 2022,
+      "distance_z": 0.341,
+      "cutoff_date": "2022-05-31",
+      "cum_snow_cm": 12.9,
+      "cum_precip_mm": 18.4,
+      "window_temp_min_mean_c": -7.8,
+      "window_temp_max_mean_c": -0.06,
+      "window_freezing_level_mean_m": null,
+      "window_snow_days_>=1cm": 3,
+      "snow_depth_jul4_m": 1.02,
+      "snow_cum_jul3_cm": 111.2,
+      "week_jul4_10_snow_cm": 66.6,
+      "season_total_cm": 275.4,
+      "peak_snow_depth_m": 1.95
+    },
+    {
+      "year": 2011,
+      "distance_z": 0.482,
+      "cutoff_date": "2011-05-31",
+      "cum_snow_cm": 4.1,
+      "cum_precip_mm": 13.8,
+      "window_temp_min_mean_c": -5.29,
+      "window_temp_max_mean_c": 3.91,
+      "window_freezing_level_mean_m": null,
+      "window_snow_days_>=1cm": 2,
+      "snow_depth_jul4_m": 0.83,
+      "snow_cum_jul3_cm": 89.0,
+      "week_jul4_10_snow_cm": 0,
+      "season_total_cm": 295.0,
+      "peak_snow_depth_m": 2.04
+    }
+  ],
+  "predictions_via_analogs": {
+    "snow_depth_jul4_m": {
+      "median": 0.83,
+      "mean": 0.87,
+      "stdev": 0.29,
+      "range": [
+        0.47,
+        1.25
+      ],
+      "n": 5
+    },
+    "snow_cum_jul3_cm": {
+      "median": 111.2,
+      "mean": 107.0,
+      "stdev": 26.09,
+      "range": [
+        76.2,
+        144.1
+      ],
+      "n": 5
+    },
+    "week_jul4_10_snow_cm": {
+      "median": 6.0,
+      "mean": 27.28,
+      "stdev": 34.17,
+      "range": [
+        0,
+        66.6
+      ],
+      "n": 5
+    },
+    "season_total_cm": {
+      "median": 295.0,
+      "mean": 332.2,
+      "stdev": 114.89,
+      "range": [
+        193.3,
+        478.4
+      ],
+      "n": 5
+    },
+    "peak_snow_depth_m": {
+      "median": 2.04,
+      "mean": 2.22,
+      "stdev": 0.58,
+      "range": [
+        1.5,
+        2.91
+      ],
+      "n": 5
+    }
+  },
+  "analog_trajectories": {
+    "dates": [
+      "05-31",
+      "06-15",
+      "06-30",
+      "07-04",
+      "07-10",
+      "07-31",
+      "08-31",
+      "09-30"
+    ],
+    "by_year": {
+      "2021": {
+        "cum_snow_cm": [
+          21.7,
+          33.9,
+          76.2,
+          76.2,
+          77.4,
+          78.6,
+          170.7,
+          193.3
+        ],
+        "snow_depth_max_m": [
+          0.15,
+          0.16,
+          0.5,
+          0.47,
+          0.47,
+          0.46,
+          1.18,
+          1.06
+        ]
+      },
+      "2009": {
+        "cum_snow_cm": [
+          28.4,
+          36.5,
+          142.6,
+          146.9,
+          150.1,
+          185.6,
+          317.1,
+          418.9
+        ],
+        "snow_depth_max_m": [
+          0.2,
+          0.31,
+          1.38,
+          1.25,
+          1.14,
+          1.38,
+          1.81,
+          2.07
+        ]
+      },
+      "2006": {
+        "cum_snow_cm": [
+          32.8,
+          103.2,
+          114.3,
+          114.5,
+          177.1,
+          363.4,
+          436.2,
+          478.4
+        ],
+        "snow_depth_max_m": [
+          0.21,
+          0.86,
+          0.82,
+          0.78,
+          1.63,
+          2.52,
+          2.33,
+          2.14
+        ]
+      },
+      "2022": {
+        "cum_snow_cm": [
+          12.9,
+          62.7,
+          83.7,
+          111.8,
+          177.8,
+          218.4,
+          261.2,
+          275.4
+        ],
+        "snow_depth_max_m": [
+          0.28,
+          0.61,
+          0.76,
+          1.02,
+          1.65,
+          1.33,
+          1.47,
+          1.38
+        ]
+      },
+      "2011": {
+        "cum_snow_cm": [
+          4.1,
+          23.4,
+          89.0,
+          89.0,
+          89.0,
+          157.7,
+          275.7,
+          295.0
+        ],
+        "snow_depth_max_m": [
+          0.01,
+          0.21,
+          0.92,
+          0.83,
+          0.76,
+          1.4,
+          1.91,
+          1.23
+        ]
+      }
+    }
+  },
+  "reference_trajectories": {
+    "dates": [
+      "05-31",
+      "06-15",
+      "06-30",
+      "07-04",
+      "07-10",
+      "07-31",
+      "08-31",
+      "09-30"
+    ],
+    "by_year": {
+      "2021@catedral": {
+        "cum_snow_cm": [
+          15.0,
+          23.9,
+          49.8,
+          57.0,
+          88.1,
+          94.7,
+          206.6,
+          225.1
+        ],
+        "snow_depth_max_m": [
+          0.06,
+          0.05,
+          0.21,
+          0.2,
+          0.38,
+          0.24,
+          0.72,
+          0.29
+        ],
+        "year": 2021,
+        "source": "catedral"
+      },
+      "2024@catedral": {
+        "cum_snow_cm": [
+          126.9,
+          143.4,
+          242.9,
+          272.3,
+          272.4,
+          296.2,
+          337.5,
+          457.4
+        ],
+        "snow_depth_max_m": [
+          0.63,
+          0.51,
+          1.21,
+          1.33,
+          1.21,
+          1.17,
+          1.17,
+          1.61
+        ],
+        "year": 2024,
+        "source": "catedral"
+      },
+      "2025@vallenevado": {
+        "cum_snow_cm": [
+          83.8,
+          114.9,
+          162.2,
+          162.8,
+          162.8,
+          179.1,
+          273.9,
+          301.8
+        ],
+        "snow_depth_max_m": [
+          0.49,
+          0.85,
+          1.09,
+          1.02,
+          0.92,
+          0.95,
+          1.68,
+          1.41
+        ],
+        "year": 2025,
+        "source": "vallenevado"
+      }
+    }
+  },
+  "current_year_trajectory": {
+    "dates": [
+      "05-31",
+      "06-15",
+      "06-30",
+      "07-04",
+      "07-10",
+      "07-31",
+      "08-31",
+      "09-30"
+    ],
+    "cum_snow_cm": [
+      24.1,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "snow_depth_max_m": [
+      0.01,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "actuals_through": "2026-05-15",
+    "forecast_through": "2026-05-31",
+    "cum_snow_cm_projected": [
+      24.1,
+      43.4,
+      105.6,
+      109.0,
+      145.8,
+      181.3,
+      295.7,
+      315.0
+    ],
+    "snow_depth_max_m_projected": [
+      0.01,
+      0.21,
+      0.62,
+      0.75,
+      0.95,
+      1.19,
+      1.62,
+      1.23
+    ]
+  },
+  "reference_years": {
+    "bad": [
+      [
+        2021,
+        "catedral"
+      ]
+    ],
+    "good": [
+      [
+        2024,
+        "catedral"
+      ],
+      [
+        2025,
+        "vallenevado"
+      ]
+    ]
+  },
+  "conditional_probabilities": {
+    "manto_jul4_m": {
+      "n_analogs": 5,
+      "median": 0.83,
+      "range": [
+        0.47,
+        1.25
+      ],
+      "probabilities": [
+        {
+          "threshold": 0.2,
+          "label": "mejor que 2021 (catedral MALA)",
+          "category": "bad",
+          "fraction": "5/5",
+          "p": 1.0
+        },
+        {
+          "threshold": 1.33,
+          "label": "tan bueno como 2024 (catedral BUENA)",
+          "category": "good",
+          "fraction": "0/5",
+          "p": 0.0
+        },
+        {
+          "threshold": 1.02,
+          "label": "tan bueno como 2025 (vallenevado BUENA)",
+          "category": "good",
+          "fraction": "2/5",
+          "p": 0.4
+        }
+      ]
+    },
+    "season_total_cm": {
+      "n_analogs": 5,
+      "median": 295.0,
+      "range": [
+        193.3,
+        478.4
+      ],
+      "probabilities": [
+        {
+          "threshold": 225.1,
+          "label": "mejor que 2021 (catedral MALA)",
+          "category": "bad",
+          "fraction": "4/5",
+          "p": 0.8
+        },
+        {
+          "threshold": 457.4,
+          "label": "tan bueno como 2024 (catedral BUENA)",
+          "category": "good",
+          "fraction": "1/5",
+          "p": 0.2
+        },
+        {
+          "threshold": 301.8,
+          "label": "tan bueno como 2025 (vallenevado BUENA)",
+          "category": "good",
+          "fraction": "2/5",
+          "p": 0.4
+        }
+      ]
+    },
+    "peak_snow_depth_m": {
+      "n_analogs": 5,
+      "median": 2.04,
+      "range": [
+        1.5,
+        2.91
+      ],
+      "probabilities": [
+        {
+          "threshold": 0.9,
+          "label": "mejor que 2021 (catedral MALA)",
+          "category": "bad",
+          "fraction": "5/5",
+          "p": 1.0
+        },
+        {
+          "threshold": 1.61,
+          "label": "tan bueno como 2024 (catedral BUENA)",
+          "category": "good",
+          "fraction": "4/5",
+          "p": 0.8
+        },
+        {
+          "threshold": 1.94,
+          "label": "tan bueno como 2025 (vallenevado BUENA)",
+          "category": "good",
+          "fraction": "4/5",
+          "p": 0.8
+        }
+      ]
+    }
+  },
+  "n_historical_years": 25
+}

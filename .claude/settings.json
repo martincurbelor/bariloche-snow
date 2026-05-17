@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wait)",
+      "WebSearch",
+      "WebFetch(domain:www.smn.gob.ar)",
+      "WebFetch(domain:www.infobae.com)",
+      "WebFetch(domain:www.canal26.com)",
+      "WebFetch(domain:ruralnet.com.ar)",
+      "WebFetch(domain:www.lanacion.com.ar)",
+      "Bash(git commit -m ' *)",
+      "Bash(git config *)",
+      "Bash(git push *)",
+      "Bash(git pull *)",
+      "Bash(git commit *)",
+      "Bash(git rebase *)",
+      "Bash(GIT_EDITOR=true git rebase --continue)"
+    ],
+    "additionalDirectories": [
+      "/mnt/c/Users/marti/OneDrive/Documentos/Otros/Infocus/AI_Devs/aoe2-bot"
+    ]
+  }
+}

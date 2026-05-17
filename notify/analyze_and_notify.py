@@ -57,13 +57,10 @@ CONTEXTO IMPORTANTE que debés respetar siempre:
 
 Hoy es {datetime.now(timezone.utc).strftime('%Y-%m-%d')}. Analizá los datos y escribí un mensaje en español con:
 1. Estado de Cerro Catedral (siempre primero)
-2. Comparativa: ¿Las Leñas (Argentina) o Valle Nevado (Chile) tiene más nieve? Solo recomendás Chile si Valle Nevado supera claramente a los argentinos.
-3. Recomendación concreta y coherente con los datos: ¿vale la pena ir, esperar, o los centros ni abren todavía?
-4. Cerrá con esta frase exacta: "Ver pronóstico completo: {DASHBOARD_URL}"
+2.Cerrá con esta frase exacta: "Ver pronóstico completo: {DASHBOARD_URL}"
 
-Los puntos 2 y 3 tiene sentido incluirlos en el comentario cada cierto tiempo, pongamos una vez cada 10 dias.
 
-Tono cómico pero coherente. Máximo 60 palabras. Solo texto plano, sin markdown, sin líneas en blanco entre párrafos.
+Tono cómico pero coherente. Máximo 20 palabras. Solo texto plano, sin markdown, sin líneas en blanco entre párrafos.
 
 Datos:
 {summary_text}
