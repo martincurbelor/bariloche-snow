@@ -325,6 +325,13 @@
 
     /* ── HISTORICAL ── */
     .hist-chart-wrap { position: relative; height: 280px; }
+    .hist-link-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 12px; border-radius: 8px; font-size: 12px; font-weight: 500;
+      background: oklch(0.55 0.18 245 / 0.15); border: 1px solid oklch(0.55 0.18 245 / 0.40);
+      color: var(--ice); text-decoration: none; transition: background .15s, border-color .15s;
+    }
+    .hist-link-btn:hover { background: oklch(0.55 0.18 245 / 0.28); border-color: oklch(0.55 0.18 245 / 0.65); }
 
     /* ── FOOTER ── */
     .footer {
@@ -440,7 +447,7 @@
   <!-- HISTORICAL SEASONS -->
   <div class="section-h">
     <h2>Histórico de temporadas</h2>
-    <span class="meta">Cerro Catedral · nieve acumulada May–Sep</span>
+    <a href="historico.html" class="hist-link-btn">Ver histórico 25 años →</a>
   </div>
   <div class="chart-card">
     <div class="hist-chart-wrap"><canvas id="chartHistorical"></canvas></div>

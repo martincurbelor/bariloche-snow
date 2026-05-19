@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Histórico de Temporadas — Bariloche Snow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg:       oklch(0.16 0.025 240);
+      --bg-2:     oklch(0.20 0.028 240);
+      --surface:  oklch(0.23 0.030 240);
+      --surface-2:oklch(0.27 0.032 240);
+      --line:     oklch(0.34 0.030 240);
+      --line-soft:oklch(0.30 0.025 240 / 0.6);
+      --text:     oklch(0.97 0.015 240);
+      --text-2:   oklch(0.78 0.025 240);
+      --text-3:   oklch(0.60 0.020 240);
+      --ice:      oklch(0.82 0.12 230);
+      --ice-2:    oklch(0.70 0.15 235);
+      --ice-deep: oklch(0.55 0.18 245);
+      --warn:     oklch(0.78 0.16 65);
+      --good:     oklch(0.78 0.14 155);
+      --shadow:   0 1px 0 oklch(1 0 0 / 0.04) inset, 0 10px 30px oklch(0 0 0 / 0.35);
+      --radius:   14px;
+      --radius-sm:10px;
+    }
+    .theme-light {
+      --bg:       oklch(0.985 0.005 240);
+      --bg-2:     oklch(0.96  0.008 240);
+      --surface:  oklch(1 0 0);
+      --surface-2:oklch(0.97  0.008 240);
+      --line:     oklch(0.88  0.012 240);
+      --line-soft:oklch(0.92  0.010 240 / 0.8);
+      --text:     oklch(0.20  0.025 240);
+      --text-2:   oklch(0.42  0.020 240);
+      --text-3:   oklch(0.58  0.018 240);
+      --ice:      oklch(0.55  0.16  235);
+      --ice-2:    oklch(0.62  0.16  235);
+      --ice-deep: oklch(0.48  0.18  245);
+      --shadow:   0 1px 0 oklch(1 0 0 / 1) inset, 0 8px 24px oklch(0 0 0 / 0.06);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); }
+    body {
+      font-family: "Inter Tight", "Inter", system-ui, sans-serif;
+      font-feature-settings: "ss01","cv11";
+      font-size: 15px; line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      transition: background .2s, color .2s;
+    }
+    .num  { font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
+    .mono { font-family: "JetBrains Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+    .app { max-width: 1320px; margin: 0 auto; padding: 28px 28px 80px; }
+    @media(max-width:640px){ .app{ padding:16px 14px 60px; } }
+
+    /* TOPBAR */
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 6px 0 22px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 12px; border-radius: 8px;
+      background: oklch(1 0 0 / 0.07); border: 1px solid var(--line);
+      color: var(--text-2); font-size: 13px; text-decoration: none;
+      transition: background .15s, color .15s;
+    }
+    .back-btn:hover { background: oklch(1 0 0 / 0.13); color: var(--text); }
+    .brand-mark {
+      width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
+      background: radial-gradient(circle at 30% 30%, oklch(0.92 0.05 230), oklch(0.55 0.18 245) 70%);
+      position: relative; overflow: hidden;
+    }
+    .brand-mark::after {
+      content: ""; position: absolute; inset: 0;
+      background: repeating-linear-gradient(45deg, oklch(1 0 0 / 0.10) 0 2px, transparent 2px 6px);
+    }
+    .brand-name { font-weight: 600; letter-spacing: -0.01em; }
+    .brand-sub  { color: var(--text-3); font-size: 12px; margin-top: 1px; }
+    .topbar-right { display: flex; align-items: center; gap: 10px; }
+    .theme-btn {
+      background: oklch(1 0 0 / 0.07); border: 1px solid var(--line);
+      color: var(--text-2); border-radius: 8px; padding: 5px 11px;
+      cursor: pointer; font-size: 12px; font-family: inherit; transition: background .15s;
+    }
+    .theme-btn:hover { background: oklch(1 0 0 / 0.12); }
+
+    /* SECTION HEADER */
+    .section-h {
+      display: flex; align-items: center; justify-content: space-between;
+      margin: 28px 2px 12px;
+    }
+    .section-h h2 {
+      margin: 0; font-size: 13px; font-weight: 500;
+      color: var(--text-3); text-transform: uppercase; letter-spacing: 0.08em;
+    }
+    .section-h .meta { color: var(--text-3); font-size: 12px; }
+
+    /* FILTER CARD */
+    .filter-card {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 16px 18px; margin-bottom: 10px;
+    }
+    .filter-row {
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 12px;
+    }
+    .filter-row:last-child { margin-bottom: 0; }
+    .filter-label {
+      font-size: 11px; font-weight: 500; text-transform: uppercase;
+      letter-spacing: 0.07em; color: var(--text-3); min-width: 80px;
+    }
+    .quick-btn {
+      padding: 4px 10px; border-radius: 6px; font-size: 12px;
+      background: oklch(1 0 0 / 0.06); border: 1px solid var(--line);
+      color: var(--text-2); cursor: pointer; font-family: inherit; transition: background .12s;
+    }
+    .quick-btn:hover { background: oklch(1 0 0 / 0.12); color: var(--text); }
+    .range-select {
+      padding: 4px 8px; border-radius: 6px; font-size: 12px;
+      background-color: var(--surface-2); border: 1px solid var(--line);
+      color: var(--text); font-family: inherit; cursor: pointer;
+      color-scheme: dark;
+    }
+    .theme-light .range-select { color-scheme: light; }
+
+    /* YEAR PILLS */
+    .year-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .year-pill {
+      padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 500;
+      border: 1px solid transparent; cursor: pointer; font-family: inherit;
+      transition: opacity .15s, border-color .15s, background .15s;
+      color: #fff;
+    }
+    .year-pill.off { opacity: 0.28; filter: grayscale(0.6); }
+    .year-pill:hover { opacity: 1 !important; filter: none !important; }
+
+    /* METRIC TABS */
+    .metric-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+    .metric-tab {
+      padding: 6px 14px; border-radius: 8px; font-size: 13px; font-weight: 500;
+      background: oklch(1 0 0 / 0.05); border: 1px solid var(--line);
+      color: var(--text-2); cursor: pointer; font-family: inherit; transition: background .12s, border-color .12s, color .12s;
+    }
+    .metric-tab:hover { background: oklch(1 0 0 / 0.10); color: var(--text); }
+    .metric-tab.active {
+      background: oklch(0.55 0.18 245 / 0.25);
+      border-color: oklch(0.55 0.18 245 / 0.55);
+      color: var(--ice);
+    }
+
+    /* CHART CARDS */
+    .chart-card {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 18px 18px 12px; margin-bottom: 12px;
+    }
+    .chart-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 14px; }
+    .chart-head h3 { margin: 0; font-size: 14px; font-weight: 500; color: var(--text-2); }
+    .chart-wrap { position: relative; }
+    .chart-tall { height: 360px; }
+    .chart-mid  { height: 260px; }
+
+    /* STATS TABLE */
+    .table-wrap {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--radius); overflow: hidden; margin-bottom: 12px;
+    }
+    table.stats-tbl { width: 100%; border-collapse: collapse; }
+    .stats-tbl thead th {
+      text-align: left; font-size: 11px; font-weight: 500;
+      color: var(--text-3); text-transform: uppercase; letter-spacing: 0.06em;
+      padding: 12px 14px; background: var(--surface-2);
+      border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 1;
+    }
+    .stats-tbl tbody td { padding: 11px 14px; border-bottom: 1px solid var(--line-soft); font-size: 13px; vertical-align: middle; }
+    .stats-tbl tbody tr:last-child td { border-bottom: none; }
+    .stats-tbl tbody tr.is-current { background: oklch(0.55 0.18 245 / 0.08); }
+    .stats-tbl tbody tr:hover { background: oklch(1 0 0 / 0.025); }
+    .stats-tbl tbody tr.row-off { opacity: 0.35; }
+    .year-dot { display: inline-block; width: 10px; height: 10px; border-radius: 999px; margin-right: 7px; vertical-align: -1px; }
+    .current-badge {
+      margin-left: 6px; font-size: 10px; padding: 2px 6px;
+      background: oklch(0.78 0.14 155 / 0.18); color: oklch(0.85 0.14 155);
+      border: 1px solid oklch(0.78 0.14 155 / 0.4); border-radius: 999px;
+      text-transform: uppercase; letter-spacing: 0.06em; display: inline-block;
+    }
+    .bar-cell { display: flex; align-items: center; gap: 8px; }
+    .mini-bar { flex: 1; max-width: 100px; height: 6px; background: oklch(1 0 0 / 0.06); border-radius: 999px; overflow: hidden; border: 1px solid var(--line-soft); }
+    .mini-bar > i { display: block; height: 100%; border-radius: 999px; }
+    @media(max-width:640px){
+      .col-hide { display: none; }
+      .stats-tbl thead th, .stats-tbl tbody td { padding: 9px 8px; font-size: 12px; }
+    }
+
+    /* EMPTY STATE */
+    .empty-state {
+      display: flex; align-items: center; justify-content: center;
+      height: 100%; color: var(--text-3); font-size: 14px;
+    }
+
+    /* FOOTER */
+    .footer {
+      margin-top: 36px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
+      color: var(--text-3); font-size: 12px; padding-top: 18px; border-top: 1px solid var(--line-soft);
+    }
+    .footer a { color: var(--ice); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+
+    #loading { display: flex; align-items: center; justify-content: center; height: 60vh; font-size: 1.1rem; color: var(--text-3); }
+    #app { display: none; }
+  </style>
+</head>
+<body>
+
+<div id="loading">Cargando datos históricos…</div>
+
+<div class="app" id="app">
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="brand">
+      <a href="index.html" class="back-btn">← Volver</a>
+      <div class="brand-mark"></div>
+      <div>
+        <div class="brand-name">Bariloche Snow</div>
+        <div class="brand-sub">Histórico · Cerro Catedral · 2001–2026</div>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <button class="theme-btn" id="theme-btn" onclick="toggleTheme()">☀ Claro</button>
+    </div>
+  </div>
+
+  <!-- FILTERS -->
+  <div class="section-h" style="margin-top:4px">
+    <h2>Filtros</h2>
+    <span class="meta" id="filter-summary">—</span>
+  </div>
+
+  <div class="filter-card">
+    <!-- Year quick actions -->
+    <div class="filter-row">
+      <span class="filter-label">Temporadas</span>
+      <button class="quick-btn" onclick="selectAll()">Todas</button>
+      <button class="quick-btn" onclick="selectNone()">Ninguna</button>
+      <button class="quick-btn" onclick="selectDecade(2001,2010)">2001–10</button>
+      <button class="quick-btn" onclick="selectDecade(2011,2020)">2011–20</button>
+      <button class="quick-btn" onclick="selectDecade(2021,2099)">2021+</button>
+    </div>
+    <!-- Year range selector -->
+    <div class="filter-row" style="margin-top:4px">
+      <span class="filter-label">Rango</span>
+      <select class="range-select" id="range-from"></select>
+      <span style="color:var(--text-3);font-size:13px">a</span>
+      <select class="range-select" id="range-to"></select>
+      <button class="quick-btn" onclick="applyRange()" style="background:oklch(0.55 0.18 245 / 0.18);border-color:oklch(0.55 0.18 245 / 0.45);color:var(--ice)">Aplicar</button>
+      <button class="quick-btn" onclick="resetRange()" title="Seleccionar todas">↺ Reset</button>
+    </div>
+    <!-- Year pills -->
+    <div class="year-pills" id="year-pills"></div>
+
+    <!-- Metric selector -->
+    <div class="filter-row" style="margin-top:18px; border-top:1px solid var(--line-soft); padding-top:14px; margin-bottom:0">
+      <span class="filter-label">Métrica</span>
+      <div class="metric-tabs" style="margin-top:0; flex:1">
+        <button class="metric-tab active" data-metric="snow_total"   onclick="setMetric(this)">Nieve total</button>
+        <button class="metric-tab"        data-metric="snow_days"    onclick="setMetric(this)">Días de nevada</button>
+        <button class="metric-tab"        data-metric="peak_depth"   onclick="setMetric(this)">Base máxima</button>
+        <button class="metric-tab"        data-metric="precip_total" onclick="setMetric(this)">Precipitación</button>
+        <button class="metric-tab"        data-metric="rain_total"   onclick="setMetric(this)">Lluvia</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CUMULATIVE CHART -->
+  <div class="section-h">
+    <h2>Nieve acumulada · May – Sep</h2>
+    <span class="meta" id="cumul-meta">—</span>
+  </div>
+  <div class="chart-card">
+    <div class="chart-wrap chart-tall"><canvas id="chartCumulative"></canvas></div>
+  </div>
+
+  <!-- COMPARISON BAR CHART -->
+  <div class="section-h">
+    <h2 id="bar-title">Comparación por temporada</h2>
+    <span class="meta" id="bar-meta">temporadas seleccionadas</span>
+  </div>
+  <div class="chart-card">
+    <div class="chart-wrap chart-mid"><canvas id="chartComparison"></canvas></div>
+  </div>
+
+  <!-- PERIOD CHART -->
+  <div class="section-h">
+    <h2>Nieve nueva por período de 15 días</h2>
+    <span class="meta" id="period-meta">—</span>
+  </div>
+  <div class="chart-card">
+    <div class="chart-wrap chart-tall"><canvas id="chartPeriod"></canvas></div>
+  </div>
+
+  <!-- STATS TABLE -->
+  <div class="section-h">
+    <h2>Resumen por temporada</h2>
+    <span class="meta">ERA5 · ~1.187 m · May–Sep</span>
+  </div>
+  <div class="table-wrap">
+    <table class="stats-tbl">
+      <thead>
+        <tr>
+          <th>Temporada</th>
+          <th>Nieve total</th>
+          <th>Días nevada</th>
+          <th class="col-hide">Base máx.</th>
+          <th class="col-hide">Precipitación</th>
+          <th class="col-hide">Lluvia</th>
+        </tr>
+      </thead>
+      <tbody id="stats-tbody"></tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    <div>Datos: <a href="https://open-meteo.com" target="_blank">ERA5 via Open-Meteo</a> · ENSO: <a href="https://cpc.ncep.noaa.gov" target="_blank">NOAA CPC</a></div>
+    <div>Bariloche Snow · actualizado automáticamente</div>
+  </div>
+
+</div>
+
+<script>
+/* ── THEME ── */
+function toggleTheme() {
+  const isLight = document.body.classList.toggle("theme-light");
+  document.getElementById("theme-btn").textContent = isLight ? "☾ Oscuro" : "☀ Claro";
+  localStorage.setItem("theme", isLight ? "light" : "dark");
+}
+if (localStorage.getItem("theme") === "light") {
+  document.body.classList.add("theme-light");
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("theme-btn");
+    if (btn) btn.textContent = "☾ Oscuro";
+  });
+}
+
+/* ── STATE ── */
+let allSeasons    = {};   // { "2001": { year, is_current, daily, summary }, ... }
+let selectedYears = new Set();
+let currentMetric = "snow_total";
+let cumulChart    = null;
+let barChart      = null;
+let periodChart   = null;
+
+const METRIC_CONFIG = {
+  snow_total:   { label: "Nieve total (cm)",          unit: "cm",  key: s => s.summary.season_total_snow_cm },
+  snow_days:    { label: "Días con nevada ≥1 cm",     unit: "días",key: s => s.summary["days_with_snowfall_>=1cm"] },
+  peak_depth:   { label: "Profundidad de base máx. (cm)", unit: "cm", key: s => Math.round((s.summary.peak_snow_depth_m || 0) * 100) },
+  precip_total: { label: "Precipitación total (mm)",  unit: "mm",  key: s => s.summary.season_total_precip_mm },
+  rain_total:   { label: "Lluvia total (mm)",         unit: "mm",  key: s => s.summary.season_total_rain_mm },
+};
+
+/* ── COLORS ── */
+// 26 years, gradient dark-gray → mid-blue → bright-blue, current year = white
+function lerp(a, b, t) { return a + (b - a) * t; }
+
+function getYearColor(year) {
+  const s = allSeasons[year];
+  if (s && s.is_current) return "#e2f0ff";
+  const allYrs = Object.keys(allSeasons).map(Number).filter(y => !allSeasons[y].is_current);
+  if (!allYrs.length) return "#4b7ab8";
+  const min = Math.min(...allYrs);
+  const max = Math.max(...allYrs);
+  const t   = max === min ? 0.5 : (year - min) / (max - min);
+  // 0→gray(75,85,99), 0.5→dark-blue(55,100,160), 1→bright-blue(96,180,255)
+  let r, g, b;
+  if (t < 0.5) {
+    const u = t * 2;
+    r = lerp(75, 55, u); g = lerp(85, 100, u); b = lerp(99, 160, u);
+  } else {
+    const u = (t - 0.5) * 2;
+    r = lerp(55, 96, u); g = lerp(100, 180, u); b = lerp(160, 255, u);
+  }
+  return `rgb(${Math.round(r)},${Math.round(g)},${Math.round(b)})`;
+}
+
+/* ── 15-DAY PERIODS ── */
+// May1-15, May16-31, Jun1-15, Jun16-30, Jul1-15, Jul16-31, Aug1-15, Aug16-31, Sep1-15, Sep16-30
+const PERIOD_LABELS = [
+  "1–15 May","16–31 May",
+  "1–15 Jun","16–30 Jun",
+  "1–15 Jul","16–31 Jul",
+  "1–15 Ago","16–31 Ago",
+  "1–15 Sep","16–30 Sep",
+];
+// [start, end) day indices within the 153-day season array
+const PERIOD_RANGES = [
+  [0,15],[15,31],
+  [31,46],[46,61],
+  [61,76],[76,92],
+  [92,107],[107,123],
+  [123,138],[138,153],
+];
+
+function buildPeriodData(season) {
+  const daily = season.daily || [];
+  return PERIOD_RANGES.map(([s, e]) =>
+    Math.round(daily.slice(s, e).reduce((acc, d) => acc + (d.snow_cm || 0), 0) * 10) / 10
+  );
+}
+
+/* ── SEASON DAY LABELS (May 1 – Sep 30 = 153 days) ── */
+const SEASON_MONTHS  = ["May","Jun","Jul","Ago","Sep"];
+const SEASON_M_DAYS  = [31, 30, 31, 31, 30];
+const SEASON_LABELS  = (() => {
+  const lbs = [];
+  SEASON_MONTHS.forEach((m, mi) => {
+    for (let d = 1; d <= SEASON_M_DAYS[mi]; d++) {
+      lbs.push(d === 1 || d === 15 ? `${d} ${m}` : "");
+    }
+  });
+  return lbs;
+})();
+// Full date per day for tooltip (same length as SEASON_LABELS)
+const SEASON_FULL_LABELS = (() => {
+  const lbs = [];
+  SEASON_MONTHS.forEach((m, mi) => {
+    for (let d = 1; d <= SEASON_M_DAYS[mi]; d++) lbs.push(`${d} ${m}`);
+  });
+  return lbs;
+})();
+
+/* ── BUILD CUMULATIVE ARRAY FROM DAILY DATA ── */
+function buildCumulative(season) {
+  const daily = season.daily || [];
+  const cum = [];
+  let acc = 0;
+  daily.forEach(d => { acc += (d.snow_cm || 0); cum.push(Math.round(acc * 10) / 10); });
+  // pad/trim to 153
+  while (cum.length < 153) cum.push(null);
+  return cum.slice(0, 153);
+}
+
+/* ── RENDER YEAR PILLS ── */
+function renderPills() {
+  const container = document.getElementById("year-pills");
+  container.innerHTML = "";
+  Object.keys(allSeasons).sort().forEach(yr => {
+    const color = getYearColor(Number(yr));
+    const btn = document.createElement("button");
+    btn.className = "year-pill" + (selectedYears.has(yr) ? "" : " off");
+    btn.textContent = yr;
+    btn.style.background = color;
+    btn.style.borderColor = color;
+    btn.dataset.year = yr;
+    btn.addEventListener("click", () => toggleYear(yr));
+    container.appendChild(btn);
+  });
+}
+
+function toggleYear(yr) {
+  if (selectedYears.has(yr)) {
+    selectedYears.delete(yr);
+  } else {
+    selectedYears.add(yr);
+  }
+  document.querySelectorAll(".year-pill").forEach(btn => {
+    btn.classList.toggle("off", !selectedYears.has(btn.dataset.year));
+  });
+  updateCharts();
+}
+
+function selectAll()  { Object.keys(allSeasons).forEach(y => selectedYears.add(y));    syncPills(); updateCharts(); }
+function selectNone() { selectedYears.clear();                                           syncPills(); updateCharts(); }
+function selectDecade(from, to) {
+  Object.keys(allSeasons).forEach(y => {
+    const n = Number(y);
+    if (n >= from && n <= to) selectedYears.add(y); else selectedYears.delete(y);
+  });
+  syncPills(); updateCharts();
+}
+function applyRange() {
+  const from = Number(document.getElementById("range-from").value);
+  const to   = Number(document.getElementById("range-to").value);
+  if (from > to) return;
+  Object.keys(allSeasons).forEach(y => {
+    const n = Number(y);
+    if (n >= from && n <= to) selectedYears.add(y); else selectedYears.delete(y);
+  });
+  syncPills(); updateCharts();
+}
+function buildRangeSelects() {
+  const years = Object.keys(allSeasons).sort();
+  ["range-from","range-to"].forEach((id, i) => {
+    const sel = document.getElementById(id);
+    years.forEach(y => {
+      const opt = document.createElement("option");
+      opt.value = opt.textContent = y;
+      sel.appendChild(opt);
+    });
+    sel.value = i === 0 ? years[0] : years[years.length - 1];
+  });
+}
+function resetRange() {
+  const years = Object.keys(allSeasons).sort();
+  document.getElementById("range-from").value = years[0];
+  document.getElementById("range-to").value   = years[years.length - 1];
+  selectAll();
+}
+function syncPills() {
+  document.querySelectorAll(".year-pill").forEach(btn => {
+    btn.classList.toggle("off", !selectedYears.has(btn.dataset.year));
+  });
+}
+
+/* ── METRIC SWITCH ── */
+function setMetric(btn) {
+  document.querySelectorAll(".metric-tab").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  currentMetric = btn.dataset.metric;
+  updateCharts();
+}
+
+/* ── UPDATE FILTER SUMMARY ── */
+function updateFilterSummary() {
+  const n = selectedYears.size;
+  const total = Object.keys(allSeasons).length;
+  document.getElementById("filter-summary").textContent =
+    n === total ? `Todas (${total} temporadas)` :
+    n === 0     ? "Ninguna seleccionada" :
+                  `${n} de ${total} temporadas`;
+}
+
+/* ── CHART GRID / TICK COLORS ── */
+function cssVar(name) {
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+}
+
+/* ── CUMULATIVE CHART ── */
+function renderCumulChart() {
+  if (cumulChart) { cumulChart.destroy(); cumulChart = null; }
+
+  const years = Object.keys(allSeasons).sort().filter(y => selectedYears.has(y));
+
+  if (years.length === 0) {
+    document.getElementById("cumul-meta").textContent = "Sin temporadas seleccionadas";
+    return;
+  }
+
+  const datasets = years.map(yr => {
+    const s = allSeasons[yr];
+    const isCurrent = !!s.is_current;
+    const color = getYearColor(Number(yr));
+    return {
+      label:          yr,
+      data:           buildCumulative(s),
+      borderColor:    color,
+      backgroundColor:"transparent",
+      borderWidth:    isCurrent ? 3 : 1.5,
+      borderDash:     isCurrent ? [] : [4, 3],
+      pointRadius:    0,
+      tension:        0.3,
+      spanGaps:       false,
+      order:          isCurrent ? 0 : 1,
+    };
+  });
+
+  // Compute final totals for meta
+  const totals = years.map(yr => {
+    const cum = buildCumulative(allSeasons[yr]);
+    return cum.filter(v => v != null).pop() || 0;
+  });
+  const maxTotal = Math.max(...totals);
+  const maxYear  = years[totals.indexOf(maxTotal)];
+  document.getElementById("cumul-meta").textContent =
+    `${years.length} temporadas · máximo ${maxTotal} cm (${maxYear})`;
+
+  const gridColor = "oklch(1 0 0 / 0.05)";
+  const tickColor = cssVar("--text-3");
+
+  cumulChart = new Chart(document.getElementById("chartCumulative"), {
+    type: "line",
+    data: { labels: SEASON_LABELS, datasets },
+    options: {
+      animation:      false,
+      responsive:     true,
+      maintainAspectRatio: false,
+      interaction:    { mode: "index", intersect: false },
+      plugins: {
+        legend: {
+          display: true, position: "top",
+          labels: { color: tickColor, boxWidth: 22, boxHeight: 2, padding: 12, font: { size: 11 } },
+        },
+        tooltip: {
+          itemSort: (a, b) => (b.parsed.y ?? -1) - (a.parsed.y ?? -1),
+          callbacks: {
+            title: items => SEASON_FULL_LABELS[items[0]?.dataIndex ?? 0],
+            label: ctx => {
+              const val = ctx.parsed.y;
+              const maxVal = Math.max(...ctx.chart.data.datasets.map(ds => ds.data[ctx.dataIndex] ?? -1));
+              const isTop = val != null && val === maxVal;
+              return `${isTop ? "▲ " : "   "}${ctx.dataset.label}: ${val != null ? val + " cm" : "—"}`;
+            },
+            labelColor: ctx => ({
+              borderColor:     ctx.dataset.borderColor,
+              backgroundColor: ctx.dataset.borderColor,
+              borderWidth: 2, borderRadius: 3,
+            }),
+          },
+        },
+      },
+      scales: {
+        x: {
+          ticks: { color: tickColor, font: { size: 10 }, maxRotation: 0, autoSkip: false },
+          grid:  { color: gridColor },
+        },
+        y: {
+          min: 0,
+          ticks: { color: tickColor, font: { size: 11 }, callback: v => v + " cm" },
+          grid:  { color: gridColor },
+        },
+      },
+    },
+  });
+}
+
+/* ── COMPARISON BAR CHART ── */
+function renderBarChart() {
+  if (barChart) { barChart.destroy(); barChart = null; }
+
+  const years  = Object.keys(allSeasons).sort().filter(y => selectedYears.has(y));
+  const cfg    = METRIC_CONFIG[currentMetric];
+
+  document.getElementById("bar-title").textContent = cfg.label;
+  document.getElementById("bar-meta").textContent  =
+    years.length === 0 ? "Sin temporadas seleccionadas" : `${years.length} temporadas`;
+
+  if (years.length === 0) return;
+
+  const values = years.map(yr => cfg.key(allSeasons[yr]));
+  const colors = years.map(yr => {
+    const color = getYearColor(Number(yr));
+    return color;
+  });
+  const bgColors = years.map(yr => {
+    const s = allSeasons[yr];
+    return s.is_current ? getYearColor(Number(yr)) : getYearColor(Number(yr)) + "bb";
+  });
+
+  const gridColor = "oklch(1 0 0 / 0.05)";
+  const tickColor = cssVar("--text-3");
+
+  barChart = new Chart(document.getElementById("chartComparison"), {
+    type: "bar",
+    data: {
+      labels:   years,
+      datasets: [{
+        label:           cfg.label,
+        data:            values,
+        backgroundColor: bgColors,
+        borderColor:     colors,
+        borderWidth:     1.5,
+        borderRadius:    4,
+      }],
+    },
+    options: {
+      animation:      false,
+      responsive:     true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: { label: ctx => `${ctx.parsed.y} ${cfg.unit}` },
+        },
+      },
+      scales: {
+        x: {
+          ticks: { color: tickColor, font: { size: 11 } },
+          grid:  { display: false },
+        },
+        y: {
+          min: 0,
+          ticks: { color: tickColor, font: { size: 11 }, callback: v => v + " " + cfg.unit },
+          grid:  { color: gridColor },
+        },
+      },
+    },
+  });
+}
+
+/* ── STATS TABLE ── */
+function renderTable() {
+  const tbody = document.getElementById("stats-tbody");
+  tbody.innerHTML = "";
+
+  const years = Object.keys(allSeasons).sort((a, b) => b - a);
+  const allVals = Object.values(allSeasons).map(s => s.summary.season_total_snow_cm);
+  const maxSnow = Math.max(...allVals);
+
+  years.forEach(yr => {
+    const s   = allSeasons[yr];
+    const sum = s.summary;
+    const selected = selectedYears.has(yr);
+    const color = getYearColor(Number(yr));
+    const barPct = maxSnow ? Math.round((sum.season_total_snow_cm / maxSnow) * 100) : 0;
+
+    const tr = document.createElement("tr");
+    if (s.is_current) tr.classList.add("is-current");
+    if (!selected)    tr.classList.add("row-off");
+
+    tr.innerHTML = `
+      <td>
+        <span class="year-dot" style="background:${color}"></span>
+        <strong>${yr}</strong>${s.is_current ? '<span class="current-badge">actual</span>' : ''}
+      </td>
+      <td>
+        <div class="bar-cell">
+          <div class="mini-bar"><i style="width:${barPct}%;background:${color}"></i></div>
+          <span class="num">${sum.season_total_snow_cm} cm</span>
+        </div>
+      </td>
+      <td class="num">${sum["days_with_snowfall_>=1cm"]} días</td>
+      <td class="num col-hide">${Math.round((sum.peak_snow_depth_m || 0) * 100)} cm</td>
+      <td class="num col-hide">${sum.season_total_precip_mm} mm</td>
+      <td class="num col-hide">${sum.season_total_rain_mm} mm</td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+/* ── PERIOD CHART ── */
+function renderPeriodChart() {
+  if (periodChart) { periodChart.destroy(); periodChart = null; }
+
+  const years = Object.keys(allSeasons).sort().filter(y => selectedYears.has(y));
+
+  if (years.length === 0) {
+    document.getElementById("period-meta").textContent = "Sin temporadas seleccionadas";
+    return;
+  }
+
+  const datasets = years.map(yr => {
+    const s = allSeasons[yr];
+    const isCurrent = !!s.is_current;
+    const color = getYearColor(Number(yr));
+    return {
+      label:          yr,
+      data:           buildPeriodData(s),
+      borderColor:    color,
+      backgroundColor:"transparent",
+      borderWidth:    isCurrent ? 3 : 1.5,
+      borderDash:     isCurrent ? [] : [4, 3],
+      pointRadius:    isCurrent ? 4 : 3,
+      pointHoverRadius: 5,
+      tension:        0.25,
+      order:          isCurrent ? 0 : 1,
+    };
+  });
+
+  document.getElementById("period-meta").textContent =
+    `${years.length} temporadas · nieve nueva acumulada por bloque de 15 días`;
+
+  const gridColor = "oklch(1 0 0 / 0.05)";
+  const tickColor = cssVar("--text-3");
+
+  periodChart = new Chart(document.getElementById("chartPeriod"), {
+    type: "line",
+    data: { labels: PERIOD_LABELS, datasets },
+    options: {
+      animation:      false,
+      responsive:     true,
+      maintainAspectRatio: false,
+      interaction:    { mode: "index", intersect: false },
+      plugins: {
+        legend: {
+          display: true, position: "top",
+          labels: { color: tickColor, boxWidth: 22, boxHeight: 2, padding: 12, font: { size: 11 } },
+        },
+        tooltip: {
+          itemSort: (a, b) => (b.parsed.y ?? -1) - (a.parsed.y ?? -1),
+          callbacks: {
+            title: items => PERIOD_LABELS[items[0]?.dataIndex ?? 0],
+            label: ctx => {
+              const val = ctx.parsed.y;
+              const maxVal = Math.max(...ctx.chart.data.datasets.map(ds => ds.data[ctx.dataIndex] ?? -1));
+              const isTop = val != null && val === maxVal;
+              return `${isTop ? "▲ " : "   "}${ctx.dataset.label}: ${val} cm`;
+            },
+            labelColor: ctx => ({
+              borderColor:     ctx.dataset.borderColor,
+              backgroundColor: ctx.dataset.borderColor,
+              borderWidth: 2, borderRadius: 3,
+            }),
+          },
+        },
+      },
+      scales: {
+        x: {
+          ticks: { color: tickColor, font: { size: 11 }, maxRotation: 25 },
+          grid:  { color: gridColor },
+        },
+        y: {
+          min: 0,
+          ticks: { color: tickColor, font: { size: 11 }, callback: v => v + " cm" },
+          grid:  { color: gridColor },
+        },
+      },
+    },
+  });
+}
+
+/* ── UPDATE ALL ── */
+function updateCharts() {
+  updateFilterSummary();
+  renderCumulChart();
+  renderBarChart();
+  renderPeriodChart();
+  renderTable();
+}
+
+/* ── INIT ── */
+async function init() {
+  try {
+    const r    = await fetch("historical.json?t=" + Date.now());
+    const data = await r.json();
+
+    allSeasons = data.seasons || {};
+
+    // Default: all years selected
+    Object.keys(allSeasons).forEach(y => selectedYears.add(y));
+
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("app").style.display     = "block";
+
+    renderPills();
+    buildRangeSelects();
+    updateCharts();
+
+  } catch (e) {
+    document.getElementById("loading").textContent = "Error al cargar historical.json.";
+    console.error(e);
+  }
+}
+
+init();
+</script>
+</body>
+</html>
