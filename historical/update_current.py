@@ -17,9 +17,10 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 OUT_FILE = os.path.join(BASE_DIR, "..", "docs", "historical.json")
 
 RESORT = {
-    "lat": -41.17,
-    "lon": -71.45,
+    "lat": -41.22,
+    "lon": -71.48,
     "timezone": "America/Argentina/Buenos_Aires",
+    # ERA5 punto efectivo ~2270m (cumbre 2405m). Original -41.17,-71.45 caía a ~1187m.
 }
 
 DAILY_VARS = [

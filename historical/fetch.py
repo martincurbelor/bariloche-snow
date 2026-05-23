@@ -24,10 +24,12 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 RESORTS = {
     "catedral": {
         "name": "Cerro Catedral",
-        "lat": -41.17,
-        "lon": -71.45,
+        "lat": -41.22,
+        "lon": -71.48,
         "elevation_m": 2405,
         "timezone": "America/Argentina/Buenos_Aires",
+        # Coords ajustadas para ERA5: punto efectivo a ~2270m (cumbre 2405m).
+        # Original (-41.17, -71.45) caía a ~1187m, fuera del ski area principal.
     },
     "vallenevado": {
         "name": "Valle Nevado",
