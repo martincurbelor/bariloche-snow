@@ -4,7 +4,7 @@ import re
 import subprocess
 import os
 import time
-from datetime import datetime, timezone
+from datetime import datetime, date, timedelta, timezone
 from bs4 import BeautifulSoup
 
 
@@ -154,6 +154,163 @@ def fetch_open_meteo(resort):
             "periods":          periods,
         })
 
+    return days
+
+
+_SF_CONDITION_TO_CODE = {
+    "clear": 0, "sunny": 0,
+    "mostly clear": 1, "mostly sunny": 1,
+    "some clouds": 2, "partly cloudy": 2,
+    "cloudy": 3, "overcast": 3, "dull": 3,
+    "fog": 45, "mist": 45,
+    "drizzle": 51, "light drizzle": 51,
+    "light rain": 61, "rain showers": 61,
+    "rain": 63, "heavy rain": 65,
+    "light snow": 71, "snow showers": 85,
+    "snow": 73, "heavy snow": 75,
+    "blizzard": 75, "thunderstorm": 95,
+}
+
+
+def _sf_condition_code(text):
+    t = text.lower().strip()
+    return _SF_CONDITION_TO_CODE.get(t, 3)
+
+
+def _sf_parse_wind(cell):
+    m = re.match(r"(\d+)([A-Z]+)", cell.strip())
+    if m:
+        return int(m.group(1)), m.group(2)
+    return None, "-"
+
+
+def _sf_num(v):
+    v = v.strip()
+    if v in ("—", "", "-"): return 0.0
+    try: return float(v)
+    except: return 0.0
+
+
+def fetch_sf_forecast(resort):
+    """Scrape 16-day forecast from snow-forecast.com (requires member cookie)."""
+    cookie = os.environ.get("SF_SESSION_COOKIE", "").strip()
+    if not cookie:
+        return None
+
+    slug = resort.get("snowforecast_slug")
+    if not slug:
+        return None
+
+    url = f"https://www.snow-forecast.com/resorts/{slug}/16-day/top"
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+    try:
+        r = requests.get(url, headers=headers,
+                         cookies={"_current_session": cookie}, timeout=20)
+        r.raise_for_status()
+    except Exception as e:
+        print(f"  [SF forecast] request error: {e}")
+        return None
+
+    soup = BeautifulSoup(r.text, "html.parser")
+    table = soup.select_one("table.forecast-table__table--content")
+    if not table:
+        print("  [SF forecast] table not found (cookie expired?)")
+        return None
+
+    rows = table.find_all("tr")
+
+    # --- Date cells (colspan=3 per day) ---
+    today = date.today()
+    date_cells = rows[1].find_all("td")
+    dates = []
+    prev_day = 0
+    mo, yr = today.month, today.year
+    for cell in date_cells:
+        m = re.search(r"(\d+)$", cell.get_text(strip=True))
+        if not m:
+            continue
+        day_num = int(m.group(1))
+        if day_num < prev_day:          # month rolled over
+            mo = mo + 1 if mo < 12 else 1
+            if mo == 1:
+                yr += 1
+        prev_day = day_num
+        dates.append(date(yr, mo, day_num).isoformat())
+
+    # --- Period labels (AM/PM/night per day) ---
+    periods_row = [c.get_text(strip=True).lower() for c in rows[2].find_all("td")]
+
+    def get_row_vals(label):
+        for row in rows:
+            hdr = row.find("th")
+            if hdr and label in hdr.get_text(strip=True).lower():
+                return [c.get_text(strip=True) for c in row.find_all("td")]
+        return []
+
+    snow_vals   = get_row_vals("cm")
+    rain_vals   = get_row_vals("mm")
+    tmax_vals   = get_row_vals("max")
+    tmin_vals   = get_row_vals("min")
+    freeze_vals = get_row_vals("freeze")
+    wind_vals   = get_row_vals("km/h")
+    cond_vals   = rows[4].find_all("td") if len(rows) > 4 else []
+    cond_vals   = [c.get_text(strip=True) for c in cond_vals]
+
+    # Build per-period index aligned to dates
+    n_periods = len(periods_row)
+    period_dates = []
+    for i, d_str in enumerate(dates):
+        period_dates += [d_str] * 3      # 3 periods per day
+    period_dates = period_dates[:n_periods]
+
+    # Group into days
+    day_map = {}
+    for idx, (d_str, period) in enumerate(zip(period_dates, periods_row)):
+        if d_str not in day_map:
+            day_map[d_str] = {"am": {}, "pm": {}, "night": {}}
+        p = period if period in ("am", "pm", "night") else "am"
+        day_map[d_str][p] = {
+            "snow_cm":  _sf_num(snow_vals[idx]) if idx < len(snow_vals) else 0.0,
+            "rain_mm":  _sf_num(rain_vals[idx]) if idx < len(rain_vals) else 0.0,
+            "temp_c":   None,
+            "wind_kmh": _sf_parse_wind(wind_vals[idx])[0] if idx < len(wind_vals) else None,
+            "wind_dir": _sf_parse_wind(wind_vals[idx])[1] if idx < len(wind_vals) else "-",
+            "freeze_m": _sf_num(freeze_vals[idx]) or None if idx < len(freeze_vals) else None,
+            "visibility_m": None,
+        }
+
+    # Build daily forecast list
+    days = []
+    cumulative = 0.0
+    for i, d_str in enumerate(dates):
+        ps = day_map.get(d_str, {"am": {}, "pm": {}, "night": {}})
+        snow_day = sum(ps[p].get("snow_cm", 0) for p in ("am", "pm", "night"))
+        rain_day = sum(ps[p].get("rain_mm", 0) for p in ("am", "pm", "night"))
+        cumulative = round(cumulative + snow_day, 1)
+
+        tmax = float(tmax_vals[i]) if i < len(tmax_vals) and tmax_vals[i] not in ("—","") else None
+        tmin = float(tmin_vals[i]) if i < len(tmin_vals) and tmin_vals[i] not in ("—","") else None
+        wind_speeds = [ps[p]["wind_kmh"] for p in ("am", "pm", "night") if ps[p].get("wind_kmh")]
+        wind_max = max(wind_speeds) if wind_speeds else None
+        cond_text = cond_vals[i * 3] if i * 3 < len(cond_vals) else ""
+
+        days.append({
+            "date":               d_str,
+            "snow_cm":            round(snow_day, 1),
+            "temp_max":           tmax,
+            "temp_min":           tmin,
+            "wind_max_kmh":       wind_max,
+            "wind_dir":           "-",
+            "precip_mm":          round(rain_day + snow_day * 0.1, 1),
+            "precip_prob":        None,
+            "weathercode":        _sf_condition_code(cond_text),
+            "cumulative_snow_cm": cumulative,
+            "periods":            ps,
+            "source":             "snow-forecast.com",
+        })
+
+    print(f"  [SF forecast] {len(days)} días · top 2179m · "
+          f"total nieve: {cumulative} cm")
     return days
 
 
@@ -320,7 +477,12 @@ def main():
 
     for resort in RESORTS:
         print(f"[{resort['name']}] Fetching forecast...")
-        forecast_days = fetch_open_meteo(resort)
+        forecast_days = None
+        if resort.get("snowforecast_slug"):
+            forecast_days = fetch_sf_forecast(resort)
+        if not forecast_days:
+            print(f"  → fallback Open-Meteo")
+            forecast_days = fetch_open_meteo(resort)
         for d in forecast_days:
             d["condition"] = weathercode_to_label(d["weathercode"])
 

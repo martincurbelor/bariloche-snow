@@ -26,6 +26,8 @@ jobs:
       - run: pip install -r requirements.txt
 
       - run: python fetch_forecast.py
+        env:
+          SF_SESSION_COOKIE: ${{ secrets.SF_SESSION_COOKIE }}
 
       - name: Update historical (incremental)
         run: python historical/update_current.py
