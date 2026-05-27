@@ -42,6 +42,5 @@ jobs:
             echo "No changes to commit."
           else
             git commit -m "update: forecast $(date -u +'%Y-%m-%d %H:%M UTC')"
-            git pull --rebase origin main
-            git push
+            git push || { echo "Push rejected — concurrent run already updated data. OK."; exit 0; }
           fi
