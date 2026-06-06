@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-05T23:40:09.332220+00:00",
+  "generated_at": "2026-06-06T04:30:41.954770+00:00",
   "webcams": [
     {
       "name": "Punta Princesa",
@@ -43,37 +43,37 @@
         "last_7days_cm": null,
         "last_24h_cm": null,
         "resort_status": "Resort Closed",
-        "scraped_at": "2026-06-05T23:40:11.444617+00:00"
+        "scraped_at": "2026-06-06T04:30:43.831283+00:00"
       },
       "forecast": [
         {
-          "date": "2026-06-05",
+          "date": "2026-06-06",
           "snow_cm": 0.0,
-          "temp_max": 1.0,
+          "temp_max": 2.0,
           "temp_min": 1.0,
-          "wind_max_kmh": 25,
+          "wind_max_kmh": 15,
           "wind_dir": "-",
           "precip_mm": 0.0,
           "precip_prob": null,
-          "weathercode": 3,
+          "weathercode": 2,
           "cumulative_snow_cm": 0.0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 10,
+              "wind_kmh": 15,
               "wind_dir": "W",
-              "freeze_m": 2550.0,
+              "freeze_m": 2600.0,
               "visibility_m": null
             },
             "pm": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 25,
-              "wind_dir": "NW",
-              "freeze_m": 2450.0,
+              "wind_kmh": 10,
+              "wind_dir": "W",
+              "freeze_m": 2400.0,
               "visibility_m": null
             },
             "night": {
@@ -87,18 +87,18 @@
             }
           },
           "source": "snow-forecast.com",
-          "condition": "Nublado"
+          "condition": "Parcialmente nublado"
         },
         {
-          "date": "2026-06-06",
+          "date": "2026-06-07",
           "snow_cm": 0.0,
           "temp_max": 2.0,
-          "temp_min": 2.0,
+          "temp_min": 1.0,
           "wind_max_kmh": 5,
           "wind_dir": "-",
           "precip_mm": 0.0,
           "precip_prob": null,
-          "weathercode": 3,
+          "weathercode": 2,
           "cumulative_snow_cm": 0.0,
           "periods": {
             "am": {
@@ -107,7 +107,7 @@
               "temp_c": null,
               "wind_kmh": 5,
               "wind_dir": "ENE",
-              "freeze_m": 2400.0,
+              "freeze_m": 2250.0,
               "visibility_m": null
             },
             "pm": {
@@ -115,8 +115,8 @@
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 5,
-              "wind_dir": "W",
-              "freeze_m": 2600.0,
+              "wind_dir": "NE",
+              "freeze_m": 2550.0,
               "visibility_m": null
             },
             "night": {
@@ -124,20 +124,20 @@
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 0,
-              "wind_dir": "N",
-              "freeze_m": 2450.0,
+              "wind_dir": "NW",
+              "freeze_m": 2350.0,
               "visibility_m": null
             }
           },
           "source": "snow-forecast.com",
-          "condition": "Nublado"
+          "condition": "Parcialmente nublado"
         },
         {
-          "date": "2026-06-07",
+          "date": "2026-06-08",
           "snow_cm": 0.0,
-          "temp_max": 2.0,
-          "temp_min": 2.0,
-          "wind_max_kmh": 5,
+          "temp_max": 1.0,
+          "temp_min": 1.0,
+          "wind_max_kmh": 15,
           "wind_dir": "-",
           "precip_mm": 0.0,
           "precip_prob": null,
@@ -149,51 +149,8 @@
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 5,
-              "wind_dir": "NNW",
-              "freeze_m": 2700.0,
-              "visibility_m": null
-            },
-            "pm": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 5,
-              "wind_dir": "NNE",
-              "freeze_m": 2700.0,
-              "visibility_m": null
-            },
-            "night": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 5,
               "wind_dir": "N",
-              "freeze_m": 2600.0,
-              "visibility_m": null
-            }
-          },
-          "source": "snow-forecast.com",
-          "condition": "Despejado"
-        },
-        {
-          "date": "2026-06-08",
-          "snow_cm": 1.0,
-          "temp_max": 2.0,
-          "temp_min": 2.0,
-          "wind_max_kmh": 25,
-          "wind_dir": "-",
-          "precip_mm": 0.1,
-          "precip_prob": null,
-          "weathercode": 2,
-          "cumulative_snow_cm": 1.0,
-          "periods": {
-            "am": {
-              "snow_cm": 1.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 25,
-              "wind_dir": "W",
-              "freeze_m": 1800.0,
+              "freeze_m": 3200.0,
               "visibility_m": null
             },
             "pm": {
@@ -202,59 +159,102 @@
               "temp_c": null,
               "wind_kmh": 15,
               "wind_dir": "NW",
-              "freeze_m": 2700.0,
+              "freeze_m": 2950.0,
               "visibility_m": null
             },
             "night": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 25,
-              "wind_dir": "WNW",
-              "freeze_m": 2250.0,
+              "wind_kmh": 5,
+              "wind_dir": "NE",
+              "freeze_m": 2850.0,
               "visibility_m": null
             }
           },
           "source": "snow-forecast.com",
-          "condition": "Parcialmente nublado"
+          "condition": "Despejado"
         },
         {
           "date": "2026-06-09",
-          "snow_cm": 0.0,
-          "temp_max": 2.0,
-          "temp_min": 1.0,
-          "wind_max_kmh": 40,
+          "snow_cm": 2.0,
+          "temp_max": 1.0,
+          "temp_min": 0.0,
+          "wind_max_kmh": 30,
           "wind_dir": "-",
-          "precip_mm": 0.0,
+          "precip_mm": 0.2,
           "precip_prob": null,
-          "weathercode": 71,
-          "cumulative_snow_cm": 1.0,
+          "weathercode": 3,
+          "cumulative_snow_cm": 2.0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 40,
-              "wind_dir": "WSW",
-              "freeze_m": 950.0,
+              "wind_kmh": 25,
+              "wind_dir": "W",
+              "freeze_m": 1850.0,
+              "visibility_m": null
+            },
+            "pm": {
+              "snow_cm": 2.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 30,
+              "wind_dir": "W",
+              "freeze_m": 1650.0,
+              "visibility_m": null
+            },
+            "night": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 20,
+              "wind_dir": "WNW",
+              "freeze_m": 2300.0,
+              "visibility_m": null
+            }
+          },
+          "source": "snow-forecast.com",
+          "condition": "Nublado"
+        },
+        {
+          "date": "2026-06-10",
+          "snow_cm": 0.0,
+          "temp_max": 1.0,
+          "temp_min": 0.0,
+          "wind_max_kmh": 20,
+          "wind_dir": "-",
+          "precip_mm": 0.0,
+          "precip_prob": null,
+          "weathercode": 71,
+          "cumulative_snow_cm": 2.0,
+          "periods": {
+            "am": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 15,
+              "wind_dir": "SW",
+              "freeze_m": 1650.0,
               "visibility_m": null
             },
             "pm": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 35,
-              "wind_dir": "W",
-              "freeze_m": 1700.0,
+              "wind_kmh": 20,
+              "wind_dir": "WSW",
+              "freeze_m": 1800.0,
               "visibility_m": null
             },
             "night": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 40,
-              "wind_dir": "W",
-              "freeze_m": 1400.0,
+              "wind_kmh": 20,
+              "wind_dir": "WSW",
+              "freeze_m": 1650.0,
               "visibility_m": null
             }
           },
@@ -262,16 +262,16 @@
           "condition": "Nevada leve"
         },
         {
-          "date": "2026-06-10",
+          "date": "2026-06-11",
           "snow_cm": 0.0,
-          "temp_max": 1.0,
-          "temp_min": 1.0,
-          "wind_max_kmh": 40,
+          "temp_max": 2.0,
+          "temp_min": 2.0,
+          "wind_max_kmh": 30,
           "wind_dir": "-",
           "precip_mm": 0.0,
           "precip_prob": null,
           "weathercode": 2,
-          "cumulative_snow_cm": 1.0,
+          "cumulative_snow_cm": 2.0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
@@ -279,25 +279,25 @@
               "temp_c": null,
               "wind_kmh": 30,
               "wind_dir": "WSW",
-              "freeze_m": 700.0,
+              "freeze_m": 1000.0,
               "visibility_m": null
             },
             "pm": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 40,
+              "wind_kmh": 30,
               "wind_dir": "WSW",
-              "freeze_m": 1200.0,
+              "freeze_m": 1550.0,
               "visibility_m": null
             },
             "night": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 35,
+              "wind_kmh": 25,
               "wind_dir": "WSW",
-              "freeze_m": 800.0,
+              "freeze_m": 1150.0,
               "visibility_m": null
             }
           },
@@ -305,85 +305,85 @@
           "condition": "Parcialmente nublado"
         },
         {
-          "date": "2026-06-11",
-          "snow_cm": 36.0,
+          "date": "2026-06-12",
+          "snow_cm": 3.0,
           "temp_max": 2.0,
           "temp_min": 2.0,
-          "wind_max_kmh": 65,
+          "wind_max_kmh": 60,
           "wind_dir": "-",
-          "precip_mm": 3.6,
+          "precip_mm": 0.3,
           "precip_prob": null,
-          "weathercode": 3,
-          "cumulative_snow_cm": 37.0,
+          "weathercode": 71,
+          "cumulative_snow_cm": 5.0,
           "periods": {
             "am": {
-              "snow_cm": 28.0,
+              "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 65,
-              "wind_dir": "WNW",
-              "freeze_m": 1350.0,
+              "wind_kmh": 55,
+              "wind_dir": "W",
+              "freeze_m": 1250.0,
               "visibility_m": null
             },
             "pm": {
+              "snow_cm": 3.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 60,
+              "wind_dir": "WNW",
+              "freeze_m": 1600.0,
+              "visibility_m": null
+            },
+            "night": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 40,
-              "wind_dir": "WSW",
-              "freeze_m": 1250.0,
-              "visibility_m": null
-            },
-            "night": {
-              "snow_cm": 8.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 60,
               "wind_dir": "W",
-              "freeze_m": 1050.0,
+              "freeze_m": 1300.0,
               "visibility_m": null
             }
           },
           "source": "snow-forecast.com",
-          "condition": "Nublado"
+          "condition": "Nevada leve"
         },
         {
-          "date": "2026-06-12",
-          "snow_cm": 32.0,
+          "date": "2026-06-13",
+          "snow_cm": 42.0,
           "temp_max": 2.0,
-          "temp_min": 1.0,
-          "wind_max_kmh": 65,
+          "temp_min": 2.0,
+          "wind_max_kmh": 55,
           "wind_dir": "-",
-          "precip_mm": 3.2,
+          "precip_mm": 4.2,
           "precip_prob": null,
           "weathercode": 75,
-          "cumulative_snow_cm": 69.0,
+          "cumulative_snow_cm": 47.0,
           "periods": {
             "am": {
               "snow_cm": 6.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 50,
+              "wind_kmh": 20,
               "wind_dir": "W",
-              "freeze_m": 700.0,
+              "freeze_m": 1050.0,
               "visibility_m": null
             },
             "pm": {
-              "snow_cm": 18.0,
+              "snow_cm": 2.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 65,
+              "wind_kmh": 20,
               "wind_dir": "W",
-              "freeze_m": 1300.0,
+              "freeze_m": 1100.0,
               "visibility_m": null
             },
             "night": {
-              "snow_cm": 8.0,
+              "snow_cm": 34.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 40,
-              "wind_dir": "W",
-              "freeze_m": 450.0,
+              "wind_kmh": 55,
+              "wind_dir": "NW",
+              "freeze_m": 1400.0,
               "visibility_m": null
             }
           },
@@ -391,152 +391,66 @@
           "condition": "Nevada intensa"
         },
         {
-          "date": "2026-06-13",
-          "snow_cm": 11.0,
-          "temp_max": 2.0,
-          "temp_min": 1.0,
-          "wind_max_kmh": 45,
+          "date": "2026-06-14",
+          "snow_cm": 2.0,
+          "temp_max": 3.0,
+          "temp_min": 2.0,
+          "wind_max_kmh": 10,
           "wind_dir": "-",
-          "precip_mm": 1.1,
+          "precip_mm": 0.2,
           "precip_prob": null,
-          "weathercode": 3,
-          "cumulative_snow_cm": 80.0,
+          "weathercode": 71,
+          "cumulative_snow_cm": 49.0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 5,
-              "wind_dir": "SSW",
+              "wind_kmh": 10,
+              "wind_dir": "SSE",
               "freeze_m": null,
               "visibility_m": null
             },
             "pm": {
-              "snow_cm": 7.0,
+              "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 45,
-              "wind_dir": "W",
+              "wind_kmh": 10,
+              "wind_dir": "S",
               "freeze_m": 850.0,
               "visibility_m": null
             },
             "night": {
-              "snow_cm": 4.0,
+              "snow_cm": 2.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 25,
-              "wind_dir": "W",
-              "freeze_m": 350.0,
+              "wind_kmh": 5,
+              "wind_dir": "SE",
+              "freeze_m": 400.0,
               "visibility_m": null
             }
           },
           "source": "snow-forecast.com",
-          "condition": "Nublado"
+          "condition": "Nevada leve"
         },
         {
-          "date": "2026-06-14",
+          "date": "2026-06-15",
           "snow_cm": 0.0,
-          "temp_max": 2.0,
-          "temp_min": 2.0,
+          "temp_max": 1.0,
+          "temp_min": -1.0,
           "wind_max_kmh": 20,
           "wind_dir": "-",
           "precip_mm": 0.0,
           "precip_prob": null,
-          "weathercode": 0,
-          "cumulative_snow_cm": 80.0,
+          "weathercode": 2,
+          "cumulative_snow_cm": 49.0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 20,
-              "wind_dir": "E",
-              "freeze_m": null,
-              "visibility_m": null
-            },
-            "pm": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 5,
-              "wind_dir": "ESE",
-              "freeze_m": 900.0,
-              "visibility_m": null
-            },
-            "night": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 15,
-              "wind_dir": "E",
-              "freeze_m": null,
-              "visibility_m": null
-            }
-          },
-          "source": "snow-forecast.com",
-          "condition": "Despejado"
-        },
-        {
-          "date": "2026-06-15",
-          "snow_cm": 0.0,
-          "temp_max": 2.0,
-          "temp_min": -1.0,
-          "wind_max_kmh": 15,
-          "wind_dir": "-",
-          "precip_mm": 0.0,
-          "precip_prob": null,
-          "weathercode": 0,
-          "cumulative_snow_cm": 80.0,
-          "periods": {
-            "am": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 10,
-              "wind_dir": "SE",
-              "freeze_m": null,
-              "visibility_m": null
-            },
-            "pm": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 15,
-              "wind_dir": "E",
-              "freeze_m": 850.0,
-              "visibility_m": null
-            },
-            "night": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 10,
-              "wind_dir": "E",
-              "freeze_m": null,
-              "visibility_m": null
-            }
-          },
-          "source": "snow-forecast.com",
-          "condition": "Despejado"
-        },
-        {
-          "date": "2026-06-16",
-          "snow_cm": 0.0,
-          "temp_max": -1.0,
-          "temp_min": -2.0,
-          "wind_max_kmh": 10,
-          "wind_dir": "-",
-          "precip_mm": 0.0,
-          "precip_prob": null,
-          "weathercode": 0,
-          "cumulative_snow_cm": 80.0,
-          "periods": {
-            "am": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 10,
-              "wind_dir": "SE",
+              "wind_dir": "SSE",
               "freeze_m": null,
               "visibility_m": null
             },
@@ -546,7 +460,50 @@
               "temp_c": null,
               "wind_kmh": 10,
               "wind_dir": "SSE",
-              "freeze_m": 1050.0,
+              "freeze_m": 1250.0,
+              "visibility_m": null
+            },
+            "night": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 15,
+              "wind_dir": "SE",
+              "freeze_m": null,
+              "visibility_m": null
+            }
+          },
+          "source": "snow-forecast.com",
+          "condition": "Parcialmente nublado"
+        },
+        {
+          "date": "2026-06-16",
+          "snow_cm": 0.0,
+          "temp_max": -1.0,
+          "temp_min": -2.0,
+          "wind_max_kmh": 15,
+          "wind_dir": "-",
+          "precip_mm": 0.0,
+          "precip_prob": null,
+          "weathercode": 0,
+          "cumulative_snow_cm": 49.0,
+          "periods": {
+            "am": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 15,
+              "wind_dir": "SSW",
+              "freeze_m": null,
+              "visibility_m": null
+            },
+            "pm": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 15,
+              "wind_dir": "SW",
+              "freeze_m": 1000.0,
               "visibility_m": null
             },
             "night": {
@@ -554,7 +511,7 @@
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 10,
-              "wind_dir": "S",
+              "wind_dir": "SW",
               "freeze_m": null,
               "visibility_m": null
             }
@@ -566,30 +523,30 @@
           "date": "2026-06-17",
           "snow_cm": 0.0,
           "temp_max": -2.0,
-          "temp_min": -3.0,
+          "temp_min": -2.0,
           "wind_max_kmh": 15,
           "wind_dir": "-",
           "precip_mm": 0.0,
           "precip_prob": null,
-          "weathercode": 0,
-          "cumulative_snow_cm": 80.0,
+          "weathercode": 3,
+          "cumulative_snow_cm": 49.0,
           "periods": {
             "am": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 10,
+              "wind_dir": "SW",
+              "freeze_m": 900.0,
+              "visibility_m": null
+            },
+            "pm": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 5,
-              "wind_dir": "ESE",
-              "freeze_m": null,
-              "visibility_m": null
-            },
-            "pm": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 15,
-              "wind_dir": "SE",
-              "freeze_m": 1400.0,
+              "wind_dir": "WSW",
+              "freeze_m": 1250.0,
               "visibility_m": null
             },
             "night": {
@@ -597,120 +554,42 @@
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 15,
-              "wind_dir": "ESE",
-              "freeze_m": null,
+              "wind_dir": "SW",
+              "freeze_m": 750.0,
               "visibility_m": null
             }
           },
           "source": "snow-forecast.com",
-          "condition": "Despejado"
+          "condition": "Nublado"
         },
         {
           "date": "2026-06-18",
           "snow_cm": 0.0,
-          "temp_max": -3.0,
-          "temp_min": -7.0,
-          "wind_max_kmh": null,
+          "temp_max": -2.0,
+          "temp_min": -3.0,
+          "wind_max_kmh": 45,
           "wind_dir": "-",
           "precip_mm": 0.0,
           "precip_prob": null,
-          "weathercode": 0,
-          "cumulative_snow_cm": 80.0,
+          "weathercode": 2,
+          "cumulative_snow_cm": 49.0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 0,
-              "wind_dir": "S",
-              "freeze_m": 2800.0,
-              "visibility_m": null
-            },
-            "pm": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 0,
-              "wind_dir": "N",
-              "freeze_m": 1900.0,
-              "visibility_m": null
-            },
-            "night": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 0,
-              "wind_dir": "NNW",
-              "freeze_m": null,
-              "visibility_m": null
-            }
-          },
-          "source": "snow-forecast.com",
-          "condition": "Despejado"
-        },
-        {
-          "date": "2026-06-19",
-          "snow_cm": 0.0,
-          "temp_max": -5.0,
-          "temp_min": -6.0,
-          "wind_max_kmh": 15,
-          "wind_dir": "-",
-          "precip_mm": 0.0,
-          "precip_prob": null,
-          "weathercode": 0,
-          "cumulative_snow_cm": 80.0,
-          "periods": {
-            "am": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 10,
-              "wind_dir": "SW",
-              "freeze_m": 2800.0,
-              "visibility_m": null
-            },
-            "pm": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 10,
-              "wind_dir": "SW",
-              "freeze_m": 2800.0,
-              "visibility_m": null
-            },
-            "night": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 15,
-              "wind_dir": "SW",
-              "freeze_m": 2650.0,
-              "visibility_m": null
-            }
-          },
-          "source": "snow-forecast.com",
-          "condition": "Despejado"
-        },
-        {
-          "date": "2026-06-20",
-          "snow_cm": 0.0,
-          "temp_max": -4.0,
-          "temp_min": -5.0,
-          "wind_max_kmh": 20,
-          "wind_dir": "-",
-          "precip_mm": 0.0,
-          "precip_prob": null,
-          "weathercode": 0,
-          "cumulative_snow_cm": 80.0,
-          "periods": {
-            "am": {},
-            "pm": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 10,
+              "wind_kmh": 30,
               "wind_dir": "WSW",
-              "freeze_m": 3150.0,
+              "freeze_m": 3450.0,
+              "visibility_m": null
+            },
+            "pm": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 45,
+              "wind_dir": "W",
+              "freeze_m": 2950.0,
               "visibility_m": null
             },
             "night": {
@@ -718,13 +597,134 @@
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 20,
-              "wind_dir": "WSW",
-              "freeze_m": 3050.0,
+              "wind_dir": "SW",
+              "freeze_m": 950.0,
               "visibility_m": null
             }
           },
           "source": "snow-forecast.com",
-          "condition": "Despejado"
+          "condition": "Parcialmente nublado"
+        },
+        {
+          "date": "2026-06-19",
+          "snow_cm": 0.0,
+          "temp_max": -2.0,
+          "temp_min": -2.0,
+          "wind_max_kmh": 45,
+          "wind_dir": "-",
+          "precip_mm": 0.0,
+          "precip_prob": null,
+          "weathercode": 2,
+          "cumulative_snow_cm": 49.0,
+          "periods": {
+            "am": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 45,
+              "wind_dir": "WSW",
+              "freeze_m": 3500.0,
+              "visibility_m": null
+            },
+            "pm": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 45,
+              "wind_dir": "W",
+              "freeze_m": 3400.0,
+              "visibility_m": null
+            },
+            "night": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 45,
+              "wind_dir": "WSW",
+              "freeze_m": 3300.0,
+              "visibility_m": null
+            }
+          },
+          "source": "snow-forecast.com",
+          "condition": "Parcialmente nublado"
+        },
+        {
+          "date": "2026-06-20",
+          "snow_cm": 3.0,
+          "temp_max": -2.0,
+          "temp_min": -3.0,
+          "wind_max_kmh": 45,
+          "wind_dir": "-",
+          "precip_mm": 0.3,
+          "precip_prob": null,
+          "weathercode": 2,
+          "cumulative_snow_cm": 52.0,
+          "periods": {
+            "am": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 35,
+              "wind_dir": "WNW",
+              "freeze_m": 2350.0,
+              "visibility_m": null
+            },
+            "pm": {
+              "snow_cm": 3.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 45,
+              "wind_dir": "WNW",
+              "freeze_m": 2200.0,
+              "visibility_m": null
+            },
+            "night": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 45,
+              "wind_dir": "W",
+              "freeze_m": 2950.0,
+              "visibility_m": null
+            }
+          },
+          "source": "snow-forecast.com",
+          "condition": "Parcialmente nublado"
+        },
+        {
+          "date": "2026-06-21",
+          "snow_cm": 1.0,
+          "temp_max": -3.0,
+          "temp_min": -5.0,
+          "wind_max_kmh": 55,
+          "wind_dir": "-",
+          "precip_mm": 0.1,
+          "precip_prob": null,
+          "weathercode": 71,
+          "cumulative_snow_cm": 53.0,
+          "periods": {
+            "am": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 55,
+              "wind_dir": "WNW",
+              "freeze_m": 1850.0,
+              "visibility_m": null
+            },
+            "pm": {},
+            "night": {
+              "snow_cm": 1.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 50,
+              "wind_dir": "WNW",
+              "freeze_m": 2150.0,
+              "visibility_m": null
+            }
+          },
+          "source": "snow-forecast.com",
+          "condition": "Nevada leve"
         }
       ],
       "historical_seasons": [
@@ -1565,6 +1565,7 @@
             6.0,
             6.0,
             6.0,
+            6.0,
             6.0
           ],
           "total": 6.0,
@@ -1582,52 +1583,9 @@
         "last_7days_cm": null,
         "last_24h_cm": null,
         "resort_status": "Resort Closed",
-        "scraped_at": "2026-06-05T23:40:17.807292+00:00"
+        "scraped_at": "2026-06-06T04:30:49.434363+00:00"
       },
       "forecast": [
-        {
-          "date": "2026-06-05",
-          "snow_cm": 0.0,
-          "temp_max": 2.0,
-          "temp_min": 0.0,
-          "wind_max_kmh": 15,
-          "wind_dir": "-",
-          "precip_mm": 0.0,
-          "precip_prob": null,
-          "weathercode": 2,
-          "cumulative_snow_cm": 0.0,
-          "periods": {
-            "am": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 5,
-              "wind_dir": "NNW",
-              "freeze_m": 3150.0,
-              "visibility_m": null
-            },
-            "pm": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 15,
-              "wind_dir": "NW",
-              "freeze_m": 3350.0,
-              "visibility_m": null
-            },
-            "night": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 10,
-              "wind_dir": "WNW",
-              "freeze_m": 3050.0,
-              "visibility_m": null
-            }
-          },
-          "source": "snow-forecast.com",
-          "condition": "Parcialmente nublado"
-        },
         {
           "date": "2026-06-06",
           "snow_cm": 0.0,
@@ -1645,15 +1603,15 @@
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 5,
-              "wind_dir": "E",
-              "freeze_m": 2700.0,
+              "wind_dir": "NW",
+              "freeze_m": 3150.0,
               "visibility_m": null
             },
             "pm": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 10,
+              "wind_kmh": 5,
               "wind_dir": "NW",
               "freeze_m": 2900.0,
               "visibility_m": null
@@ -1662,9 +1620,9 @@
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 0,
-              "wind_dir": "NE",
-              "freeze_m": 2650.0,
+              "wind_kmh": 10,
+              "wind_dir": "NW",
+              "freeze_m": 3050.0,
               "visibility_m": null
             }
           },
@@ -1676,20 +1634,20 @@
           "snow_cm": 0.0,
           "temp_max": -2.0,
           "temp_min": -3.0,
-          "wind_max_kmh": 10,
+          "wind_max_kmh": 5,
           "wind_dir": "-",
           "precip_mm": 0.0,
           "precip_prob": null,
-          "weathercode": 2,
+          "weathercode": 3,
           "cumulative_snow_cm": 0.0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 10,
-              "wind_dir": "W",
-              "freeze_m": 3300.0,
+              "wind_kmh": 5,
+              "wind_dir": "ENE",
+              "freeze_m": 2800.0,
               "visibility_m": null
             },
             "pm": {
@@ -1697,7 +1655,7 @@
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 5,
-              "wind_dir": "S",
+              "wind_dir": "SSW",
               "freeze_m": 2950.0,
               "visibility_m": null
             },
@@ -1705,21 +1663,21 @@
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 5,
-              "wind_dir": "W",
-              "freeze_m": 2800.0,
+              "wind_kmh": 0,
+              "wind_dir": "N",
+              "freeze_m": 2700.0,
               "visibility_m": null
             }
           },
           "source": "snow-forecast.com",
-          "condition": "Parcialmente nublado"
+          "condition": "Nublado"
         },
         {
           "date": "2026-06-08",
           "snow_cm": 0.0,
-          "temp_max": -3.0,
+          "temp_max": -2.0,
           "temp_min": -4.0,
-          "wind_max_kmh": 20,
+          "wind_max_kmh": 10,
           "wind_dir": "-",
           "precip_mm": 0.0,
           "precip_prob": null,
@@ -1730,16 +1688,16 @@
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 20,
-              "wind_dir": "WNW",
-              "freeze_m": 2750.0,
+              "wind_kmh": 10,
+              "wind_dir": "W",
+              "freeze_m": 3250.0,
               "visibility_m": null
             },
             "pm": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 15,
+              "wind_kmh": 10,
               "wind_dir": "WNW",
               "freeze_m": 3350.0,
               "visibility_m": null
@@ -1748,9 +1706,9 @@
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 20,
-              "wind_dir": "WNW",
-              "freeze_m": 2750.0,
+              "wind_kmh": 5,
+              "wind_dir": "W",
+              "freeze_m": 2650.0,
               "visibility_m": null
             }
           },
@@ -1759,70 +1717,70 @@
         },
         {
           "date": "2026-06-09",
-          "snow_cm": 3.0,
-          "temp_max": -5.0,
-          "temp_min": -6.0,
+          "snow_cm": 0.0,
+          "temp_max": -4.0,
+          "temp_min": -5.0,
           "wind_max_kmh": 20,
           "wind_dir": "-",
-          "precip_mm": 0.3,
+          "precip_mm": 0.0,
           "precip_prob": null,
-          "weathercode": 71,
-          "cumulative_snow_cm": 3.0,
+          "weathercode": 2,
+          "cumulative_snow_cm": 0.0,
           "periods": {
             "am": {
-              "snow_cm": 1.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 15,
-              "wind_dir": "W",
-              "freeze_m": 2300.0,
-              "visibility_m": null
-            },
-            "pm": {
-              "snow_cm": 1.0,
+              "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 20,
               "wind_dir": "WNW",
-              "freeze_m": 2500.0,
+              "freeze_m": 2600.0,
+              "visibility_m": null
+            },
+            "pm": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 20,
+              "wind_dir": "WNW",
+              "freeze_m": 2550.0,
               "visibility_m": null
             },
             "night": {
-              "snow_cm": 1.0,
+              "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 15,
               "wind_dir": "WNW",
-              "freeze_m": 2150.0,
+              "freeze_m": 2800.0,
               "visibility_m": null
             }
           },
           "source": "snow-forecast.com",
-          "condition": "Nevada leve"
+          "condition": "Parcialmente nublado"
         },
         {
           "date": "2026-06-10",
-          "snow_cm": 1.0,
+          "snow_cm": 5.0,
           "temp_max": -5.0,
-          "temp_min": -6.0,
-          "wind_max_kmh": 20,
+          "temp_min": -5.0,
+          "wind_max_kmh": 15,
           "wind_dir": "-",
-          "precip_mm": 0.1,
+          "precip_mm": 0.5,
           "precip_prob": null,
           "weathercode": 3,
-          "cumulative_snow_cm": 4.0,
+          "cumulative_snow_cm": 5.0,
           "periods": {
             "am": {
-              "snow_cm": 0.0,
+              "snow_cm": 2.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 20,
+              "wind_kmh": 10,
               "wind_dir": "W",
-              "freeze_m": 2350.0,
+              "freeze_m": 2300.0,
               "visibility_m": null
             },
             "pm": {
-              "snow_cm": 1.0,
+              "snow_cm": 2.0,
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 15,
@@ -1831,12 +1789,12 @@
               "visibility_m": null
             },
             "night": {
-              "snow_cm": 0.0,
+              "snow_cm": 1.0,
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 15,
-              "wind_dir": "W",
-              "freeze_m": 2000.0,
+              "wind_dir": "WNW",
+              "freeze_m": 2200.0,
               "visibility_m": null
             }
           },
@@ -1848,38 +1806,81 @@
           "snow_cm": 0.0,
           "temp_max": -3.0,
           "temp_min": -3.0,
-          "wind_max_kmh": 30,
+          "wind_max_kmh": 15,
           "wind_dir": "-",
           "precip_mm": 0.0,
           "precip_prob": null,
-          "weathercode": 2,
-          "cumulative_snow_cm": 4.0,
+          "weathercode": 71,
+          "cumulative_snow_cm": 5.0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 30,
-              "wind_dir": "W",
-              "freeze_m": 2600.0,
+              "wind_kmh": 15,
+              "wind_dir": "WSW",
+              "freeze_m": 2250.0,
               "visibility_m": null
             },
             "pm": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 20,
+              "wind_kmh": 15,
               "wind_dir": "W",
-              "freeze_m": 2450.0,
+              "freeze_m": 2350.0,
               "visibility_m": null
             },
             "night": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 25,
+              "wind_kmh": 15,
               "wind_dir": "W",
-              "freeze_m": 2350.0,
+              "freeze_m": 1950.0,
+              "visibility_m": null
+            }
+          },
+          "source": "snow-forecast.com",
+          "condition": "Nevada leve"
+        },
+        {
+          "date": "2026-06-12",
+          "snow_cm": 0.0,
+          "temp_max": -4.0,
+          "temp_min": -5.0,
+          "wind_max_kmh": 30,
+          "wind_dir": "-",
+          "precip_mm": 0.0,
+          "precip_prob": null,
+          "weathercode": 2,
+          "cumulative_snow_cm": 5.0,
+          "periods": {
+            "am": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 25,
+              "wind_dir": "WNW",
+              "freeze_m": 2900.0,
+              "visibility_m": null
+            },
+            "pm": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 30,
+              "wind_dir": "WNW",
+              "freeze_m": 2800.0,
+              "visibility_m": null
+            },
+            "night": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 15,
+              "wind_dir": "W",
+              "freeze_m": 2550.0,
               "visibility_m": null
             }
           },
@@ -1887,85 +1888,42 @@
           "condition": "Parcialmente nublado"
         },
         {
-          "date": "2026-06-12",
-          "snow_cm": 24.0,
-          "temp_max": -3.0,
-          "temp_min": -4.0,
-          "wind_max_kmh": 35,
-          "wind_dir": "-",
-          "precip_mm": 2.4,
-          "precip_prob": null,
-          "weathercode": 3,
-          "cumulative_snow_cm": 28.0,
-          "periods": {
-            "am": {
-              "snow_cm": 15.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 35,
-              "wind_dir": "WNW",
-              "freeze_m": 2450.0,
-              "visibility_m": null
-            },
-            "pm": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 30,
-              "wind_dir": "W",
-              "freeze_m": 2300.0,
-              "visibility_m": null
-            },
-            "night": {
-              "snow_cm": 9.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 30,
-              "wind_dir": "WNW",
-              "freeze_m": 2400.0,
-              "visibility_m": null
-            }
-          },
-          "source": "snow-forecast.com",
-          "condition": "Nublado"
-        },
-        {
           "date": "2026-06-13",
-          "snow_cm": 62.0,
+          "snow_cm": 32.0,
           "temp_max": -1.0,
-          "temp_min": -2.0,
+          "temp_min": -3.0,
           "wind_max_kmh": 30,
           "wind_dir": "-",
-          "precip_mm": 6.2,
+          "precip_mm": 3.2,
           "precip_prob": null,
           "weathercode": 75,
-          "cumulative_snow_cm": 90.0,
+          "cumulative_snow_cm": 37.0,
           "periods": {
             "am": {
-              "snow_cm": 12.0,
+              "snow_cm": 11.0,
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 30,
               "wind_dir": "WNW",
-              "freeze_m": 2400.0,
+              "freeze_m": 2050.0,
               "visibility_m": null
             },
             "pm": {
-              "snow_cm": 16.0,
+              "snow_cm": 11.0,
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 30,
               "wind_dir": "WNW",
-              "freeze_m": 2350.0,
+              "freeze_m": 1950.0,
               "visibility_m": null
             },
             "night": {
-              "snow_cm": 34.0,
+              "snow_cm": 10.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 25,
+              "wind_kmh": 30,
               "wind_dir": "WNW",
-              "freeze_m": 2250.0,
+              "freeze_m": 2200.0,
               "visibility_m": null
             }
           },
@@ -1974,41 +1932,41 @@
         },
         {
           "date": "2026-06-14",
-          "snow_cm": 50.0,
+          "snow_cm": 39.0,
           "temp_max": 0.0,
-          "temp_min": 0.0,
+          "temp_min": -1.0,
           "wind_max_kmh": 25,
           "wind_dir": "-",
-          "precip_mm": 5.0,
+          "precip_mm": 3.9,
           "precip_prob": null,
           "weathercode": 75,
-          "cumulative_snow_cm": 140.0,
+          "cumulative_snow_cm": 76.0,
           "periods": {
             "am": {
-              "snow_cm": 13.0,
+              "snow_cm": 9.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 20,
+              "wind_dir": "NNW",
+              "freeze_m": 1700.0,
+              "visibility_m": null
+            },
+            "pm": {
+              "snow_cm": 8.0,
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 20,
               "wind_dir": "NW",
-              "freeze_m": 2250.0,
-              "visibility_m": null
-            },
-            "pm": {
-              "snow_cm": 12.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 25,
-              "wind_dir": "WNW",
-              "freeze_m": 2300.0,
+              "freeze_m": 1400.0,
               "visibility_m": null
             },
             "night": {
-              "snow_cm": 25.0,
+              "snow_cm": 22.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 20,
-              "wind_dir": "WNW",
-              "freeze_m": 2100.0,
+              "wind_kmh": 25,
+              "wind_dir": "NW",
+              "freeze_m": 1850.0,
               "visibility_m": null
             }
           },
@@ -2017,41 +1975,41 @@
         },
         {
           "date": "2026-06-15",
-          "snow_cm": 31.0,
+          "snow_cm": 7.0,
           "temp_max": -2.0,
-          "temp_min": -5.0,
-          "wind_max_kmh": 25,
+          "temp_min": -4.0,
+          "wind_max_kmh": 15,
           "wind_dir": "-",
-          "precip_mm": 3.1,
+          "precip_mm": 0.7,
           "precip_prob": null,
           "weathercode": 3,
-          "cumulative_snow_cm": 171.0,
+          "cumulative_snow_cm": 83.0,
           "periods": {
             "am": {
-              "snow_cm": 9.0,
+              "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 25,
-              "wind_dir": "WNW",
-              "freeze_m": 1400.0,
+              "wind_kmh": 15,
+              "wind_dir": "WSW",
+              "freeze_m": 800.0,
               "visibility_m": null
             },
             "pm": {
-              "snow_cm": 7.0,
+              "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 20,
-              "wind_dir": "NW",
-              "freeze_m": 2250.0,
+              "wind_kmh": 15,
+              "wind_dir": "WSW",
+              "freeze_m": 550.0,
               "visibility_m": null
             },
             "night": {
-              "snow_cm": 15.0,
+              "snow_cm": 7.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 25,
+              "wind_kmh": 15,
               "wind_dir": "NW",
-              "freeze_m": 2000.0,
+              "freeze_m": 1000.0,
               "visibility_m": null
             }
           },
@@ -2060,46 +2018,46 @@
         },
         {
           "date": "2026-06-16",
-          "snow_cm": 1.0,
+          "snow_cm": 0.0,
           "temp_max": -5.0,
-          "temp_min": -6.0,
-          "wind_max_kmh": 20,
+          "temp_min": -5.0,
+          "wind_max_kmh": 10,
           "wind_dir": "-",
-          "precip_mm": 0.1,
+          "precip_mm": 0.0,
           "precip_prob": null,
-          "weathercode": 3,
-          "cumulative_snow_cm": 172.0,
+          "weathercode": 2,
+          "cumulative_snow_cm": 83.0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 5,
-              "wind_dir": "N",
-              "freeze_m": 1650.0,
+              "wind_dir": "WSW",
+              "freeze_m": 1850.0,
               "visibility_m": null
             },
             "pm": {
-              "snow_cm": 1.0,
+              "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 20,
+              "wind_kmh": 10,
               "wind_dir": "W",
-              "freeze_m": 900.0,
+              "freeze_m": 1550.0,
               "visibility_m": null
             },
             "night": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 15,
-              "wind_dir": "WNW",
-              "freeze_m": 700.0,
+              "wind_kmh": 0,
+              "wind_dir": "W",
+              "freeze_m": null,
               "visibility_m": null
             }
           },
           "source": "snow-forecast.com",
-          "condition": "Nublado"
+          "condition": "Parcialmente nublado"
         },
         {
           "date": "2026-06-17",
@@ -2110,111 +2068,25 @@
           "wind_dir": "-",
           "precip_mm": 0.0,
           "precip_prob": null,
-          "weathercode": 71,
-          "cumulative_snow_cm": 172.0,
-          "periods": {
-            "am": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 10,
-              "wind_dir": "NNE",
-              "freeze_m": 1800.0,
-              "visibility_m": null
-            },
-            "pm": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 5,
-              "wind_dir": "N",
-              "freeze_m": 1200.0,
-              "visibility_m": null
-            },
-            "night": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 5,
-              "wind_dir": "NNE",
-              "freeze_m": 550.0,
-              "visibility_m": null
-            }
-          },
-          "source": "snow-forecast.com",
-          "condition": "Nevada leve"
-        },
-        {
-          "date": "2026-06-18",
-          "snow_cm": 0.0,
-          "temp_max": -7.0,
-          "temp_min": -9.0,
-          "wind_max_kmh": 10,
-          "wind_dir": "-",
-          "precip_mm": 0.0,
-          "precip_prob": null,
-          "weathercode": 71,
-          "cumulative_snow_cm": 172.0,
-          "periods": {
-            "am": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 5,
-              "wind_dir": "W",
-              "freeze_m": 2800.0,
-              "visibility_m": null
-            },
-            "pm": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 10,
-              "wind_dir": "NNW",
-              "freeze_m": 2150.0,
-              "visibility_m": null
-            },
-            "night": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 5,
-              "wind_dir": "NNW",
-              "freeze_m": 1850.0,
-              "visibility_m": null
-            }
-          },
-          "source": "snow-forecast.com",
-          "condition": "Nevada leve"
-        },
-        {
-          "date": "2026-06-19",
-          "snow_cm": 0.0,
-          "temp_max": -8.0,
-          "temp_min": -9.0,
-          "wind_max_kmh": 10,
-          "wind_dir": "-",
-          "precip_mm": 0.0,
-          "precip_prob": null,
           "weathercode": 0,
-          "cumulative_snow_cm": 172.0,
+          "cumulative_snow_cm": 83.0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 5,
-              "wind_dir": "WSW",
-              "freeze_m": 2650.0,
+              "wind_kmh": 10,
+              "wind_dir": "W",
+              "freeze_m": 2300.0,
               "visibility_m": null
             },
             "pm": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 5,
-              "wind_dir": "W",
-              "freeze_m": 2700.0,
+              "wind_kmh": 0,
+              "wind_dir": "SW",
+              "freeze_m": 2100.0,
               "visibility_m": null
             },
             "night": {
@@ -2222,8 +2094,8 @@
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 10,
-              "wind_dir": "WNW",
-              "freeze_m": 2150.0,
+              "wind_dir": "W",
+              "freeze_m": 1150.0,
               "visibility_m": null
             }
           },
@@ -2231,25 +2103,33 @@
           "condition": "Despejado"
         },
         {
-          "date": "2026-06-20",
+          "date": "2026-06-18",
           "snow_cm": 0.0,
           "temp_max": -7.0,
           "temp_min": -8.0,
-          "wind_max_kmh": 5,
+          "wind_max_kmh": 10,
           "wind_dir": "-",
           "precip_mm": 0.0,
           "precip_prob": null,
           "weathercode": 0,
-          "cumulative_snow_cm": 172.0,
+          "cumulative_snow_cm": 83.0,
           "periods": {
-            "am": {},
-            "pm": {
+            "am": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 5,
-              "wind_dir": "S",
-              "freeze_m": 2400.0,
+              "wind_dir": "W",
+              "freeze_m": 3650.0,
+              "visibility_m": null
+            },
+            "pm": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 10,
+              "wind_dir": "W",
+              "freeze_m": 3700.0,
               "visibility_m": null
             },
             "night": {
@@ -2264,6 +2144,127 @@
           },
           "source": "snow-forecast.com",
           "condition": "Despejado"
+        },
+        {
+          "date": "2026-06-19",
+          "snow_cm": 0.0,
+          "temp_max": -8.0,
+          "temp_min": -8.0,
+          "wind_max_kmh": 10,
+          "wind_dir": "-",
+          "precip_mm": 0.0,
+          "precip_prob": null,
+          "weathercode": 0,
+          "cumulative_snow_cm": 83.0,
+          "periods": {
+            "am": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 5,
+              "wind_dir": "W",
+              "freeze_m": 4100.0,
+              "visibility_m": null
+            },
+            "pm": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 10,
+              "wind_dir": "W",
+              "freeze_m": 4000.0,
+              "visibility_m": null
+            },
+            "night": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 5,
+              "wind_dir": "W",
+              "freeze_m": 3950.0,
+              "visibility_m": null
+            }
+          },
+          "source": "snow-forecast.com",
+          "condition": "Despejado"
+        },
+        {
+          "date": "2026-06-20",
+          "snow_cm": 0.0,
+          "temp_max": -7.0,
+          "temp_min": -8.0,
+          "wind_max_kmh": 15,
+          "wind_dir": "-",
+          "precip_mm": 0.0,
+          "precip_prob": null,
+          "weathercode": 2,
+          "cumulative_snow_cm": 83.0,
+          "periods": {
+            "am": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 15,
+              "wind_dir": "WNW",
+              "freeze_m": 4050.0,
+              "visibility_m": null
+            },
+            "pm": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 15,
+              "wind_dir": "WNW",
+              "freeze_m": 3800.0,
+              "visibility_m": null
+            },
+            "night": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 10,
+              "wind_dir": "WNW",
+              "freeze_m": 4000.0,
+              "visibility_m": null
+            }
+          },
+          "source": "snow-forecast.com",
+          "condition": "Parcialmente nublado"
+        },
+        {
+          "date": "2026-06-21",
+          "snow_cm": 0.0,
+          "temp_max": -9.0,
+          "temp_min": -9.0,
+          "wind_max_kmh": 20,
+          "wind_dir": "-",
+          "precip_mm": 0.0,
+          "precip_prob": null,
+          "weathercode": 2,
+          "cumulative_snow_cm": 83.0,
+          "periods": {
+            "am": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 20,
+              "wind_dir": "WNW",
+              "freeze_m": 3150.0,
+              "visibility_m": null
+            },
+            "pm": {},
+            "night": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 20,
+              "wind_dir": "WNW",
+              "freeze_m": 3500.0,
+              "visibility_m": null
+            }
+          },
+          "source": "snow-forecast.com",
+          "condition": "Parcialmente nublado"
         }
       ]
     },
@@ -2277,60 +2278,17 @@
         "last_7days_cm": null,
         "last_24h_cm": null,
         "resort_status": "Resort Closed",
-        "scraped_at": "2026-06-05T23:40:19.533762+00:00"
+        "scraped_at": "2026-06-06T04:30:50.979521+00:00"
       },
       "forecast": [
         {
-          "date": "2026-06-05",
-          "snow_cm": 1.0,
-          "temp_max": 0.0,
-          "temp_min": 0.0,
-          "wind_max_kmh": 15,
-          "wind_dir": "-",
-          "precip_mm": 0.1,
-          "precip_prob": null,
-          "weathercode": 3,
-          "cumulative_snow_cm": 1.0,
-          "periods": {
-            "am": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 10,
-              "wind_dir": "WNW",
-              "freeze_m": 3300.0,
-              "visibility_m": null
-            },
-            "pm": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 15,
-              "wind_dir": "NNW",
-              "freeze_m": 3600.0,
-              "visibility_m": null
-            },
-            "night": {
-              "snow_cm": 1.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 15,
-              "wind_dir": "N",
-              "freeze_m": 3300.0,
-              "visibility_m": null
-            }
-          },
-          "source": "snow-forecast.com",
-          "condition": "Nublado"
-        },
-        {
           "date": "2026-06-06",
-          "snow_cm": 1.0,
+          "snow_cm": 2.0,
           "temp_max": -2.0,
           "temp_min": -3.0,
           "wind_max_kmh": 10,
           "wind_dir": "-",
-          "precip_mm": 0.1,
+          "precip_mm": 0.2,
           "precip_prob": null,
           "weathercode": 71,
           "cumulative_snow_cm": 2.0,
@@ -2339,9 +2297,9 @@
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 5,
-              "wind_dir": "SW",
-              "freeze_m": 3250.0,
+              "wind_kmh": 10,
+              "wind_dir": "NW",
+              "freeze_m": 3350.0,
               "visibility_m": null
             },
             "pm": {
@@ -2354,12 +2312,12 @@
               "visibility_m": null
             },
             "night": {
-              "snow_cm": 0.0,
+              "snow_cm": 1.0,
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 10,
-              "wind_dir": "NW",
-              "freeze_m": 3000.0,
+              "wind_dir": "NNW",
+              "freeze_m": 3300.0,
               "visibility_m": null
             }
           },
@@ -2375,6 +2333,49 @@
           "wind_dir": "-",
           "precip_mm": 0.0,
           "precip_prob": null,
+          "weathercode": 3,
+          "cumulative_snow_cm": 2.0,
+          "periods": {
+            "am": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 5,
+              "wind_dir": "WSW",
+              "freeze_m": 3300.0,
+              "visibility_m": null
+            },
+            "pm": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 5,
+              "wind_dir": "WSW",
+              "freeze_m": 3350.0,
+              "visibility_m": null
+            },
+            "night": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 10,
+              "wind_dir": "NW",
+              "freeze_m": 3000.0,
+              "visibility_m": null
+            }
+          },
+          "source": "snow-forecast.com",
+          "condition": "Nublado"
+        },
+        {
+          "date": "2026-06-08",
+          "snow_cm": 0.0,
+          "temp_max": -4.0,
+          "temp_min": -4.0,
+          "wind_max_kmh": 10,
+          "wind_dir": "-",
+          "precip_mm": 0.0,
+          "precip_prob": null,
           "weathercode": 0,
           "cumulative_snow_cm": 2.0,
           "periods": {
@@ -2383,7 +2384,7 @@
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 5,
-              "wind_dir": "WNW",
+              "wind_dir": "W",
               "freeze_m": 3700.0,
               "visibility_m": null
             },
@@ -2392,16 +2393,16 @@
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 10,
-              "wind_dir": "SW",
-              "freeze_m": 3300.0,
+              "wind_dir": "WNW",
+              "freeze_m": 3650.0,
               "visibility_m": null
             },
             "night": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 0,
-              "wind_dir": "WNW",
+              "wind_kmh": 5,
+              "wind_dir": "NW",
               "freeze_m": 3300.0,
               "visibility_m": null
             }
@@ -2410,71 +2411,28 @@
           "condition": "Despejado"
         },
         {
-          "date": "2026-06-08",
-          "snow_cm": 0.0,
-          "temp_max": -4.0,
-          "temp_min": -4.0,
-          "wind_max_kmh": 15,
-          "wind_dir": "-",
-          "precip_mm": 0.0,
-          "precip_prob": null,
-          "weathercode": 2,
-          "cumulative_snow_cm": 2.0,
-          "periods": {
-            "am": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 10,
-              "wind_dir": "WNW",
-              "freeze_m": 3100.0,
-              "visibility_m": null
-            },
-            "pm": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 10,
-              "wind_dir": "NW",
-              "freeze_m": 3650.0,
-              "visibility_m": null
-            },
-            "night": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 15,
-              "wind_dir": "NNW",
-              "freeze_m": 3450.0,
-              "visibility_m": null
-            }
-          },
-          "source": "snow-forecast.com",
-          "condition": "Parcialmente nublado"
-        },
-        {
           "date": "2026-06-09",
-          "snow_cm": 10.0,
+          "snow_cm": 4.0,
           "temp_max": -4.0,
           "temp_min": -5.0,
           "wind_max_kmh": 15,
           "wind_dir": "-",
-          "precip_mm": 1.0,
+          "precip_mm": 0.4,
           "precip_prob": null,
           "weathercode": 71,
-          "cumulative_snow_cm": 12.0,
+          "cumulative_snow_cm": 6.0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 15,
-              "wind_dir": "W",
-              "freeze_m": 2450.0,
+              "wind_dir": "NW",
+              "freeze_m": 2800.0,
               "visibility_m": null
             },
             "pm": {
-              "snow_cm": 2.0,
+              "snow_cm": 4.0,
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 15,
@@ -2483,12 +2441,12 @@
               "visibility_m": null
             },
             "night": {
-              "snow_cm": 8.0,
+              "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 10,
-              "wind_dir": "W",
-              "freeze_m": 2250.0,
+              "wind_dir": "NNW",
+              "freeze_m": 3400.0,
               "visibility_m": null
             }
           },
@@ -2497,32 +2455,75 @@
         },
         {
           "date": "2026-06-10",
-          "snow_cm": 2.0,
+          "snow_cm": 26.0,
           "temp_max": -3.0,
           "temp_min": -5.0,
           "wind_max_kmh": 15,
           "wind_dir": "-",
-          "precip_mm": 0.2,
+          "precip_mm": 2.6,
           "precip_prob": null,
-          "weathercode": 71,
-          "cumulative_snow_cm": 14.0,
+          "weathercode": 75,
+          "cumulative_snow_cm": 32.0,
+          "periods": {
+            "am": {
+              "snow_cm": 7.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 10,
+              "wind_dir": "W",
+              "freeze_m": 2350.0,
+              "visibility_m": null
+            },
+            "pm": {
+              "snow_cm": 3.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 15,
+              "wind_dir": "WSW",
+              "freeze_m": 2350.0,
+              "visibility_m": null
+            },
+            "night": {
+              "snow_cm": 16.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 10,
+              "wind_dir": "WNW",
+              "freeze_m": 2300.0,
+              "visibility_m": null
+            }
+          },
+          "source": "snow-forecast.com",
+          "condition": "Nevada intensa"
+        },
+        {
+          "date": "2026-06-11",
+          "snow_cm": 0.0,
+          "temp_max": -2.0,
+          "temp_min": -2.0,
+          "wind_max_kmh": 10,
+          "wind_dir": "-",
+          "precip_mm": 0.0,
+          "precip_prob": null,
+          "weathercode": 3,
+          "cumulative_snow_cm": 32.0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 10,
-              "wind_dir": "SW",
-              "freeze_m": 2900.0,
+              "wind_dir": "WSW",
+              "freeze_m": 2750.0,
               "visibility_m": null
             },
             "pm": {
-              "snow_cm": 2.0,
+              "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 15,
-              "wind_dir": "W",
-              "freeze_m": 2400.0,
+              "wind_kmh": 5,
+              "wind_dir": "WSW",
+              "freeze_m": 2650.0,
               "visibility_m": null
             },
             "night": {
@@ -2531,15 +2532,15 @@
               "temp_c": null,
               "wind_kmh": 10,
               "wind_dir": "W",
-              "freeze_m": 2350.0,
+              "freeze_m": 2400.0,
               "visibility_m": null
             }
           },
           "source": "snow-forecast.com",
-          "condition": "Nevada leve"
+          "condition": "Nublado"
         },
         {
-          "date": "2026-06-11",
+          "date": "2026-06-12",
           "snow_cm": 0.0,
           "temp_max": -2.0,
           "temp_min": -3.0,
@@ -2548,7 +2549,7 @@
           "precip_mm": 0.0,
           "precip_prob": null,
           "weathercode": 2,
-          "cumulative_snow_cm": 14.0,
+          "cumulative_snow_cm": 32.0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
@@ -2556,16 +2557,16 @@
               "temp_c": null,
               "wind_kmh": 15,
               "wind_dir": "WNW",
-              "freeze_m": 3200.0,
+              "freeze_m": 3400.0,
               "visibility_m": null
             },
             "pm": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 5,
+              "wind_kmh": 15,
               "wind_dir": "WNW",
-              "freeze_m": 2850.0,
+              "freeze_m": 3250.0,
               "visibility_m": null
             },
             "night": {
@@ -2582,102 +2583,16 @@
           "condition": "Parcialmente nublado"
         },
         {
-          "date": "2026-06-12",
-          "snow_cm": 14.0,
-          "temp_max": -2.0,
-          "temp_min": -3.0,
-          "wind_max_kmh": 30,
-          "wind_dir": "-",
-          "precip_mm": 1.4,
-          "precip_prob": null,
-          "weathercode": 71,
-          "cumulative_snow_cm": 28.0,
-          "periods": {
-            "am": {
-              "snow_cm": 6.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 30,
-              "wind_dir": "W",
-              "freeze_m": 2850.0,
-              "visibility_m": null
-            },
-            "pm": {
-              "snow_cm": 2.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 15,
-              "wind_dir": "WNW",
-              "freeze_m": 2700.0,
-              "visibility_m": null
-            },
-            "night": {
-              "snow_cm": 6.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 25,
-              "wind_dir": "WNW",
-              "freeze_m": 2850.0,
-              "visibility_m": null
-            }
-          },
-          "source": "snow-forecast.com",
-          "condition": "Nevada leve"
-        },
-        {
           "date": "2026-06-13",
-          "snow_cm": 21.0,
+          "snow_cm": 4.0,
           "temp_max": 0.0,
           "temp_min": -2.0,
-          "wind_max_kmh": 35,
-          "wind_dir": "-",
-          "precip_mm": 2.1,
-          "precip_prob": null,
-          "weathercode": 3,
-          "cumulative_snow_cm": 49.0,
-          "periods": {
-            "am": {
-              "snow_cm": 6.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 30,
-              "wind_dir": "WNW",
-              "freeze_m": 2750.0,
-              "visibility_m": null
-            },
-            "pm": {
-              "snow_cm": 5.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 30,
-              "wind_dir": "W",
-              "freeze_m": 2850.0,
-              "visibility_m": null
-            },
-            "night": {
-              "snow_cm": 10.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 35,
-              "wind_dir": "WNW",
-              "freeze_m": 2900.0,
-              "visibility_m": null
-            }
-          },
-          "source": "snow-forecast.com",
-          "condition": "Nublado"
-        },
-        {
-          "date": "2026-06-14",
-          "snow_cm": 4.0,
-          "temp_max": 1.0,
-          "temp_min": 0.0,
           "wind_max_kmh": 30,
           "wind_dir": "-",
           "precip_mm": 0.4,
           "precip_prob": null,
           "weathercode": 71,
-          "cumulative_snow_cm": 53.0,
+          "cumulative_snow_cm": 36.0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
@@ -2685,25 +2600,25 @@
               "temp_c": null,
               "wind_kmh": 30,
               "wind_dir": "WNW",
-              "freeze_m": 2900.0,
+              "freeze_m": 2800.0,
               "visibility_m": null
             },
             "pm": {
-              "snow_cm": 1.0,
+              "snow_cm": 4.0,
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 30,
               "wind_dir": "WNW",
-              "freeze_m": 2750.0,
+              "freeze_m": 2350.0,
               "visibility_m": null
             },
             "night": {
-              "snow_cm": 3.0,
+              "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 25,
-              "wind_dir": "NW",
-              "freeze_m": 2800.0,
+              "wind_dir": "WNW",
+              "freeze_m": 3100.0,
               "visibility_m": null
             }
           },
@@ -2711,85 +2626,42 @@
           "condition": "Nevada leve"
         },
         {
-          "date": "2026-06-15",
-          "snow_cm": 11.0,
-          "temp_max": -1.0,
-          "temp_min": -3.0,
+          "date": "2026-06-14",
+          "snow_cm": 60.0,
+          "temp_max": 1.0,
+          "temp_min": 0.0,
           "wind_max_kmh": 35,
           "wind_dir": "-",
-          "precip_mm": 1.1,
+          "precip_mm": 6.0,
           "precip_prob": null,
-          "weathercode": 71,
-          "cumulative_snow_cm": 64.0,
+          "weathercode": 75,
+          "cumulative_snow_cm": 96.0,
           "periods": {
             "am": {
-              "snow_cm": 8.0,
+              "snow_cm": 16.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 30,
+              "wind_dir": "NW",
+              "freeze_m": 1950.0,
+              "visibility_m": null
+            },
+            "pm": {
+              "snow_cm": 27.0,
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 35,
               "wind_dir": "NW",
-              "freeze_m": 2150.0,
-              "visibility_m": null
-            },
-            "pm": {
-              "snow_cm": 0.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 30,
-              "wind_dir": "NW",
-              "freeze_m": 2750.0,
+              "freeze_m": 1600.0,
               "visibility_m": null
             },
             "night": {
-              "snow_cm": 3.0,
+              "snow_cm": 17.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 30,
-              "wind_dir": "NW",
-              "freeze_m": 2450.0,
-              "visibility_m": null
-            }
-          },
-          "source": "snow-forecast.com",
-          "condition": "Nevada leve"
-        },
-        {
-          "date": "2026-06-16",
-          "snow_cm": 19.0,
-          "temp_max": -4.0,
-          "temp_min": -4.0,
-          "wind_max_kmh": 30,
-          "wind_dir": "-",
-          "precip_mm": 1.9,
-          "precip_prob": null,
-          "weathercode": 75,
-          "cumulative_snow_cm": 83.0,
-          "periods": {
-            "am": {
-              "snow_cm": 1.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 20,
-              "wind_dir": "NW",
-              "freeze_m": 2400.0,
-              "visibility_m": null
-            },
-            "pm": {
-              "snow_cm": 15.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 30,
+              "wind_kmh": 35,
               "wind_dir": "WNW",
-              "freeze_m": 2150.0,
-              "visibility_m": null
-            },
-            "night": {
-              "snow_cm": 3.0,
-              "rain_mm": 0.0,
-              "temp_c": null,
-              "wind_kmh": 20,
-              "wind_dir": "NW",
-              "freeze_m": 2250.0,
+              "freeze_m": 2100.0,
               "visibility_m": null
             }
           },
@@ -2797,67 +2669,67 @@
           "condition": "Nevada intensa"
         },
         {
-          "date": "2026-06-17",
-          "snow_cm": 15.0,
-          "temp_max": -6.0,
-          "temp_min": -7.0,
-          "wind_max_kmh": 20,
+          "date": "2026-06-15",
+          "snow_cm": 29.0,
+          "temp_max": -1.0,
+          "temp_min": -3.0,
+          "wind_max_kmh": 30,
           "wind_dir": "-",
-          "precip_mm": 1.5,
+          "precip_mm": 2.9,
           "precip_prob": null,
-          "weathercode": 3,
-          "cumulative_snow_cm": 98.0,
+          "weathercode": 75,
+          "cumulative_snow_cm": 125.0,
           "periods": {
             "am": {
               "snow_cm": 1.0,
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 10,
-              "wind_dir": "NNW",
-              "freeze_m": 2650.0,
+              "wind_dir": "WSW",
+              "freeze_m": 1250.0,
               "visibility_m": null
             },
             "pm": {
-              "snow_cm": 6.0,
+              "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 20,
-              "wind_dir": "NW",
-              "freeze_m": 2400.0,
+              "wind_kmh": 10,
+              "wind_dir": "SW",
+              "freeze_m": 1050.0,
               "visibility_m": null
             },
             "night": {
-              "snow_cm": 8.0,
+              "snow_cm": 28.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 15,
-              "wind_dir": "NNW",
-              "freeze_m": 2250.0,
+              "wind_kmh": 30,
+              "wind_dir": "NW",
+              "freeze_m": 1100.0,
               "visibility_m": null
             }
           },
           "source": "snow-forecast.com",
-          "condition": "Nublado"
+          "condition": "Nevada intensa"
         },
         {
-          "date": "2026-06-18",
+          "date": "2026-06-16",
           "snow_cm": 0.0,
-          "temp_max": -8.0,
-          "temp_min": -10.0,
+          "temp_max": -4.0,
+          "temp_min": -6.0,
           "wind_max_kmh": 5,
           "wind_dir": "-",
           "precip_mm": 0.0,
           "precip_prob": null,
-          "weathercode": 71,
-          "cumulative_snow_cm": 98.0,
+          "weathercode": 0,
+          "cumulative_snow_cm": 125.0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 5,
-              "wind_dir": "NNW",
-              "freeze_m": 3100.0,
+              "wind_dir": "S",
+              "freeze_m": 2350.0,
               "visibility_m": null
             },
             "pm": {
@@ -2865,8 +2737,8 @@
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 5,
-              "wind_dir": "NNW",
-              "freeze_m": 2800.0,
+              "wind_dir": "WSW",
+              "freeze_m": 2300.0,
               "visibility_m": null
             },
             "night": {
@@ -2874,42 +2746,128 @@
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 5,
-              "wind_dir": "NNE",
-              "freeze_m": 2650.0,
+              "wind_dir": "ESE",
+              "freeze_m": 700.0,
               "visibility_m": null
             }
           },
           "source": "snow-forecast.com",
-          "condition": "Nevada leve"
+          "condition": "Despejado"
+        },
+        {
+          "date": "2026-06-17",
+          "snow_cm": 0.0,
+          "temp_max": -7.0,
+          "temp_min": -7.0,
+          "wind_max_kmh": 10,
+          "wind_dir": "-",
+          "precip_mm": 0.0,
+          "precip_prob": null,
+          "weathercode": 0,
+          "cumulative_snow_cm": 125.0,
+          "periods": {
+            "am": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 10,
+              "wind_dir": "WNW",
+              "freeze_m": 2900.0,
+              "visibility_m": null
+            },
+            "pm": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 10,
+              "wind_dir": "NNW",
+              "freeze_m": 2600.0,
+              "visibility_m": null
+            },
+            "night": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 10,
+              "wind_dir": "NNW",
+              "freeze_m": 1950.0,
+              "visibility_m": null
+            }
+          },
+          "source": "snow-forecast.com",
+          "condition": "Despejado"
+        },
+        {
+          "date": "2026-06-18",
+          "snow_cm": 0.0,
+          "temp_max": -8.0,
+          "temp_min": -9.0,
+          "wind_max_kmh": 20,
+          "wind_dir": "-",
+          "precip_mm": 0.0,
+          "precip_prob": null,
+          "weathercode": 0,
+          "cumulative_snow_cm": 125.0,
+          "periods": {
+            "am": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 5,
+              "wind_dir": "ESE",
+              "freeze_m": 3600.0,
+              "visibility_m": null
+            },
+            "pm": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 5,
+              "wind_dir": "ENE",
+              "freeze_m": 3500.0,
+              "visibility_m": null
+            },
+            "night": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 20,
+              "wind_dir": "E",
+              "freeze_m": 2500.0,
+              "visibility_m": null
+            }
+          },
+          "source": "snow-forecast.com",
+          "condition": "Despejado"
         },
         {
           "date": "2026-06-19",
           "snow_cm": 0.0,
           "temp_max": -9.0,
           "temp_min": -10.0,
-          "wind_max_kmh": 10,
+          "wind_max_kmh": 5,
           "wind_dir": "-",
           "precip_mm": 0.0,
           "precip_prob": null,
-          "weathercode": 3,
-          "cumulative_snow_cm": 98.0,
+          "weathercode": 0,
+          "cumulative_snow_cm": 125.0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 10,
-              "wind_dir": "SE",
-              "freeze_m": 2700.0,
+              "wind_kmh": 5,
+              "wind_dir": "WNW",
+              "freeze_m": 4150.0,
               "visibility_m": null
             },
             "pm": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 10,
-              "wind_dir": "NNW",
-              "freeze_m": 2950.0,
+              "wind_kmh": 5,
+              "wind_dir": "N",
+              "freeze_m": 4100.0,
               "visibility_m": null
             },
             "night": {
@@ -2917,13 +2875,13 @@
               "rain_mm": 0.0,
               "temp_c": null,
               "wind_kmh": 5,
-              "wind_dir": "NNW",
-              "freeze_m": 2550.0,
+              "wind_dir": "N",
+              "freeze_m": 3700.0,
               "visibility_m": null
             }
           },
           "source": "snow-forecast.com",
-          "condition": "Nublado"
+          "condition": "Despejado"
         },
         {
           "date": "2026-06-20",
@@ -2935,30 +2893,73 @@
           "precip_mm": 0.0,
           "precip_prob": null,
           "weathercode": 0,
-          "cumulative_snow_cm": 98.0,
+          "cumulative_snow_cm": 125.0,
           "periods": {
-            "am": {},
+            "am": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 10,
+              "wind_dir": "NNW",
+              "freeze_m": 4300.0,
+              "visibility_m": null
+            },
             "pm": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 5,
-              "wind_dir": "E",
-              "freeze_m": 2500.0,
+              "wind_kmh": 10,
+              "wind_dir": "NW",
+              "freeze_m": 4150.0,
               "visibility_m": null
             },
             "night": {
               "snow_cm": 0.0,
               "rain_mm": 0.0,
               "temp_c": null,
-              "wind_kmh": 10,
-              "wind_dir": "ENE",
-              "freeze_m": 2400.0,
+              "wind_kmh": 5,
+              "wind_dir": "N",
+              "freeze_m": 4150.0,
               "visibility_m": null
             }
           },
           "source": "snow-forecast.com",
           "condition": "Despejado"
+        },
+        {
+          "date": "2026-06-21",
+          "snow_cm": 0.0,
+          "temp_max": -8.0,
+          "temp_min": -9.0,
+          "wind_max_kmh": 15,
+          "wind_dir": "-",
+          "precip_mm": 0.0,
+          "precip_prob": null,
+          "weathercode": 3,
+          "cumulative_snow_cm": 125.0,
+          "periods": {
+            "am": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 10,
+              "wind_dir": "WNW",
+              "freeze_m": 3650.0,
+              "visibility_m": null
+            },
+            "pm": {},
+            "night": {
+              "snow_cm": 0.0,
+              "rain_mm": 0.0,
+              "temp_c": null,
+              "wind_kmh": 15,
+              "wind_dir": "NW",
+              "freeze_m": 3900.0,
+              "visibility_m": null
+            }
+          },
+          "source": "snow-forecast.com",
+          "condition": "Nublado"
         }
       ]
     }
