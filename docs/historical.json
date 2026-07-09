@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T03:48:38.128059+00:00",
+  "generated_at": "2026-07-09T04:23:53.681824+00:00",
   "location": {
     "name": "Cerro Catedral",
     "lat": -41.17,
@@ -70800,27 +70800,45 @@
           "freezing_level_min_m": null,
           "freezing_level_max_m": null,
           "temp_850hpa_mean_c": null
+        },
+        {
+          "date": "2026-07-08",
+          "snow_cm": 9.31,
+          "precip_mm": 49.1,
+          "rain_mm": 35.8,
+          "temp_max_c": -1.5,
+          "temp_min_c": -5.3,
+          "temp_mean_c": -3.6,
+          "wind_max_kmh": 4.5,
+          "wind_gust_kmh": 59.8,
+          "snow_depth_max_m": 0.51,
+          "snow_depth_mean_m": 0.46,
+          "snow_depth_end_m": 0.51,
+          "freezing_level_mean_m": null,
+          "freezing_level_min_m": null,
+          "freezing_level_max_m": null,
+          "temp_850hpa_mean_c": null
         }
       ],
       "summary": {
-        "season_total_snow_cm": 85.2,
-        "season_total_precip_mm": 260.1,
-        "season_total_rain_mm": 139.2,
-        "days_with_snowfall_>=1cm": 12,
-        "peak_snow_depth_m": 0.45,
-        "peak_snow_depth_date": "2026-07-07",
+        "season_total_snow_cm": 94.5,
+        "season_total_precip_mm": 309.2,
+        "season_total_rain_mm": 175.0,
+        "days_with_snowfall_>=1cm": 13,
+        "peak_snow_depth_m": 0.51,
+        "peak_snow_depth_date": "2026-07-08",
         "cumulative_snow_by_jul3_cm": 76.2,
         "target_week_jul4_10": {
-          "snow_cm_total": 9.0,
-          "precip_mm_total": 55.1,
-          "rain_mm_total": 42.3,
-          "days_with_snowfall_>=1cm": 1,
+          "snow_cm_total": 18.3,
+          "precip_mm_total": 104.2,
+          "rain_mm_total": 78.1,
+          "days_with_snowfall_>=1cm": 2,
           "snow_depth_start_m": 0.4,
           "snow_depth_end_m": null,
-          "snow_depth_max_m": 0.45,
-          "mean_temp_max_c": -2.52,
-          "mean_temp_min_c": -10.93,
-          "mean_temp_mean_c": -7.42,
+          "snow_depth_max_m": 0.51,
+          "mean_temp_max_c": -2.32,
+          "mean_temp_min_c": -9.8,
+          "mean_temp_mean_c": -6.66,
           "mean_freezing_level_m": null
         }
       }
