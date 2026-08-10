@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T09:51:08.838325+00:00",
+  "generated_at": "2026-08-10T11:27:55.542674+00:00",
   "webcams": [
     {
       "name": "Punta Princesa",
@@ -38,12 +38,8 @@
       "country": "Argentina",
       "elevation_m": 2405,
       "snow_report": {
-        "upper_snow_cm": null,
-        "lower_snow_cm": null,
-        "last_7days_cm": null,
-        "last_24h_cm": null,
-        "resort_status": "Resort Open",
-        "scraped_at": "2026-08-10T09:51:12.185031+00:00"
+        "scraped_at": "2026-08-10T11:27:56.321116+00:00",
+        "error": "403 Client Error: Forbidden for url: https://www.snow-forecast.com/resorts/Catedral/snow-report"
       },
       "forecast": [
         {
@@ -1551,12 +1547,8 @@
       "country": "Argentina",
       "elevation_m": 3430,
       "snow_report": {
-        "upper_snow_cm": null,
-        "lower_snow_cm": null,
-        "last_7days_cm": null,
-        "last_24h_cm": null,
-        "resort_status": "Resort Open",
-        "scraped_at": "2026-08-10T09:51:26.699090+00:00"
+        "scraped_at": "2026-08-10T11:28:02.842046+00:00",
+        "error": "403 Client Error: Forbidden for url: https://www.snow-forecast.com/resorts/Las-Lenas/snow-report"
       },
       "forecast": [
         {
@@ -2154,12 +2146,8 @@
       "country": "Chile",
       "elevation_m": 3025,
       "snow_report": {
-        "upper_snow_cm": null,
-        "lower_snow_cm": null,
-        "last_7days_cm": null,
-        "last_24h_cm": null,
-        "resort_status": "Resort Open",
-        "scraped_at": "2026-08-10T09:51:29.999531+00:00"
+        "scraped_at": "2026-08-10T11:28:03.500494+00:00",
+        "error": "403 Client Error: Forbidden for url: https://www.snow-forecast.com/resorts/Valle-Nevado/snow-report"
       },
       "forecast": [
         {
