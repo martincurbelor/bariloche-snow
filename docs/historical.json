@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T00:43:28.608629+00:00",
+  "generated_at": "2026-10-05T05:52:51.158520+00:00",
   "location": {
     "name": "Cerro Catedral",
     "lat": -41.17,
@@ -72384,13 +72384,31 @@
           "freezing_level_min_m": null,
           "freezing_level_max_m": null,
           "temp_850hpa_mean_c": null
+        },
+        {
+          "date": "2026-10-04",
+          "snow_cm": 2.38,
+          "precip_mm": 3.8,
+          "rain_mm": 0.4,
+          "temp_max_c": -1.8,
+          "temp_min_c": -6.3,
+          "temp_mean_c": -4.6,
+          "wind_max_kmh": 16.4,
+          "wind_gust_kmh": 71.6,
+          "snow_depth_max_m": 1.28,
+          "snow_depth_mean_m": 1.27,
+          "snow_depth_end_m": 1.26,
+          "freezing_level_mean_m": null,
+          "freezing_level_min_m": null,
+          "freezing_level_max_m": null,
+          "temp_850hpa_mean_c": null
         }
       ],
       "summary": {
-        "season_total_snow_cm": 431.1,
-        "season_total_precip_mm": 954.3,
-        "season_total_rain_mm": 340.0,
-        "days_with_snowfall_>=1cm": 55,
+        "season_total_snow_cm": 433.5,
+        "season_total_precip_mm": 958.1,
+        "season_total_rain_mm": 340.4,
+        "days_with_snowfall_>=1cm": 56,
         "peak_snow_depth_m": 1.61,
         "peak_snow_depth_date": "2026-09-02",
         "cumulative_snow_by_jul3_cm": 76.2,
