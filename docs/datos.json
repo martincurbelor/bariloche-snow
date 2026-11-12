@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T00:48:41.933241+00:00",
+  "generated_at": "2026-11-12T09:55:01.883094+00:00",
   "webcams": [
     {
       "name": "Punta Princesa",
@@ -43,100 +43,58 @@
         "last_7days_cm": null,
         "last_24h_cm": null,
         "resort_status": "Resort Closed",
-        "scraped_at": "2026-11-12T00:48:44.215830+00:00"
+        "scraped_at": "2026-11-12T09:55:03.752287+00:00"
       },
       "forecast": [
         {
-          "date": "2026-11-11",
-          "snow_cm": 0,
-          "temp_max": 13.0,
-          "temp_min": -1.5,
-          "wind_max_kmh": 9.0,
-          "wind_dir": "SW",
-          "precip_mm": 0,
-          "precip_prob": 0,
-          "weathercode": 45,
-          "cumulative_snow_cm": 0,
-          "periods": {
-            "am": {
-              "snow_cm": 0.0,
-              "temp_c": 3.6,
-              "wind_kmh": 4.3,
-              "wind_dir": "SW",
-              "freeze_m": 3830.0,
-              "visibility_m": 43033.3,
-              "rain_mm": 0.0
-            },
-            "pm": {
-              "snow_cm": 0.0,
-              "temp_c": 11.8,
-              "wind_kmh": 7.4,
-              "wind_dir": "W",
-              "freeze_m": 3731.7,
-              "visibility_m": 86556.7,
-              "rain_mm": 0.0
-            },
-            "night": {
-              "snow_cm": 0.0,
-              "temp_c": 7.0,
-              "wind_kmh": 5.1,
-              "wind_dir": "SSW",
-              "freeze_m": 3738.3,
-              "visibility_m": 81830.0,
-              "rain_mm": 0.0
-            }
-          },
-          "condition": "Niebla"
-        },
-        {
           "date": "2026-11-12",
           "snow_cm": 0,
-          "temp_max": 10.6,
-          "temp_min": -0.7,
-          "wind_max_kmh": 13.0,
+          "temp_max": 10.5,
+          "temp_min": -0.9,
+          "wind_max_kmh": 13.2,
           "wind_dir": "W",
           "precip_mm": 0,
           "precip_prob": 0,
-          "weathercode": 3,
+          "weathercode": 2,
           "cumulative_snow_cm": 0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
-              "temp_c": 4.8,
-              "wind_kmh": 2.5,
-              "wind_dir": "W",
-              "freeze_m": 3210.0,
-              "visibility_m": 81060.0,
+              "temp_c": 5.0,
+              "wind_kmh": 2.4,
+              "wind_dir": "NW",
+              "freeze_m": 3213.3,
+              "visibility_m": 80536.7,
               "rain_mm": 0.0
             },
             "pm": {
               "snow_cm": 0.0,
-              "temp_c": 10.2,
-              "wind_kmh": 11.8,
-              "wind_dir": "WSW",
-              "freeze_m": 3228.3,
-              "visibility_m": 85770.0,
+              "temp_c": 10.0,
+              "wind_kmh": 11.6,
+              "wind_dir": "WNW",
+              "freeze_m": 3166.7,
+              "visibility_m": 85756.7,
               "rain_mm": 0.0
             },
             "night": {
               "snow_cm": 0.0,
-              "temp_c": 3.6,
-              "wind_kmh": 9.7,
+              "temp_c": 3.5,
+              "wind_kmh": 10.2,
               "wind_dir": "SW",
-              "freeze_m": 3730.0,
-              "visibility_m": 19726.7,
+              "freeze_m": 3621.7,
+              "visibility_m": 71566.7,
               "rain_mm": 0.0
             }
           },
-          "condition": "Nublado"
+          "condition": "Parcialmente nublado"
         },
         {
           "date": "2026-11-13",
           "snow_cm": 0,
-          "temp_max": 12.3,
-          "temp_min": -3.0,
-          "wind_max_kmh": 7.6,
-          "wind_dir": "NW",
+          "temp_max": 12.2,
+          "temp_min": -3.5,
+          "wind_max_kmh": 6.3,
+          "wind_dir": "N",
           "precip_mm": 0,
           "precip_prob": 0,
           "weathercode": 45,
@@ -144,29 +102,29 @@
           "periods": {
             "am": {
               "snow_cm": 0.0,
-              "temp_c": 1.7,
-              "wind_kmh": 3.4,
-              "wind_dir": "NE",
-              "freeze_m": 3548.3,
-              "visibility_m": 34503.3,
+              "temp_c": 1.4,
+              "wind_kmh": 2.9,
+              "wind_dir": "SE",
+              "freeze_m": 3571.7,
+              "visibility_m": 23093.3,
               "rain_mm": 0.0
             },
             "pm": {
               "snow_cm": 0.0,
-              "temp_c": 10.8,
-              "wind_kmh": 5.8,
-              "wind_dir": "N",
-              "freeze_m": 3898.3,
-              "visibility_m": 80070.0,
+              "temp_c": 10.7,
+              "wind_kmh": 5.4,
+              "wind_dir": "NNE",
+              "freeze_m": 3818.3,
+              "visibility_m": 49533.3,
               "rain_mm": 0.0
             },
             "night": {
               "snow_cm": 0.0,
               "temp_c": 8.8,
               "wind_kmh": 2.6,
-              "wind_dir": "SSE",
-              "freeze_m": 4263.3,
-              "visibility_m": 78520.0,
+              "wind_dir": "SSW",
+              "freeze_m": 4203.3,
+              "visibility_m": 78506.7,
               "rain_mm": 0.0
             }
           },
@@ -175,9 +133,9 @@
         {
           "date": "2026-11-14",
           "snow_cm": 0,
-          "temp_max": 15.0,
-          "temp_min": 4.4,
-          "wind_max_kmh": 17.7,
+          "temp_max": 14.9,
+          "temp_min": 4.2,
+          "wind_max_kmh": 16.4,
           "wind_dir": "ENE",
           "precip_mm": 0,
           "precip_prob": 0,
@@ -186,29 +144,29 @@
           "periods": {
             "am": {
               "snow_cm": 0.0,
-              "temp_c": 7.5,
-              "wind_kmh": 10.4,
-              "wind_dir": "ENE",
-              "freeze_m": 4643.3,
+              "temp_c": 7.4,
+              "wind_kmh": 9.4,
+              "wind_dir": "E",
+              "freeze_m": 4488.3,
               "visibility_m": 83576.7,
               "rain_mm": 0.0
             },
             "pm": {
               "snow_cm": 0.0,
-              "temp_c": 13.7,
-              "wind_kmh": 16.0,
+              "temp_c": 13.5,
+              "wind_kmh": 15.2,
               "wind_dir": "NE",
-              "freeze_m": 4773.3,
-              "visibility_m": 86690.0,
+              "freeze_m": 4646.7,
+              "visibility_m": 86650.0,
               "rain_mm": 0.0
             },
             "night": {
               "snow_cm": 0.0,
-              "temp_c": 11.6,
-              "wind_kmh": 5.7,
-              "wind_dir": "E",
-              "freeze_m": 4631.7,
-              "visibility_m": 86900.0,
+              "temp_c": 11.5,
+              "wind_kmh": 6.6,
+              "wind_dir": "NE",
+              "freeze_m": 4590.0,
+              "visibility_m": 86783.3,
               "rain_mm": 0.0
             }
           },
@@ -217,41 +175,41 @@
         {
           "date": "2026-11-15",
           "snow_cm": 0,
-          "temp_max": 13.8,
-          "temp_min": 2.7,
-          "wind_max_kmh": 9.2,
-          "wind_dir": "SW",
-          "precip_mm": 8.4,
-          "precip_prob": 61,
+          "temp_max": 12.3,
+          "temp_min": 2.5,
+          "wind_max_kmh": 8.7,
+          "wind_dir": "NE",
+          "precip_mm": 17.5,
+          "precip_prob": 69,
           "weathercode": 95,
           "cumulative_snow_cm": 0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
-              "temp_c": 6.8,
-              "wind_kmh": 3.7,
-              "wind_dir": "N",
-              "freeze_m": 3640.0,
-              "visibility_m": 64606.7,
+              "temp_c": 6.1,
+              "wind_kmh": 4.3,
+              "wind_dir": "ENE",
+              "freeze_m": 3931.7,
+              "visibility_m": 72826.7,
               "rain_mm": 0.0
             },
             "pm": {
               "snow_cm": 0.0,
-              "temp_c": 9.5,
-              "wind_kmh": 6.3,
-              "wind_dir": "NW",
-              "freeze_m": 2880.0,
-              "visibility_m": 11400.0,
-              "rain_mm": 6.1
+              "temp_c": 11.0,
+              "wind_kmh": 6.8,
+              "wind_dir": "N",
+              "freeze_m": 3196.7,
+              "visibility_m": 66150.0,
+              "rain_mm": 3.8
             },
             "night": {
               "snow_cm": 0.0,
-              "temp_c": 5.6,
-              "wind_kmh": 7.4,
-              "wind_dir": "SW",
-              "freeze_m": 2591.7,
-              "visibility_m": 10810.0,
-              "rain_mm": 2.3
+              "temp_c": 5.4,
+              "wind_kmh": 4.1,
+              "wind_dir": "WNW",
+              "freeze_m": 2708.3,
+              "visibility_m": 3880.0,
+              "rain_mm": 13.7
             }
           },
           "condition": "Tormenta"
@@ -259,83 +217,83 @@
         {
           "date": "2026-11-16",
           "snow_cm": 0,
-          "temp_max": 3.9,
-          "temp_min": 1.8,
-          "wind_max_kmh": 7.9,
-          "wind_dir": "SW",
-          "precip_mm": 10.4,
-          "precip_prob": 90,
-          "weathercode": 55,
+          "temp_max": 8.3,
+          "temp_min": 1.4,
+          "wind_max_kmh": 12.1,
+          "wind_dir": "W",
+          "precip_mm": 13.1,
+          "precip_prob": 80,
+          "weathercode": 80,
           "cumulative_snow_cm": 0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
-              "temp_c": 2.6,
-              "wind_kmh": 7.4,
+              "temp_c": 2.8,
+              "wind_kmh": 5.6,
               "wind_dir": "SW",
-              "freeze_m": 2508.3,
-              "visibility_m": 11886.7,
+              "freeze_m": 2553.3,
+              "visibility_m": 21010.0,
               "rain_mm": 1.8
             },
             "pm": {
               "snow_cm": 0.0,
-              "temp_c": 3.5,
-              "wind_kmh": 4.9,
-              "wind_dir": "SW",
-              "freeze_m": 2495.0,
-              "visibility_m": 6566.7,
-              "rain_mm": 3.5
+              "temp_c": 7.8,
+              "wind_kmh": 11.4,
+              "wind_dir": "W",
+              "freeze_m": 2521.7,
+              "visibility_m": 69173.3,
+              "rain_mm": 0.0
             },
             "night": {
               "snow_cm": 0.0,
-              "temp_c": 2.8,
-              "wind_kmh": 3.1,
-              "wind_dir": "SW",
-              "freeze_m": 2393.3,
-              "visibility_m": 8420.0,
-              "rain_mm": 1.0
+              "temp_c": 4.2,
+              "wind_kmh": 5.0,
+              "wind_dir": "W",
+              "freeze_m": 2433.3,
+              "visibility_m": 21613.3,
+              "rain_mm": 0.3
             }
           },
-          "condition": "Llovizna intensa"
+          "condition": "Chaparrones leves"
         },
         {
           "date": "2026-11-17",
           "snow_cm": 0,
-          "temp_max": 5.5,
-          "temp_min": -2.2,
-          "wind_max_kmh": 9.5,
-          "wind_dir": "WSW",
-          "precip_mm": 1.6,
+          "temp_max": 4.8,
+          "temp_min": -2.0,
+          "wind_max_kmh": 9.6,
+          "wind_dir": "W",
+          "precip_mm": 1.5,
           "precip_prob": 73,
           "weathercode": 51,
           "cumulative_snow_cm": 0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
-              "temp_c": 1.2,
-              "wind_kmh": 5.9,
-              "wind_dir": "SW",
-              "freeze_m": 2236.7,
-              "visibility_m": 9256.7,
+              "temp_c": 1.6,
+              "wind_kmh": 4.8,
+              "wind_dir": "W",
+              "freeze_m": 2150.0,
+              "visibility_m": 37393.3,
               "rain_mm": 0.2
             },
             "pm": {
               "snow_cm": 0.0,
-              "temp_c": 3.6,
-              "wind_kmh": 8.0,
-              "wind_dir": "WNW",
-              "freeze_m": 2388.3,
-              "visibility_m": 36593.3,
-              "rain_mm": 0.6
+              "temp_c": 4.0,
+              "wind_kmh": 9.0,
+              "wind_dir": "W",
+              "freeze_m": 2356.7,
+              "visibility_m": 15766.7,
+              "rain_mm": 0.9
             },
             "night": {
               "snow_cm": 0.0,
-              "temp_c": 1.4,
-              "wind_kmh": 1.9,
+              "temp_c": 1.8,
+              "wind_kmh": 4.0,
               "wind_dir": "SW",
-              "freeze_m": 2496.7,
-              "visibility_m": 16910.0,
-              "rain_mm": 0.4
+              "freeze_m": 2376.7,
+              "visibility_m": 53790.0,
+              "rain_mm": 0.1
             }
           },
           "condition": "Llovizna leve"
@@ -343,124 +301,124 @@
         {
           "date": "2026-11-18",
           "snow_cm": 0,
-          "temp_max": 6.9,
-          "temp_min": -3.9,
-          "wind_max_kmh": 10.7,
-          "wind_dir": "NW",
-          "precip_mm": 5.4,
+          "temp_max": 4.2,
+          "temp_min": -2.3,
+          "wind_max_kmh": 12.4,
+          "wind_dir": "WSW",
+          "precip_mm": 0.6,
           "precip_prob": 65,
-          "weathercode": 53,
+          "weathercode": 51,
           "cumulative_snow_cm": 0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
-              "temp_c": 1.9,
-              "wind_kmh": 4.4,
-              "wind_dir": "N",
-              "freeze_m": 2508.3,
-              "visibility_m": 2073.3,
-              "rain_mm": 0.8
+              "temp_c": 1.0,
+              "wind_kmh": 8.8,
+              "wind_dir": "WSW",
+              "freeze_m": 2370.0,
+              "visibility_m": 16186.7,
+              "rain_mm": 0.2
             },
             "pm": {
               "snow_cm": 0.0,
-              "temp_c": 4.7,
-              "wind_kmh": 9.5,
-              "wind_dir": "NW",
-              "freeze_m": 2621.7,
-              "visibility_m": 10356.7,
-              "rain_mm": 2.6
+              "temp_c": 3.4,
+              "wind_kmh": 11.8,
+              "wind_dir": "WSW",
+              "freeze_m": 2440.0,
+              "visibility_m": 15893.3,
+              "rain_mm": 0.4
             },
             "night": {
               "snow_cm": 0.0,
-              "temp_c": 0.7,
-              "wind_kmh": 3.4,
-              "wind_dir": "WNW",
-              "freeze_m": 2566.7,
-              "visibility_m": 57903.3,
-              "rain_mm": 2.0
+              "temp_c": 0.5,
+              "wind_kmh": 7.0,
+              "wind_dir": "SW",
+              "freeze_m": 2288.3,
+              "visibility_m": 42863.3,
+              "rain_mm": 0.0
             }
           },
-          "condition": "Llovizna"
+          "condition": "Llovizna leve"
         },
         {
           "date": "2026-11-19",
           "snow_cm": 0,
-          "temp_max": 5.4,
-          "temp_min": -4.4,
-          "wind_max_kmh": 3.9,
-          "wind_dir": "WSW",
-          "precip_mm": 8.4,
+          "temp_max": 4.3,
+          "temp_min": -3.2,
+          "wind_max_kmh": 13.4,
+          "wind_dir": "SW",
+          "precip_mm": 0.6,
           "precip_prob": 64,
-          "weathercode": 53,
+          "weathercode": 51,
           "cumulative_snow_cm": 0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
-              "temp_c": 0.3,
-              "wind_kmh": 2.7,
-              "wind_dir": "NNW",
-              "freeze_m": 2485.0,
-              "visibility_m": 4590.0,
-              "rain_mm": 1.4
+              "temp_c": -0.1,
+              "wind_kmh": 9.8,
+              "wind_dir": "SW",
+              "freeze_m": 2039.6,
+              "visibility_m": 59013.3,
+              "rain_mm": 0.0
             },
             "pm": {
               "snow_cm": 0.0,
-              "temp_c": 1.2,
-              "wind_kmh": 3.2,
-              "wind_dir": "SW",
-              "freeze_m": 2626.7,
-              "visibility_m": 8023.3,
-              "rain_mm": 4.2
+              "temp_c": 3.0,
+              "wind_kmh": 12.9,
+              "wind_dir": "WSW",
+              "freeze_m": 2436.7,
+              "visibility_m": 31166.7,
+              "rain_mm": 0.2
             },
             "night": {
               "snow_cm": 0.0,
-              "temp_c": -0.2,
-              "wind_kmh": 3.5,
+              "temp_c": 0.4,
+              "wind_kmh": 10.4,
               "wind_dir": "SW",
-              "freeze_m": 2438.3,
-              "visibility_m": 27863.3,
-              "rain_mm": 2.8
+              "freeze_m": 2226.7,
+              "visibility_m": 37380.0,
+              "rain_mm": 0.4
             }
           },
-          "condition": "Llovizna"
+          "condition": "Llovizna leve"
         },
         {
           "date": "2026-11-20",
           "snow_cm": 0,
-          "temp_max": 5.2,
-          "temp_min": -2.9,
-          "wind_max_kmh": 8.2,
-          "wind_dir": "WSW",
-          "precip_mm": 1.8,
+          "temp_max": 4.5,
+          "temp_min": -3.3,
+          "wind_max_kmh": 18.8,
+          "wind_dir": "SW",
+          "precip_mm": 1.2,
           "precip_prob": 41,
           "weathercode": 51,
           "cumulative_snow_cm": 0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
-              "temp_c": 0.0,
-              "wind_kmh": 6.6,
-              "wind_dir": "W",
-              "freeze_m": 2088.3,
-              "visibility_m": 8290.0,
+              "temp_c": -0.9,
+              "wind_kmh": 14.1,
+              "wind_dir": "WSW",
+              "freeze_m": 1806.7,
+              "visibility_m": 27326.7,
               "rain_mm": 0.4
             },
             "pm": {
               "snow_cm": 0.0,
-              "temp_c": 3.9,
-              "wind_kmh": 7.6,
-              "wind_dir": "W",
-              "freeze_m": 2065.0,
-              "visibility_m": 14296.7,
-              "rain_mm": 1.0
+              "temp_c": 3.3,
+              "wind_kmh": 17.6,
+              "wind_dir": "WSW",
+              "freeze_m": 2153.3,
+              "visibility_m": 66273.3,
+              "rain_mm": 0.2
             },
             "night": {
               "snow_cm": 0.0,
-              "temp_c": 1.2,
-              "wind_kmh": 4.5,
-              "wind_dir": "SSW",
-              "freeze_m": 1943.3,
-              "visibility_m": 59340.0,
+              "temp_c": 0.0,
+              "wind_kmh": 7.8,
+              "wind_dir": "SW",
+              "freeze_m": 2008.3,
+              "visibility_m": 57080.0,
               "rain_mm": 0.4
             }
           },
@@ -469,10 +427,10 @@
         {
           "date": "2026-11-21",
           "snow_cm": 0,
-          "temp_max": 6.3,
-          "temp_min": -2.8,
-          "wind_max_kmh": 8.3,
-          "wind_dir": "ENE",
+          "temp_max": 6.5,
+          "temp_min": -3.8,
+          "wind_max_kmh": 8.8,
+          "wind_dir": "SW",
           "precip_mm": 1.2,
           "precip_prob": 54,
           "weathercode": 51,
@@ -480,29 +438,29 @@
           "periods": {
             "am": {
               "snow_cm": 0.0,
-              "temp_c": 1.6,
-              "wind_kmh": 5.4,
-              "wind_dir": "NE",
-              "freeze_m": 1688.3,
-              "visibility_m": 26750.0,
+              "temp_c": 0.5,
+              "wind_kmh": 2.0,
+              "wind_dir": "SSW",
+              "freeze_m": 1956.7,
+              "visibility_m": 57443.3,
               "rain_mm": 0.2
             },
             "pm": {
               "snow_cm": 0.0,
               "temp_c": 5.4,
-              "wind_kmh": 7.5,
-              "wind_dir": "NE",
-              "freeze_m": 2188.3,
-              "visibility_m": 14933.3,
+              "wind_kmh": 7.6,
+              "wind_dir": "WSW",
+              "freeze_m": 2773.3,
+              "visibility_m": 27750.0,
               "rain_mm": 0.6
             },
             "night": {
               "snow_cm": 0.0,
-              "temp_c": 1.8,
-              "wind_kmh": 2.3,
-              "wind_dir": "S",
-              "freeze_m": 2121.7,
-              "visibility_m": 18013.3,
+              "temp_c": 1.4,
+              "wind_kmh": 5.3,
+              "wind_dir": "SSW",
+              "freeze_m": 3068.3,
+              "visibility_m": 61353.3,
               "rain_mm": 0.4
             }
           },
@@ -511,128 +469,170 @@
         {
           "date": "2026-11-22",
           "snow_cm": 0,
-          "temp_max": 6.8,
-          "temp_min": -2.1,
-          "wind_max_kmh": 5.8,
-          "wind_dir": "E",
-          "precip_mm": 9.6,
+          "temp_max": 5.6,
+          "temp_min": -4.5,
+          "wind_max_kmh": 16.8,
+          "wind_dir": "SW",
+          "precip_mm": 0,
           "precip_prob": 34,
-          "weathercode": 55,
+          "weathercode": 2,
           "cumulative_snow_cm": 0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
-              "temp_c": 2.0,
-              "wind_kmh": 3.8,
-              "wind_dir": "E",
-              "freeze_m": 1916.7,
-              "visibility_m": 7983.3,
-              "rain_mm": 1.0
+              "temp_c": 0.2,
+              "wind_kmh": 10.5,
+              "wind_dir": "SW",
+              "freeze_m": 3546.7,
+              "visibility_m": 73666.7,
+              "rain_mm": 0.0
             },
             "pm": {
               "snow_cm": 0.0,
-              "temp_c": 4.3,
-              "wind_kmh": 5.3,
-              "wind_dir": "E",
-              "freeze_m": 2315.0,
-              "visibility_m": 6073.3,
-              "rain_mm": 4.2
+              "temp_c": 4.9,
+              "wind_kmh": 16.0,
+              "wind_dir": "SW",
+              "freeze_m": 3578.3,
+              "visibility_m": 78990.0,
+              "rain_mm": 0.0
             },
             "night": {
               "snow_cm": 0.0,
-              "temp_c": 2.6,
-              "wind_kmh": 2.1,
-              "wind_dir": "N",
-              "freeze_m": 2441.7,
-              "visibility_m": 11363.3,
-              "rain_mm": 4.4
+              "temp_c": 0.5,
+              "wind_kmh": 12.8,
+              "wind_dir": "SW",
+              "freeze_m": 3543.3,
+              "visibility_m": 66996.7,
+              "rain_mm": 0.0
             }
           },
-          "condition": "Llovizna intensa"
+          "condition": "Parcialmente nublado"
         },
         {
           "date": "2026-11-23",
           "snow_cm": 0,
-          "temp_max": 9.2,
-          "temp_min": -1.6,
-          "wind_max_kmh": 5.6,
-          "wind_dir": "NW",
-          "precip_mm": 12.6,
-          "precip_prob": 28,
-          "weathercode": 80,
-          "cumulative_snow_cm": 0,
-          "periods": {
-            "am": {
-              "snow_cm": 0.0,
-              "temp_c": 3.6,
-              "wind_kmh": 1.9,
-              "wind_dir": "NNE",
-              "freeze_m": 2320.0,
-              "visibility_m": 49876.7,
-              "rain_mm": 2.8
-            },
-            "pm": {
-              "snow_cm": 0.0,
-              "temp_c": 5.7,
-              "wind_kmh": 4.8,
-              "wind_dir": "NW",
-              "freeze_m": 2525.0,
-              "visibility_m": 17260.0,
-              "rain_mm": 7.0
-            },
-            "night": {
-              "snow_cm": 0.0,
-              "temp_c": 3.3,
-              "wind_kmh": 3.1,
-              "wind_dir": "WSW",
-              "freeze_m": 2405.0,
-              "visibility_m": 37816.7,
-              "rain_mm": 2.8
-            }
-          },
-          "condition": "Chaparrones leves"
-        },
-        {
-          "date": "2026-11-24",
-          "snow_cm": 0,
-          "temp_max": 10.0,
-          "temp_min": -1.2,
-          "wind_max_kmh": 15.5,
-          "wind_dir": "ENE",
+          "temp_max": 8.8,
+          "temp_min": -4.1,
+          "wind_max_kmh": 10.4,
+          "wind_dir": "ESE",
           "precip_mm": 0,
-          "precip_prob": 37,
+          "precip_prob": 28,
           "weathercode": 45,
           "cumulative_snow_cm": 0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
-              "temp_c": 4.8,
-              "wind_kmh": 5.2,
-              "wind_dir": "NE",
-              "freeze_m": 2103.3,
-              "visibility_m": 56550.0,
+              "temp_c": 0.5,
+              "wind_kmh": 2.4,
+              "wind_dir": "ENE",
+              "freeze_m": 3516.7,
+              "visibility_m": 62986.7,
               "rain_mm": 0.0
             },
             "pm": {
               "snow_cm": 0.0,
-              "temp_c": 9.3,
-              "wind_kmh": 14.0,
-              "wind_dir": "NE",
-              "freeze_m": 2281.7,
-              "visibility_m": 49630.0,
+              "temp_c": 7.1,
+              "wind_kmh": 8.8,
+              "wind_dir": "ENE",
+              "freeze_m": 3406.7,
+              "visibility_m": 83300.0,
               "rain_mm": 0.0
             },
             "night": {
               "snow_cm": 0.0,
               "temp_c": 4.9,
-              "wind_kmh": 8.1,
-              "wind_dir": "ENE",
-              "freeze_m": 2511.7,
-              "visibility_m": 64966.7,
+              "wind_kmh": 3.7,
+              "wind_dir": "ESE",
+              "freeze_m": 3445.0,
+              "visibility_m": 79243.3,
               "rain_mm": 0.0
             }
           },
           "condition": "Niebla"
+        },
+        {
+          "date": "2026-11-24",
+          "snow_cm": 0,
+          "temp_max": 12.6,
+          "temp_min": -0.2,
+          "wind_max_kmh": 16.5,
+          "wind_dir": "ENE",
+          "precip_mm": 0,
+          "precip_prob": 37,
+          "weathercode": 0,
+          "cumulative_snow_cm": 0,
+          "periods": {
+            "am": {
+              "snow_cm": 0.0,
+              "temp_c": 3.0,
+              "wind_kmh": 16.0,
+              "wind_dir": "ENE",
+              "freeze_m": 3455.0,
+              "visibility_m": 74046.7,
+              "rain_mm": 0.0
+            },
+            "pm": {
+              "snow_cm": 0.0,
+              "temp_c": 10.0,
+              "wind_kmh": 13.2,
+              "wind_dir": "NE",
+              "freeze_m": 3391.7,
+              "visibility_m": 78740.0,
+              "rain_mm": 0.0
+            },
+            "night": {
+              "snow_cm": 0.0,
+              "temp_c": 9.3,
+              "wind_kmh": 2.9,
+              "wind_dir": "ENE",
+              "freeze_m": 3453.3,
+              "visibility_m": 80173.3,
+              "rain_mm": 0.0
+            }
+          },
+          "condition": "Despejado"
+        },
+        {
+          "date": "2026-11-25",
+          "snow_cm": 0,
+          "temp_max": 12.8,
+          "temp_min": 2.7,
+          "wind_max_kmh": 10.0,
+          "wind_dir": "NE",
+          "precip_mm": 3.6,
+          "precip_prob": 26,
+          "weathercode": 53,
+          "cumulative_snow_cm": 0,
+          "periods": {
+            "am": {
+              "snow_cm": 0.0,
+              "temp_c": 8.3,
+              "wind_kmh": 4.6,
+              "wind_dir": "ENE",
+              "freeze_m": 3291.7,
+              "visibility_m": 72056.7,
+              "rain_mm": 0.0
+            },
+            "pm": {
+              "snow_cm": 0.0,
+              "temp_c": 12.0,
+              "wind_kmh": 9.0,
+              "wind_dir": "NE",
+              "freeze_m": 3328.3,
+              "visibility_m": 26530.0,
+              "rain_mm": 0.8
+            },
+            "night": {
+              "snow_cm": 0.0,
+              "temp_c": 7.2,
+              "wind_kmh": 1.8,
+              "wind_dir": "NE",
+              "freeze_m": 3353.3,
+              "visibility_m": 43766.7,
+              "rain_mm": 2.8
+            }
+          },
+          "condition": "Llovizna"
         }
       ],
       "historical_seasons": [
@@ -1650,57 +1650,15 @@
         "last_7days_cm": null,
         "last_24h_cm": null,
         "resort_status": "Resort Closed",
-        "scraped_at": "2026-11-12T00:49:21.611140+00:00"
+        "scraped_at": "2026-11-12T09:55:40.912062+00:00"
       },
       "forecast": [
-        {
-          "date": "2026-11-11",
-          "snow_cm": 0,
-          "temp_max": 9.9,
-          "temp_min": 1.6,
-          "wind_max_kmh": 6.7,
-          "wind_dir": "ESE",
-          "precip_mm": 0,
-          "precip_prob": 0,
-          "weathercode": 3,
-          "cumulative_snow_cm": 0,
-          "periods": {
-            "am": {
-              "snow_cm": 0.0,
-              "temp_c": 4.8,
-              "wind_kmh": 5.6,
-              "wind_dir": "ESE",
-              "freeze_m": 4608.3,
-              "visibility_m": 66113.3,
-              "rain_mm": 0.0
-            },
-            "pm": {
-              "snow_cm": 0.0,
-              "temp_c": 9.4,
-              "wind_kmh": 4.1,
-              "wind_dir": "SE",
-              "freeze_m": 4451.7,
-              "visibility_m": 54473.3,
-              "rain_mm": 0.0
-            },
-            "night": {
-              "snow_cm": 0.0,
-              "temp_c": 7.6,
-              "wind_kmh": 4.2,
-              "wind_dir": "SE",
-              "freeze_m": 4398.3,
-              "visibility_m": 6360.0,
-              "rain_mm": 0.0
-            }
-          },
-          "condition": "Nublado"
-        },
         {
           "date": "2026-11-12",
           "snow_cm": 0,
           "temp_max": 11.4,
-          "temp_min": 4.5,
-          "wind_max_kmh": 6.0,
+          "temp_min": 4.7,
+          "wind_max_kmh": 6.1,
           "wind_dir": "SE",
           "precip_mm": 0,
           "precip_prob": 0,
@@ -1709,29 +1667,29 @@
           "periods": {
             "am": {
               "snow_cm": 0.0,
-              "temp_c": 7.3,
-              "wind_kmh": 4.9,
+              "temp_c": 7.5,
+              "wind_kmh": 4.8,
               "wind_dir": "SE",
-              "freeze_m": 4653.3,
-              "visibility_m": 75066.7,
+              "freeze_m": 4611.7,
+              "visibility_m": 36226.7,
               "rain_mm": 0.0
             },
             "pm": {
               "snow_cm": 0.0,
               "temp_c": 10.9,
-              "wind_kmh": 2.6,
-              "wind_dir": "SW",
-              "freeze_m": 4675.0,
-              "visibility_m": 74976.7,
+              "wind_kmh": 3.1,
+              "wind_dir": "ESE",
+              "freeze_m": 4636.7,
+              "visibility_m": 74963.3,
               "rain_mm": 0.0
             },
             "night": {
               "snow_cm": 0.0,
-              "temp_c": 8.9,
-              "wind_kmh": 3.4,
-              "wind_dir": "SSW",
-              "freeze_m": 4693.3,
-              "visibility_m": 45853.3,
+              "temp_c": 9.0,
+              "wind_kmh": 3.1,
+              "wind_dir": "SSE",
+              "freeze_m": 4685.0,
+              "visibility_m": 46800.0,
               "rain_mm": 0.0
             }
           },
@@ -1741,39 +1699,39 @@
           "date": "2026-11-13",
           "snow_cm": 0,
           "temp_max": 12.0,
-          "temp_min": 3.5,
-          "wind_max_kmh": 6.9,
+          "temp_min": 3.4,
+          "wind_max_kmh": 6.7,
           "wind_dir": "ESE",
           "precip_mm": 0,
-          "precip_prob": 1,
+          "precip_prob": 0,
           "weathercode": 3,
           "cumulative_snow_cm": 0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
-              "temp_c": 8.1,
-              "wind_kmh": 3.8,
+              "temp_c": 8.0,
+              "wind_kmh": 3.7,
               "wind_dir": "SE",
-              "freeze_m": 4830.0,
-              "visibility_m": 75063.3,
+              "freeze_m": 4825.0,
+              "visibility_m": 75066.7,
               "rain_mm": 0.0
             },
             "pm": {
               "snow_cm": 0.0,
               "temp_c": 11.8,
-              "wind_kmh": 4.6,
+              "wind_kmh": 4.5,
               "wind_dir": "E",
-              "freeze_m": 4845.0,
-              "visibility_m": 74963.3,
+              "freeze_m": 4818.3,
+              "visibility_m": 74983.3,
               "rain_mm": 0.0
             },
             "night": {
               "snow_cm": 0.0,
-              "temp_c": 9.4,
-              "wind_kmh": 5.1,
+              "temp_c": 9.2,
+              "wind_kmh": 4.9,
               "wind_dir": "E",
-              "freeze_m": 4810.0,
-              "visibility_m": 74940.0,
+              "freeze_m": 4801.7,
+              "visibility_m": 74900.0,
               "rain_mm": 0.0
             }
           },
@@ -1782,40 +1740,40 @@
         {
           "date": "2026-11-14",
           "snow_cm": 0,
-          "temp_max": 10.5,
-          "temp_min": 4.9,
-          "wind_max_kmh": 8.0,
+          "temp_max": 10.8,
+          "temp_min": 4.3,
+          "wind_max_kmh": 7.9,
           "wind_dir": "E",
           "precip_mm": 0,
-          "precip_prob": 9,
+          "precip_prob": 2,
           "weathercode": 3,
           "cumulative_snow_cm": 0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
-              "temp_c": 7.8,
-              "wind_kmh": 6.1,
+              "temp_c": 7.6,
+              "wind_kmh": 6.0,
               "wind_dir": "ESE",
-              "freeze_m": 4688.3,
-              "visibility_m": 64246.7,
+              "freeze_m": 4668.3,
+              "visibility_m": 65886.7,
               "rain_mm": 0.0
             },
             "pm": {
               "snow_cm": 0.0,
-              "temp_c": 10.3,
-              "wind_kmh": 6.1,
+              "temp_c": 10.7,
+              "wind_kmh": 5.1,
               "wind_dir": "E",
-              "freeze_m": 4620.0,
-              "visibility_m": 70336.7,
+              "freeze_m": 4598.3,
+              "visibility_m": 70290.0,
               "rain_mm": 0.0
             },
             "night": {
               "snow_cm": 0.0,
-              "temp_c": 8.5,
-              "wind_kmh": 6.1,
+              "temp_c": 8.8,
+              "wind_kmh": 6.0,
               "wind_dir": "E",
-              "freeze_m": 4580.0,
-              "visibility_m": 69913.3,
+              "freeze_m": 4521.7,
+              "visibility_m": 70523.3,
               "rain_mm": 0.0
             }
           },
@@ -1824,166 +1782,166 @@
         {
           "date": "2026-11-15",
           "snow_cm": 0,
-          "temp_max": 8.4,
-          "temp_min": 2.5,
-          "wind_max_kmh": 9.1,
+          "temp_max": 8.1,
+          "temp_min": 2.1,
+          "wind_max_kmh": 7.2,
           "wind_dir": "SSE",
-          "precip_mm": 4.7,
-          "precip_prob": 49,
-          "weathercode": 81,
+          "precip_mm": 2.3,
+          "precip_prob": 51,
+          "weathercode": 55,
           "cumulative_snow_cm": 0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
-              "temp_c": 7.0,
-              "wind_kmh": 4.3,
-              "wind_dir": "SSE",
-              "freeze_m": 4168.3,
-              "visibility_m": 29646.7,
-              "rain_mm": 4.7
+              "temp_c": 5.8,
+              "wind_kmh": 4.5,
+              "wind_dir": "ESE",
+              "freeze_m": 3825.0,
+              "visibility_m": 24083.3,
+              "rain_mm": 2.3
             },
             "pm": {
               "snow_cm": 0.0,
-              "temp_c": 7.6,
-              "wind_kmh": 4.6,
-              "wind_dir": "SSW",
-              "freeze_m": 3938.3,
-              "visibility_m": 42470.0,
+              "temp_c": 7.8,
+              "wind_kmh": 4.9,
+              "wind_dir": "WSW",
+              "freeze_m": 3836.7,
+              "visibility_m": 14163.3,
               "rain_mm": 0.0
             },
             "night": {
               "snow_cm": 0.0,
-              "temp_c": 3.7,
-              "wind_kmh": 7.7,
-              "wind_dir": "SSE",
-              "freeze_m": 3775.0,
-              "visibility_m": 7446.7,
+              "temp_c": 5.1,
+              "wind_kmh": 5.9,
+              "wind_dir": "SW",
+              "freeze_m": 3825.0,
+              "visibility_m": 13966.7,
               "rain_mm": 0.0
             }
           },
-          "condition": "Chaparrones"
+          "condition": "Llovizna intensa"
         },
         {
           "date": "2026-11-16",
           "snow_cm": 0,
-          "temp_max": 6.3,
-          "temp_min": 0.6,
-          "wind_max_kmh": 9.5,
-          "wind_dir": "S",
-          "precip_mm": 3.6,
-          "precip_prob": 77,
+          "temp_max": 6.6,
+          "temp_min": 1.2,
+          "wind_max_kmh": 8.1,
+          "wind_dir": "SSW",
+          "precip_mm": 4.4,
+          "precip_prob": 75,
           "weathercode": 53,
           "cumulative_snow_cm": 0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
-              "temp_c": 3.6,
-              "wind_kmh": 7.2,
-              "wind_dir": "SSE",
-              "freeze_m": 3331.7,
-              "visibility_m": 14813.3,
+              "temp_c": 4.1,
+              "wind_kmh": 7.5,
+              "wind_dir": "S",
+              "freeze_m": 3416.7,
+              "visibility_m": 3626.7,
               "rain_mm": 0.0
             },
             "pm": {
               "snow_cm": 0.0,
-              "temp_c": 5.5,
-              "wind_kmh": 5.7,
-              "wind_dir": "W",
-              "freeze_m": 2915.0,
-              "visibility_m": 4926.7,
-              "rain_mm": 1.7
+              "temp_c": 5.6,
+              "wind_kmh": 6.2,
+              "wind_dir": "WSW",
+              "freeze_m": 2950.0,
+              "visibility_m": 12696.7,
+              "rain_mm": 1.4
             },
             "night": {
               "snow_cm": 0.0,
-              "temp_c": 3.1,
-              "wind_kmh": 6.0,
+              "temp_c": 3.2,
+              "wind_kmh": 2.4,
               "wind_dir": "SW",
-              "freeze_m": 2821.7,
-              "visibility_m": 4680.0,
-              "rain_mm": 1.9
+              "freeze_m": 2948.3,
+              "visibility_m": 3306.7,
+              "rain_mm": 3.0
             }
           },
           "condition": "Llovizna"
         },
         {
           "date": "2026-11-17",
-          "snow_cm": 0.14,
-          "temp_max": 4.4,
-          "temp_min": -0.4,
-          "wind_max_kmh": 7.2,
+          "snow_cm": 0,
+          "temp_max": 4.2,
+          "temp_min": -1.6,
+          "wind_max_kmh": 6.7,
           "wind_dir": "SSW",
-          "precip_mm": 3.6,
+          "precip_mm": 3.7,
           "precip_prob": 41,
-          "weathercode": 71,
-          "cumulative_snow_cm": 0.1,
+          "weathercode": 51,
+          "cumulative_snow_cm": 0,
           "periods": {
             "am": {
-              "snow_cm": 0.1,
-              "temp_c": 0.9,
-              "wind_kmh": 4.5,
-              "wind_dir": "SSW",
-              "freeze_m": 2750.0,
-              "visibility_m": 863.3,
+              "snow_cm": 0.0,
+              "temp_c": 1.8,
+              "wind_kmh": 4.0,
+              "wind_dir": "SSE",
+              "freeze_m": 2715.0,
+              "visibility_m": 5820.0,
               "rain_mm": 0.2
             },
             "pm": {
               "snow_cm": 0.0,
-              "temp_c": 3.9,
-              "wind_kmh": 5.2,
-              "wind_dir": "SW",
-              "freeze_m": 2718.3,
-              "visibility_m": 5050.0,
-              "rain_mm": 0.5
+              "temp_c": 3.5,
+              "wind_kmh": 4.8,
+              "wind_dir": "SSW",
+              "freeze_m": 2686.7,
+              "visibility_m": 13890.0,
+              "rain_mm": 0.9
             },
             "night": {
               "snow_cm": 0.0,
-              "temp_c": 2.2,
-              "wind_kmh": 6.8,
-              "wind_dir": "SSW",
-              "freeze_m": 2820.0,
-              "visibility_m": 693.3,
-              "rain_mm": 0.4
+              "temp_c": 1.8,
+              "wind_kmh": 5.7,
+              "wind_dir": "S",
+              "freeze_m": 2858.3,
+              "visibility_m": 8300.0,
+              "rain_mm": 0.9
             }
           },
-          "condition": "Nevada leve"
+          "condition": "Llovizna leve"
         },
         {
           "date": "2026-11-18",
           "snow_cm": 0,
-          "temp_max": 5.5,
-          "temp_min": -1.8,
-          "wind_max_kmh": 5.8,
-          "wind_dir": "S",
+          "temp_max": 5.0,
+          "temp_min": -3.3,
+          "wind_max_kmh": 6.5,
+          "wind_dir": "SSW",
           "precip_mm": 0,
           "precip_prob": 23,
           "weathercode": 45,
-          "cumulative_snow_cm": 0.1,
+          "cumulative_snow_cm": 0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
-              "temp_c": 1.5,
-              "wind_kmh": 5.5,
+              "temp_c": 0.5,
+              "wind_kmh": 6.1,
               "wind_dir": "S",
-              "freeze_m": 2745.0,
-              "visibility_m": 5600.0,
+              "freeze_m": 2766.7,
+              "visibility_m": 4413.3,
               "rain_mm": 0.0
             },
             "pm": {
               "snow_cm": 0.0,
-              "temp_c": 3.6,
-              "wind_kmh": 5.3,
-              "wind_dir": "SSW",
-              "freeze_m": 2710.0,
-              "visibility_m": 50326.7,
+              "temp_c": 4.0,
+              "wind_kmh": 5.1,
+              "wind_dir": "SW",
+              "freeze_m": 2700.0,
+              "visibility_m": 40923.3,
               "rain_mm": 0.0
             },
             "night": {
               "snow_cm": 0.0,
-              "temp_c": 1.6,
-              "wind_kmh": 5.2,
-              "wind_dir": "SSW",
-              "freeze_m": 3074.2,
-              "visibility_m": 57086.7,
+              "temp_c": 1.2,
+              "wind_kmh": 4.7,
+              "wind_dir": "SW",
+              "freeze_m": 2961.7,
+              "visibility_m": 42946.7,
               "rain_mm": 0.0
             }
           },
@@ -1992,166 +1950,166 @@
         {
           "date": "2026-11-19",
           "snow_cm": 0,
-          "temp_max": 4.5,
-          "temp_min": -1.8,
-          "wind_max_kmh": 7.4,
-          "wind_dir": "SSW",
-          "precip_mm": 3.8,
+          "temp_max": 3.3,
+          "temp_min": -3.3,
+          "wind_max_kmh": 10.9,
+          "wind_dir": "SW",
+          "precip_mm": 9.4,
           "precip_prob": 61,
-          "weathercode": 53,
-          "cumulative_snow_cm": 0.1,
-          "periods": {
-            "am": {
-              "snow_cm": 0.0,
-              "temp_c": 1.4,
-              "wind_kmh": 5.5,
-              "wind_dir": "SSE",
-              "freeze_m": 3181.7,
-              "visibility_m": 45926.7,
-              "rain_mm": 0.0
-            },
-            "pm": {
-              "snow_cm": 0.0,
-              "temp_c": 4.0,
-              "wind_kmh": 6.0,
-              "wind_dir": "W",
-              "freeze_m": 3345.0,
-              "visibility_m": 13976.7,
-              "rain_mm": 1.0
-            },
-            "night": {
-              "snow_cm": 0.0,
-              "temp_c": 2.4,
-              "wind_kmh": 4.7,
-              "wind_dir": "W",
-              "freeze_m": 3265.0,
-              "visibility_m": 3786.7,
-              "rain_mm": 2.8
-            }
-          },
-          "condition": "Llovizna"
-        },
-        {
-          "date": "2026-11-20",
-          "snow_cm": 0,
-          "temp_max": 5.6,
-          "temp_min": -1.9,
-          "wind_max_kmh": 7.0,
-          "wind_dir": "S",
-          "precip_mm": 2.6,
-          "precip_prob": 46,
-          "weathercode": 51,
-          "cumulative_snow_cm": 0.1,
-          "periods": {
-            "am": {
-              "snow_cm": 0.0,
-              "temp_c": 1.4,
-              "wind_kmh": 6.5,
-              "wind_dir": "SSE",
-              "freeze_m": 2941.7,
-              "visibility_m": 47006.7,
-              "rain_mm": 0.0
-            },
-            "pm": {
-              "snow_cm": 0.0,
-              "temp_c": 4.6,
-              "wind_kmh": 5.4,
-              "wind_dir": "SE",
-              "freeze_m": 3278.3,
-              "visibility_m": 12870.0,
-              "rain_mm": 0.2
-            },
-            "night": {
-              "snow_cm": 0.0,
-              "temp_c": 4.0,
-              "wind_kmh": 3.0,
-              "wind_dir": "SSW",
-              "freeze_m": 3235.0,
-              "visibility_m": 16003.3,
-              "rain_mm": 0.8
-            }
-          },
-          "condition": "Llovizna leve"
-        },
-        {
-          "date": "2026-11-21",
-          "snow_cm": 0,
-          "temp_max": 5.3,
-          "temp_min": 0.7,
-          "wind_max_kmh": 4.5,
-          "wind_dir": "S",
-          "precip_mm": 7.6,
-          "precip_prob": 29,
           "weathercode": 55,
-          "cumulative_snow_cm": 0.1,
+          "cumulative_snow_cm": 0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
-              "temp_c": 3.1,
-              "wind_kmh": 4.0,
+              "temp_c": -0.4,
+              "wind_kmh": 6.9,
               "wind_dir": "SSE",
-              "freeze_m": 2985.0,
-              "visibility_m": 11873.3,
-              "rain_mm": 4.0
+              "freeze_m": 3310.8,
+              "visibility_m": 680.0,
+              "rain_mm": 0.2
             },
             "pm": {
               "snow_cm": 0.0,
-              "temp_c": 4.5,
-              "wind_kmh": 2.3,
-              "wind_dir": "SW",
-              "freeze_m": 3333.3,
-              "visibility_m": 10583.3,
-              "rain_mm": 0.2
+              "temp_c": 2.6,
+              "wind_kmh": 3.6,
+              "wind_dir": "WNW",
+              "freeze_m": 3468.3,
+              "visibility_m": 3843.3,
+              "rain_mm": 2.8
             },
             "night": {
               "snow_cm": 0.0,
-              "temp_c": 2.4,
-              "wind_kmh": 2.8,
-              "wind_dir": "S",
-              "freeze_m": 3206.7,
-              "visibility_m": 12420.0,
-              "rain_mm": 0.6
+              "temp_c": 1.5,
+              "wind_kmh": 8.8,
+              "wind_dir": "WNW",
+              "freeze_m": 3158.3,
+              "visibility_m": 5410.0,
+              "rain_mm": 6.4
             }
           },
           "condition": "Llovizna intensa"
         },
         {
-          "date": "2026-11-22",
+          "date": "2026-11-20",
           "snow_cm": 0,
-          "temp_max": 2.2,
-          "temp_min": -5.0,
-          "wind_max_kmh": 7.8,
+          "temp_max": 5.8,
+          "temp_min": -1.0,
+          "wind_max_kmh": 12.5,
           "wind_dir": "SSW",
-          "precip_mm": 3.4,
-          "precip_prob": 22,
-          "weathercode": 51,
-          "cumulative_snow_cm": 0.1,
+          "precip_mm": 3.8,
+          "precip_prob": 46,
+          "weathercode": 53,
+          "cumulative_snow_cm": 0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
               "temp_c": 0.6,
-              "wind_kmh": 7.1,
-              "wind_dir": "SSW",
-              "freeze_m": 2980.0,
-              "visibility_m": 12040.0,
-              "rain_mm": 1.8
+              "wind_kmh": 5.8,
+              "wind_dir": "SE",
+              "freeze_m": 3003.3,
+              "visibility_m": 1900.0,
+              "rain_mm": 0.4
             },
             "pm": {
               "snow_cm": 0.0,
-              "temp_c": 1.2,
-              "wind_kmh": 7.2,
-              "wind_dir": "SSW",
-              "freeze_m": 3190.0,
-              "visibility_m": 22430.0,
-              "rain_mm": 0.4
+              "temp_c": 4.4,
+              "wind_kmh": 4.5,
+              "wind_dir": "SSE",
+              "freeze_m": 3481.7,
+              "visibility_m": 10536.7,
+              "rain_mm": 0.0
             },
             "night": {
               "snow_cm": 0.0,
-              "temp_c": -2.1,
-              "wind_kmh": 4.3,
+              "temp_c": 3.0,
+              "wind_kmh": 3.2,
+              "wind_dir": "SE",
+              "freeze_m": 3481.7,
+              "visibility_m": 53800.0,
+              "rain_mm": 0.0
+            }
+          },
+          "condition": "Llovizna"
+        },
+        {
+          "date": "2026-11-21",
+          "snow_cm": 0,
+          "temp_max": 5.7,
+          "temp_min": 1.2,
+          "wind_max_kmh": 7.5,
+          "wind_dir": "SE",
+          "precip_mm": 2.6,
+          "precip_prob": 29,
+          "weathercode": 51,
+          "cumulative_snow_cm": 0,
+          "periods": {
+            "am": {
+              "snow_cm": 0.0,
+              "temp_c": 3.2,
+              "wind_kmh": 6.5,
+              "wind_dir": "SE",
+              "freeze_m": 3246.7,
+              "visibility_m": 21073.3,
+              "rain_mm": 1.0
+            },
+            "pm": {
+              "snow_cm": 0.0,
+              "temp_c": 5.0,
+              "wind_kmh": 5.2,
+              "wind_dir": "SE",
+              "freeze_m": 3638.3,
+              "visibility_m": 19643.3,
+              "rain_mm": 0.6
+            },
+            "night": {
+              "snow_cm": 0.0,
+              "temp_c": 3.4,
+              "wind_kmh": 1.7,
+              "wind_dir": "SE",
+              "freeze_m": 3211.7,
+              "visibility_m": 13473.3,
+              "rain_mm": 0.6
+            }
+          },
+          "condition": "Llovizna leve"
+        },
+        {
+          "date": "2026-11-22",
+          "snow_cm": 0,
+          "temp_max": 5.5,
+          "temp_min": -0.4,
+          "wind_max_kmh": 3.6,
+          "wind_dir": "S",
+          "precip_mm": 1.6,
+          "precip_prob": 22,
+          "weathercode": 51,
+          "cumulative_snow_cm": 0,
+          "periods": {
+            "am": {
+              "snow_cm": 0.0,
+              "temp_c": 3.1,
+              "wind_kmh": 2.1,
+              "wind_dir": "S",
+              "freeze_m": 2961.7,
+              "visibility_m": 32526.7,
+              "rain_mm": 0.8
+            },
+            "pm": {
+              "snow_cm": 0.0,
+              "temp_c": 4.7,
+              "wind_kmh": 1.2,
               "wind_dir": "SSW",
-              "freeze_m": 2630.0,
-              "visibility_m": 48743.3,
+              "freeze_m": 3168.3,
+              "visibility_m": 43413.3,
+              "rain_mm": 0.0
+            },
+            "night": {
+              "snow_cm": 0.0,
+              "temp_c": 3.5,
+              "wind_kmh": 2.2,
+              "wind_dir": "SSW",
+              "freeze_m": 3458.3,
+              "visibility_m": 9370.0,
               "rain_mm": 0.0
             }
           },
@@ -2160,82 +2118,124 @@
         {
           "date": "2026-11-23",
           "snow_cm": 0,
-          "temp_max": 3.2,
-          "temp_min": -5.8,
-          "wind_max_kmh": 3.8,
+          "temp_max": 8.7,
+          "temp_min": -0.4,
+          "wind_max_kmh": 7.3,
           "wind_dir": "ESE",
           "precip_mm": 0,
           "precip_prob": 14,
-          "weathercode": 3,
-          "cumulative_snow_cm": 0.1,
+          "weathercode": 45,
+          "cumulative_snow_cm": 0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
-              "temp_c": -2.1,
-              "wind_kmh": 2.1,
-              "wind_dir": "ENE",
-              "freeze_m": 2548.3,
-              "visibility_m": 58333.3,
+              "temp_c": 3.8,
+              "wind_kmh": 4.6,
+              "wind_dir": "E",
+              "freeze_m": 3695.0,
+              "visibility_m": 6323.3,
               "rain_mm": 0.0
             },
             "pm": {
               "snow_cm": 0.0,
-              "temp_c": 2.1,
-              "wind_kmh": 2.8,
-              "wind_dir": "WNW",
-              "freeze_m": 3001.7,
-              "visibility_m": 12133.3,
+              "temp_c": 8.1,
+              "wind_kmh": 3.8,
+              "wind_dir": "ENE",
+              "freeze_m": 3828.3,
+              "visibility_m": 50666.7,
               "rain_mm": 0.0
             },
             "night": {
               "snow_cm": 0.0,
-              "temp_c": 0.3,
-              "wind_kmh": 1.9,
-              "wind_dir": "ENE",
-              "freeze_m": 3031.7,
-              "visibility_m": 9930.0,
+              "temp_c": 7.0,
+              "wind_kmh": 6.3,
+              "wind_dir": "E",
+              "freeze_m": 3785.0,
+              "visibility_m": 33653.3,
               "rain_mm": 0.0
             }
           },
-          "condition": "Nublado"
+          "condition": "Niebla"
         },
         {
           "date": "2026-11-24",
           "snow_cm": 0,
-          "temp_max": 6.4,
-          "temp_min": -3.5,
-          "wind_max_kmh": 7.2,
-          "wind_dir": "ESE",
+          "temp_max": 7.5,
+          "temp_min": 4.3,
+          "wind_max_kmh": 7.7,
+          "wind_dir": "E",
           "precip_mm": 0,
           "precip_prob": 20,
-          "weathercode": 2,
-          "cumulative_snow_cm": 0.1,
+          "weathercode": 45,
+          "cumulative_snow_cm": 0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
-              "temp_c": 2.6,
-              "wind_kmh": 6.8,
+              "temp_c": 5.5,
+              "wind_kmh": 7.2,
               "wind_dir": "ESE",
-              "freeze_m": 3126.7,
-              "visibility_m": 25813.3,
+              "freeze_m": 3595.0,
+              "visibility_m": 7570.0,
               "rain_mm": 0.0
             },
             "pm": {
               "snow_cm": 0.0,
-              "temp_c": 5.8,
-              "wind_kmh": 6.9,
-              "wind_dir": "ESE",
-              "freeze_m": 3495.0,
-              "visibility_m": 11613.3,
+              "temp_c": 7.1,
+              "wind_kmh": 5.8,
+              "wind_dir": "E",
+              "freeze_m": 3868.3,
+              "visibility_m": 19696.7,
               "rain_mm": 0.0
             },
             "night": {
               "snow_cm": 0.0,
-              "temp_c": 3.4,
-              "wind_kmh": 6.4,
+              "temp_c": 5.2,
+              "wind_kmh": 5.8,
               "wind_dir": "E",
-              "freeze_m": 3368.3,
-              "visibility_m": 41380.0,
+              "freeze_m": 3930.0,
+              "visibility_m": 7583.3,
+              "rain_mm": 0.0
+            }
+          },
+          "condition": "Niebla"
+        },
+        {
+          "date": "2026-11-25",
+          "snow_cm": 0,
+          "temp_max": 7.6,
+          "temp_min": 0.6,
+          "wind_max_kmh": 5.4,
+          "wind_dir": "ESE",
+          "precip_mm": 0,
+          "precip_prob": 20,
+          "weathercode": 2,
+          "cumulative_snow_cm": 0,
+          "periods": {
+            "am": {
+              "snow_cm": 0.0,
+              "temp_c": 5.4,
+              "wind_kmh": 3.2,
+              "wind_dir": "E",
+              "freeze_m": 3826.7,
+              "visibility_m": 45336.7,
+              "rain_mm": 0.0
+            },
+            "pm": {
+              "snow_cm": 0.0,
+              "temp_c": 6.7,
+              "wind_kmh": 2.5,
+              "wind_dir": "SSW",
+              "freeze_m": 3721.7,
+              "visibility_m": 14180.0,
+              "rain_mm": 0.0
+            },
+            "night": {
+              "snow_cm": 0.0,
+              "temp_c": 3.7,
+              "wind_kmh": 4.2,
+              "wind_dir": "SE",
+              "freeze_m": 3615.0,
+              "visibility_m": 45183.3,
               "rain_mm": 0.0
             }
           },
@@ -2253,99 +2253,57 @@
         "last_7days_cm": null,
         "last_24h_cm": null,
         "resort_status": "Resort Open",
-        "scraped_at": "2026-11-12T00:49:23.316188+00:00"
+        "scraped_at": "2026-11-12T09:55:42.647025+00:00"
       },
       "forecast": [
-        {
-          "date": "2026-11-11",
-          "snow_cm": 0,
-          "temp_max": 17.9,
-          "temp_min": 7.2,
-          "wind_max_kmh": 5.7,
-          "wind_dir": "ENE",
-          "precip_mm": 0,
-          "precip_prob": 0,
-          "weathercode": 2,
-          "cumulative_snow_cm": 0,
-          "periods": {
-            "am": {
-              "snow_cm": 0.0,
-              "temp_c": 13.0,
-              "wind_kmh": 2.9,
-              "wind_dir": "ENE",
-              "freeze_m": 4603.3,
-              "visibility_m": 64560.0,
-              "rain_mm": 0.0
-            },
-            "pm": {
-              "snow_cm": 0.0,
-              "temp_c": 17.0,
-              "wind_kmh": 4.4,
-              "wind_dir": "WSW",
-              "freeze_m": 4483.3,
-              "visibility_m": 53286.7,
-              "rain_mm": 0.0
-            },
-            "night": {
-              "snow_cm": 0.0,
-              "temp_c": 12.9,
-              "wind_kmh": 2.9,
-              "wind_dir": "ENE",
-              "freeze_m": 4645.0,
-              "visibility_m": 47053.3,
-              "rain_mm": 0.0
-            }
-          },
-          "condition": "Parcialmente nublado"
-        },
         {
           "date": "2026-11-12",
           "snow_cm": 0,
           "temp_max": 18.9,
-          "temp_min": 10.3,
-          "wind_max_kmh": 6.2,
-          "wind_dir": "N",
-          "precip_mm": 0.3,
+          "temp_min": 10.0,
+          "wind_max_kmh": 6.3,
+          "wind_dir": "NE",
+          "precip_mm": 0,
           "precip_prob": 0,
-          "weathercode": 51,
+          "weathercode": 3,
           "cumulative_snow_cm": 0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
-              "temp_c": 14.6,
+              "temp_c": 14.4,
               "wind_kmh": 2.5,
-              "wind_dir": "W",
-              "freeze_m": 4806.7,
-              "visibility_m": 63426.7,
+              "wind_dir": "ENE",
+              "freeze_m": 4783.3,
+              "visibility_m": 63436.7,
               "rain_mm": 0.0
             },
             "pm": {
               "snow_cm": 0.0,
-              "temp_c": 18.5,
-              "wind_kmh": 4.5,
+              "temp_c": 18.3,
+              "wind_kmh": 3.9,
               "wind_dir": "W",
-              "freeze_m": 4800.0,
-              "visibility_m": 42250.0,
-              "rain_mm": 0.3
+              "freeze_m": 4775.0,
+              "visibility_m": 47736.7,
+              "rain_mm": 0.0
             },
             "night": {
               "snow_cm": 0.0,
               "temp_c": 14.0,
               "wind_kmh": 4.0,
               "wind_dir": "ENE",
-              "freeze_m": 4921.7,
-              "visibility_m": 41010.0,
+              "freeze_m": 4903.3,
+              "visibility_m": 54876.7,
               "rain_mm": 0.0
             }
           },
-          "condition": "Llovizna leve"
+          "condition": "Nublado"
         },
         {
           "date": "2026-11-13",
           "snow_cm": 0,
           "temp_max": 20.1,
-          "temp_min": 11.1,
-          "wind_max_kmh": 6.5,
+          "temp_min": 11.7,
+          "wind_max_kmh": 7.3,
           "wind_dir": "N",
           "precip_mm": 0,
           "precip_prob": 0,
@@ -2354,29 +2312,29 @@
           "periods": {
             "am": {
               "snow_cm": 0.0,
-              "temp_c": 16.1,
-              "wind_kmh": 2.7,
-              "wind_dir": "NW",
-              "freeze_m": 4985.0,
-              "visibility_m": 64863.3,
+              "temp_c": 16.3,
+              "wind_kmh": 2.3,
+              "wind_dir": "WNW",
+              "freeze_m": 4961.7,
+              "visibility_m": 65416.7,
               "rain_mm": 0.0
             },
             "pm": {
               "snow_cm": 0.0,
-              "temp_c": 19.1,
-              "wind_kmh": 5.8,
+              "temp_c": 19.2,
+              "wind_kmh": 5.5,
               "wind_dir": "W",
-              "freeze_m": 4888.3,
-              "visibility_m": 23253.3,
+              "freeze_m": 4875.0,
+              "visibility_m": 53196.7,
               "rain_mm": 0.0
             },
             "night": {
               "snow_cm": 0.0,
-              "temp_c": 14.7,
-              "wind_kmh": 3.1,
+              "temp_c": 14.6,
+              "wind_kmh": 3.6,
               "wind_dir": "ENE",
-              "freeze_m": 4955.0,
-              "visibility_m": 33033.3,
+              "freeze_m": 4913.3,
+              "visibility_m": 53370.0,
               "rain_mm": 0.0
             }
           },
@@ -2385,41 +2343,41 @@
         {
           "date": "2026-11-14",
           "snow_cm": 0,
-          "temp_max": 18.7,
+          "temp_max": 18.2,
           "temp_min": 10.6,
-          "wind_max_kmh": 7.1,
-          "wind_dir": "NNW",
-          "precip_mm": 2.4,
-          "precip_prob": 24,
+          "wind_max_kmh": 6.9,
+          "wind_dir": "NW",
+          "precip_mm": 0.4,
+          "precip_prob": 10,
           "weathercode": 95,
           "cumulative_snow_cm": 0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
-              "temp_c": 14.7,
-              "wind_kmh": 1.3,
+              "temp_c": 15.4,
+              "wind_kmh": 1.6,
               "wind_dir": "ENE",
-              "freeze_m": 4710.0,
-              "visibility_m": 44440.0,
+              "freeze_m": 4693.3,
+              "visibility_m": 60680.0,
               "rain_mm": 0.0
             },
             "pm": {
               "snow_cm": 0.0,
-              "temp_c": 16.3,
-              "wind_kmh": 5.6,
+              "temp_c": 17.2,
+              "wind_kmh": 5.2,
               "wind_dir": "WNW",
-              "freeze_m": 4693.3,
-              "visibility_m": 5456.7,
-              "rain_mm": 1.1
+              "freeze_m": 4660.0,
+              "visibility_m": 20056.7,
+              "rain_mm": 0.3
             },
             "night": {
               "snow_cm": 0.0,
-              "temp_c": 12.3,
-              "wind_kmh": 2.9,
-              "wind_dir": "NE",
-              "freeze_m": 4620.0,
-              "visibility_m": 19060.0,
-              "rain_mm": 1.3
+              "temp_c": 13.7,
+              "wind_kmh": 2.6,
+              "wind_dir": "WNW",
+              "freeze_m": 4643.3,
+              "visibility_m": 21770.0,
+              "rain_mm": 0.1
             }
           },
           "condition": "Tormenta"
@@ -2427,125 +2385,125 @@
         {
           "date": "2026-11-15",
           "snow_cm": 0,
-          "temp_max": 12.1,
+          "temp_max": 11.0,
           "temp_min": 7.1,
-          "wind_max_kmh": 7.1,
-          "wind_dir": "SSW",
-          "precip_mm": 2.7,
-          "precip_prob": 68,
-          "weathercode": 51,
-          "cumulative_snow_cm": 0,
-          "periods": {
-            "am": {
-              "snow_cm": 0.0,
-              "temp_c": 9.9,
-              "wind_kmh": 3.9,
-              "wind_dir": "SW",
-              "freeze_m": 4118.3,
-              "visibility_m": 7873.3,
-              "rain_mm": 0.6
-            },
-            "pm": {
-              "snow_cm": 0.0,
-              "temp_c": 10.3,
-              "wind_kmh": 6.3,
-              "wind_dir": "SW",
-              "freeze_m": 4051.7,
-              "visibility_m": 6376.7,
-              "rain_mm": 1.5
-            },
-            "night": {
-              "snow_cm": 0.0,
-              "temp_c": 9.0,
-              "wind_kmh": 4.5,
-              "wind_dir": "SE",
-              "freeze_m": 3985.0,
-              "visibility_m": 12390.0,
-              "rain_mm": 0.1
-            }
-          },
-          "condition": "Llovizna leve"
-        },
-        {
-          "date": "2026-11-16",
-          "snow_cm": 0,
-          "temp_max": 8.5,
-          "temp_min": 3.5,
-          "wind_max_kmh": 7.7,
-          "wind_dir": "SW",
-          "precip_mm": 6.6,
-          "precip_prob": 94,
+          "wind_max_kmh": 8.9,
+          "wind_dir": "S",
+          "precip_mm": 4.4,
+          "precip_prob": 51,
           "weathercode": 53,
           "cumulative_snow_cm": 0,
           "periods": {
             "am": {
               "snow_cm": 0.0,
-              "temp_c": 7.3,
-              "wind_kmh": 3.9,
-              "wind_dir": "NE",
-              "freeze_m": 3550.0,
-              "visibility_m": 6930.0,
-              "rain_mm": 0.8
+              "temp_c": 9.3,
+              "wind_kmh": 4.9,
+              "wind_dir": "E",
+              "freeze_m": 4076.7,
+              "visibility_m": 6730.0,
+              "rain_mm": 0.6
             },
             "pm": {
               "snow_cm": 0.0,
-              "temp_c": 7.1,
-              "wind_kmh": 6.8,
-              "wind_dir": "W",
-              "freeze_m": 3186.7,
-              "visibility_m": 9336.7,
-              "rain_mm": 4.1
+              "temp_c": 10.0,
+              "wind_kmh": 7.4,
+              "wind_dir": "SW",
+              "freeze_m": 4080.0,
+              "visibility_m": 1196.7,
+              "rain_mm": 2.7
             },
             "night": {
               "snow_cm": 0.0,
-              "temp_c": 4.6,
-              "wind_kmh": 3.2,
-              "wind_dir": "WSW",
-              "freeze_m": 2980.0,
-              "visibility_m": 746.7,
-              "rain_mm": 1.5
+              "temp_c": 7.7,
+              "wind_kmh": 4.1,
+              "wind_dir": "ESE",
+              "freeze_m": 3995.0,
+              "visibility_m": 8923.3,
+              "rain_mm": 0.8
             }
           },
           "condition": "Llovizna"
         },
         {
-          "date": "2026-11-17",
-          "snow_cm": 1.68,
-          "temp_max": 7.8,
-          "temp_min": 0.5,
-          "wind_max_kmh": 5.8,
-          "wind_dir": "S",
-          "precip_mm": 12.6,
-          "precip_prob": 100,
-          "weathercode": 85,
-          "cumulative_snow_cm": 1.7,
+          "date": "2026-11-16",
+          "snow_cm": 0,
+          "temp_max": 10.1,
+          "temp_min": 2.9,
+          "wind_max_kmh": 8.5,
+          "wind_dir": "SSW",
+          "precip_mm": 7.5,
+          "precip_prob": 91,
+          "weathercode": 80,
+          "cumulative_snow_cm": 0,
           "periods": {
             "am": {
-              "snow_cm": 0.1,
-              "temp_c": 5.4,
-              "wind_kmh": 5.1,
+              "snow_cm": 0.0,
+              "temp_c": 8.1,
+              "wind_kmh": 4.3,
               "wind_dir": "SSE",
-              "freeze_m": 2883.3,
-              "visibility_m": 27410.0,
-              "rain_mm": 1.8
+              "freeze_m": 3570.0,
+              "visibility_m": 22326.7,
+              "rain_mm": 0.8
+            },
+            "pm": {
+              "snow_cm": 0.0,
+              "temp_c": 7.1,
+              "wind_kmh": 7.7,
+              "wind_dir": "WSW",
+              "freeze_m": 3225.0,
+              "visibility_m": 906.7,
+              "rain_mm": 4.4
+            },
+            "night": {
+              "snow_cm": 0.0,
+              "temp_c": 4.6,
+              "wind_kmh": 2.1,
+              "wind_dir": "SW",
+              "freeze_m": 2968.3,
+              "visibility_m": 3223.3,
+              "rain_mm": 2.3
+            }
+          },
+          "condition": "Chaparrones leves"
+        },
+        {
+          "date": "2026-11-17",
+          "snow_cm": 1.05,
+          "temp_max": 6.8,
+          "temp_min": 1.0,
+          "wind_max_kmh": 8.6,
+          "wind_dir": "SW",
+          "precip_mm": 21.0,
+          "precip_prob": 100,
+          "weathercode": 85,
+          "cumulative_snow_cm": 1.1,
+          "periods": {
+            "am": {
+              "snow_cm": 0.0,
+              "temp_c": 4.5,
+              "wind_kmh": 4.9,
+              "wind_dir": "E",
+              "freeze_m": 2931.7,
+              "visibility_m": 22096.7,
+              "rain_mm": 0.5
             },
             "pm": {
               "snow_cm": 0.7,
-              "temp_c": 5.2,
-              "wind_kmh": 3.7,
-              "wind_dir": "SW",
-              "freeze_m": 2938.3,
-              "visibility_m": 3843.3,
-              "rain_mm": 6.0
+              "temp_c": 5.1,
+              "wind_kmh": 7.0,
+              "wind_dir": "WNW",
+              "freeze_m": 2966.7,
+              "visibility_m": 4430.0,
+              "rain_mm": 15.4
             },
             "night": {
-              "snow_cm": 0.8,
+              "snow_cm": 0.3,
               "temp_c": 3.2,
-              "wind_kmh": 2.2,
-              "wind_dir": "SE",
-              "freeze_m": 3005.0,
-              "visibility_m": 5816.7,
-              "rain_mm": 4.8
+              "wind_kmh": 1.9,
+              "wind_dir": "SSE",
+              "freeze_m": 3070.0,
+              "visibility_m": 2596.7,
+              "rain_mm": 4.9
             }
           },
           "condition": "Chubascos de nieve"
@@ -2553,83 +2511,83 @@
         {
           "date": "2026-11-18",
           "snow_cm": 0,
-          "temp_max": 10.1,
-          "temp_min": -2.5,
-          "wind_max_kmh": 5.6,
-          "wind_dir": "E",
-          "precip_mm": 3.0,
+          "temp_max": 9.0,
+          "temp_min": -0.4,
+          "wind_max_kmh": 5.7,
+          "wind_dir": "SE",
+          "precip_mm": 6.6,
           "precip_prob": 88,
-          "weathercode": 51,
-          "cumulative_snow_cm": 1.7,
+          "weathercode": 53,
+          "cumulative_snow_cm": 1.1,
           "periods": {
             "am": {
               "snow_cm": 0.0,
-              "temp_c": 5.4,
-              "wind_kmh": 2.5,
-              "wind_dir": "ENE",
-              "freeze_m": 2926.7,
-              "visibility_m": 53810.0,
-              "rain_mm": 0.2
+              "temp_c": 5.3,
+              "wind_kmh": 3.4,
+              "wind_dir": "E",
+              "freeze_m": 2928.3,
+              "visibility_m": 44643.3,
+              "rain_mm": 0.6
             },
             "pm": {
               "snow_cm": 0.0,
-              "temp_c": 7.8,
-              "wind_kmh": 3.1,
-              "wind_dir": "WNW",
-              "freeze_m": 2993.3,
-              "visibility_m": 18530.0,
-              "rain_mm": 1.2
+              "temp_c": 7.9,
+              "wind_kmh": 4.3,
+              "wind_dir": "WSW",
+              "freeze_m": 2958.3,
+              "visibility_m": 15823.3,
+              "rain_mm": 2.8
             },
             "night": {
               "snow_cm": 0.0,
-              "temp_c": 5.4,
-              "wind_kmh": 4.1,
+              "temp_c": 4.0,
+              "wind_kmh": 3.1,
               "wind_dir": "SE",
-              "freeze_m": 3254.2,
-              "visibility_m": 39033.3,
-              "rain_mm": 1.6
+              "freeze_m": 3256.7,
+              "visibility_m": 5213.3,
+              "rain_mm": 3.2
             }
           },
-          "condition": "Llovizna leve"
+          "condition": "Llovizna"
         },
         {
           "date": "2026-11-19",
-          "snow_cm": 1.68,
-          "temp_max": 8.5,
-          "temp_min": 0.3,
-          "wind_max_kmh": 9.4,
-          "wind_dir": "SW",
-          "precip_mm": 24.0,
+          "snow_cm": 6.72,
+          "temp_max": 8.1,
+          "temp_min": -0.1,
+          "wind_max_kmh": 11.5,
+          "wind_dir": "WNW",
+          "precip_mm": 22.8,
           "precip_prob": 89,
           "weathercode": 95,
-          "cumulative_snow_cm": 3.4,
+          "cumulative_snow_cm": 7.8,
           "periods": {
             "am": {
-              "snow_cm": 0.0,
-              "temp_c": 5.6,
-              "wind_kmh": 3.6,
+              "snow_cm": 0.6,
+              "temp_c": 4.4,
+              "wind_kmh": 3.3,
               "wind_dir": "SSW",
-              "freeze_m": 3133.3,
-              "visibility_m": 5853.3,
-              "rain_mm": 1.2
+              "freeze_m": 3377.9,
+              "visibility_m": 40483.3,
+              "rain_mm": 2.2
             },
             "pm": {
-              "snow_cm": 0.6,
-              "temp_c": 5.8,
-              "wind_kmh": 8.1,
-              "wind_dir": "WSW",
-              "freeze_m": 3163.3,
-              "visibility_m": 1396.7,
-              "rain_mm": 9.2
+              "snow_cm": 2.8,
+              "temp_c": 5.4,
+              "wind_kmh": 9.9,
+              "wind_dir": "WNW",
+              "freeze_m": 3093.3,
+              "visibility_m": 12653.3,
+              "rain_mm": 9.8
             },
             "night": {
-              "snow_cm": 1.1,
-              "temp_c": 2.9,
-              "wind_kmh": 4.1,
-              "wind_dir": "SW",
-              "freeze_m": 3200.0,
-              "visibility_m": 440.0,
-              "rain_mm": 13.6
+              "snow_cm": 3.4,
+              "temp_c": 2.4,
+              "wind_kmh": 4.8,
+              "wind_dir": "WNW",
+              "freeze_m": 3075.0,
+              "visibility_m": 11060.0,
+              "rain_mm": 10.8
             }
           },
           "condition": "Tormenta"
@@ -2637,40 +2595,40 @@
         {
           "date": "2026-11-20",
           "snow_cm": 0,
-          "temp_max": 10.1,
-          "temp_min": 0.4,
-          "wind_max_kmh": 8.6,
-          "wind_dir": "S",
+          "temp_max": 12.0,
+          "temp_min": 0.8,
+          "wind_max_kmh": 9.5,
+          "wind_dir": "SW",
           "precip_mm": 0,
           "precip_prob": 57,
           "weathercode": 45,
-          "cumulative_snow_cm": 3.4,
+          "cumulative_snow_cm": 7.8,
           "periods": {
             "am": {
               "snow_cm": 0.0,
-              "temp_c": 6.2,
-              "wind_kmh": 4.0,
+              "temp_c": 6.6,
+              "wind_kmh": 3.4,
               "wind_dir": "SSE",
-              "freeze_m": 3048.3,
-              "visibility_m": 47346.7,
+              "freeze_m": 3238.3,
+              "visibility_m": 6190.0,
               "rain_mm": 0.0
             },
             "pm": {
               "snow_cm": 0.0,
-              "temp_c": 8.8,
-              "wind_kmh": 7.0,
-              "wind_dir": "WSW",
-              "freeze_m": 3166.7,
-              "visibility_m": 19586.7,
+              "temp_c": 11.1,
+              "wind_kmh": 7.6,
+              "wind_dir": "W",
+              "freeze_m": 3440.0,
+              "visibility_m": 41543.3,
               "rain_mm": 0.0
             },
             "night": {
               "snow_cm": 0.0,
-              "temp_c": 6.7,
-              "wind_kmh": 2.8,
+              "temp_c": 8.5,
+              "wind_kmh": 2.1,
               "wind_dir": "E",
-              "freeze_m": 3363.3,
-              "visibility_m": 27410.0,
+              "freeze_m": 3573.3,
+              "visibility_m": 50916.7,
               "rain_mm": 0.0
             }
           },
@@ -2678,171 +2636,213 @@
         },
         {
           "date": "2026-11-21",
-          "snow_cm": 0.42,
-          "temp_max": 8.0,
-          "temp_min": 1.0,
-          "wind_max_kmh": 7.0,
-          "wind_dir": "SSE",
-          "precip_mm": 15.8,
+          "snow_cm": 0,
+          "temp_max": 10.7,
+          "temp_min": 4.3,
+          "wind_max_kmh": 4.5,
+          "wind_dir": "ESE",
+          "precip_mm": 7.2,
           "precip_prob": 72,
-          "weathercode": 85,
-          "cumulative_snow_cm": 3.8,
+          "weathercode": 55,
+          "cumulative_snow_cm": 7.8,
           "periods": {
             "am": {
               "snow_cm": 0.0,
-              "temp_c": 4.9,
-              "wind_kmh": 6.0,
-              "wind_dir": "ESE",
-              "freeze_m": 3303.3,
-              "visibility_m": 7033.3,
-              "rain_mm": 3.4
-            },
-            "pm": {
-              "snow_cm": 0.0,
-              "temp_c": 6.6,
-              "wind_kmh": 3.8,
-              "wind_dir": "SW",
-              "freeze_m": 3261.7,
-              "visibility_m": 5693.3,
-              "rain_mm": 5.2
-            },
-            "night": {
-              "snow_cm": 0.4,
-              "temp_c": 4.5,
-              "wind_kmh": 5.4,
-              "wind_dir": "SSW",
-              "freeze_m": 3308.3,
-              "visibility_m": 1840.0,
-              "rain_mm": 6.2
-            }
-          },
-          "condition": "Chubascos de nieve"
-        },
-        {
-          "date": "2026-11-22",
-          "snow_cm": 21.0,
-          "temp_max": 4.3,
-          "temp_min": -5.8,
-          "wind_max_kmh": 5.6,
-          "wind_dir": "SSE",
-          "precip_mm": 33.4,
-          "precip_prob": 64,
-          "weathercode": 86,
-          "cumulative_snow_cm": 24.8,
-          "periods": {
-            "am": {
-              "snow_cm": 7.0,
-              "temp_c": 0.3,
-              "wind_kmh": 5.1,
-              "wind_dir": "SSE",
-              "freeze_m": 3046.7,
-              "visibility_m": 1973.3,
-              "rain_mm": 10.8
-            },
-            "pm": {
-              "snow_cm": 7.0,
-              "temp_c": 0.7,
-              "wind_kmh": 3.6,
-              "wind_dir": "SSW",
-              "freeze_m": 2771.7,
-              "visibility_m": 5043.3,
-              "rain_mm": 10.8
-            },
-            "night": {
-              "snow_cm": 3.9,
-              "temp_c": -2.7,
-              "wind_kmh": 3.9,
+              "temp_c": 8.4,
+              "wind_kmh": 1.6,
               "wind_dir": "E",
-              "freeze_m": 2688.3,
-              "visibility_m": 33180.0,
-              "rain_mm": 5.6
-            }
-          },
-          "condition": "Chubascos de nieve intensos"
-        },
-        {
-          "date": "2026-11-23",
-          "snow_cm": 0.42,
-          "temp_max": 3.4,
-          "temp_min": -5.8,
-          "wind_max_kmh": 7.3,
-          "wind_dir": "ENE",
-          "precip_mm": 1.2,
-          "precip_prob": 55,
-          "weathercode": 85,
-          "cumulative_snow_cm": 25.2,
-          "periods": {
-            "am": {
-              "snow_cm": 0.1,
-              "temp_c": -0.4,
-              "wind_kmh": 4.2,
-              "wind_dir": "NE",
-              "freeze_m": 2821.7,
-              "visibility_m": 50360.0,
+              "freeze_m": 3700.0,
+              "visibility_m": 57766.7,
               "rain_mm": 0.2
             },
             "pm": {
-              "snow_cm": 0.3,
-              "temp_c": 2.3,
-              "wind_kmh": 2.8,
+              "snow_cm": 0.0,
+              "temp_c": 8.7,
+              "wind_kmh": 2.0,
               "wind_dir": "W",
-              "freeze_m": 3015.0,
-              "visibility_m": 23570.0,
-              "rain_mm": 0.6
+              "freeze_m": 3773.3,
+              "visibility_m": 15233.3,
+              "rain_mm": 1.8
             },
             "night": {
               "snow_cm": 0.0,
-              "temp_c": 0.7,
-              "wind_kmh": 1.6,
-              "wind_dir": "ENE",
-              "freeze_m": 3315.0,
-              "visibility_m": 53150.0,
-              "rain_mm": 0.4
+              "temp_c": 5.9,
+              "wind_kmh": 2.7,
+              "wind_dir": "ESE",
+              "freeze_m": 3865.0,
+              "visibility_m": 4376.7,
+              "rain_mm": 5.2
+            }
+          },
+          "condition": "Llovizna intensa"
+        },
+        {
+          "date": "2026-11-22",
+          "snow_cm": 0.42,
+          "temp_max": 7.5,
+          "temp_min": 2.6,
+          "wind_max_kmh": 5.7,
+          "wind_dir": "SSW",
+          "precip_mm": 25.2,
+          "precip_prob": 64,
+          "weathercode": 85,
+          "cumulative_snow_cm": 8.2,
+          "periods": {
+            "am": {
+              "snow_cm": 0.3,
+              "temp_c": 5.0,
+              "wind_kmh": 4.9,
+              "wind_dir": "SSE",
+              "freeze_m": 3911.7,
+              "visibility_m": 5286.7,
+              "rain_mm": 7.6
+            },
+            "pm": {
+              "snow_cm": 0.0,
+              "temp_c": 5.3,
+              "wind_kmh": 5.3,
+              "wind_dir": "W",
+              "freeze_m": 3900.0,
+              "visibility_m": 4276.7,
+              "rain_mm": 6.6
+            },
+            "night": {
+              "snow_cm": 0.0,
+              "temp_c": 4.8,
+              "wind_kmh": 1.4,
+              "wind_dir": "NE",
+              "freeze_m": 3836.7,
+              "visibility_m": 16966.7,
+              "rain_mm": 3.6
             }
           },
           "condition": "Chubascos de nieve"
+        },
+        {
+          "date": "2026-11-23",
+          "snow_cm": 0,
+          "temp_max": 16.2,
+          "temp_min": 3.3,
+          "wind_max_kmh": 7.0,
+          "wind_dir": "N",
+          "precip_mm": 0,
+          "precip_prob": 55,
+          "weathercode": 2,
+          "cumulative_snow_cm": 8.2,
+          "periods": {
+            "am": {
+              "snow_cm": 0.0,
+              "temp_c": 11.2,
+              "wind_kmh": 3.8,
+              "wind_dir": "ENE",
+              "freeze_m": 3710.0,
+              "visibility_m": 64553.3,
+              "rain_mm": 0.0
+            },
+            "pm": {
+              "snow_cm": 0.0,
+              "temp_c": 15.5,
+              "wind_kmh": 5.2,
+              "wind_dir": "W",
+              "freeze_m": 3698.3,
+              "visibility_m": 61196.7,
+              "rain_mm": 0.0
+            },
+            "night": {
+              "snow_cm": 0.0,
+              "temp_c": 10.8,
+              "wind_kmh": 1.8,
+              "wind_dir": "ENE",
+              "freeze_m": 3781.7,
+              "visibility_m": 55556.7,
+              "rain_mm": 0.0
+            }
+          },
+          "condition": "Parcialmente nublado"
         },
         {
           "date": "2026-11-24",
           "snow_cm": 0,
-          "temp_max": 12.2,
-          "temp_min": -1.0,
-          "wind_max_kmh": 4.0,
-          "wind_dir": "E",
-          "precip_mm": 0,
+          "temp_max": 13.1,
+          "temp_min": 5.1,
+          "wind_max_kmh": 4.9,
+          "wind_dir": "NW",
+          "precip_mm": 3.0,
           "precip_prob": 62,
-          "weathercode": 3,
-          "cumulative_snow_cm": 25.2,
+          "weathercode": 51,
+          "cumulative_snow_cm": 8.2,
           "periods": {
             "am": {
               "snow_cm": 0.0,
-              "temp_c": 6.0,
-              "wind_kmh": 2.8,
-              "wind_dir": "ENE",
-              "freeze_m": 3525.0,
-              "visibility_m": 31053.3,
-              "rain_mm": 0.0
+              "temp_c": 10.4,
+              "wind_kmh": 2.0,
+              "wind_dir": "N",
+              "freeze_m": 3896.7,
+              "visibility_m": 24970.0,
+              "rain_mm": 0.2
             },
             "pm": {
               "snow_cm": 0.0,
-              "temp_c": 11.0,
-              "wind_kmh": 3.0,
-              "wind_dir": "SW",
-              "freeze_m": 3488.3,
-              "visibility_m": 56273.3,
-              "rain_mm": 0.0
+              "temp_c": 12.5,
+              "wind_kmh": 3.9,
+              "wind_dir": "WSW",
+              "freeze_m": 3970.0,
+              "visibility_m": 10916.7,
+              "rain_mm": 1.2
             },
             "night": {
               "snow_cm": 0.0,
-              "temp_c": 7.7,
-              "wind_kmh": 1.3,
+              "temp_c": 9.1,
+              "wind_kmh": 1.9,
               "wind_dir": "ENE",
-              "freeze_m": 3475.0,
-              "visibility_m": 52363.3,
-              "rain_mm": 0.0
+              "freeze_m": 4038.3,
+              "visibility_m": 30453.3,
+              "rain_mm": 1.6
             }
           },
-          "condition": "Nublado"
+          "condition": "Llovizna leve"
+        },
+        {
+          "date": "2026-11-25",
+          "snow_cm": 0,
+          "temp_max": 12.9,
+          "temp_min": 6.3,
+          "wind_max_kmh": 7.7,
+          "wind_dir": "WSW",
+          "precip_mm": 6.0,
+          "precip_prob": 63,
+          "weathercode": 53,
+          "cumulative_snow_cm": 8.2,
+          "periods": {
+            "am": {
+              "snow_cm": 0.0,
+              "temp_c": 11.2,
+              "wind_kmh": 2.2,
+              "wind_dir": "SW",
+              "freeze_m": 3910.0,
+              "visibility_m": 53550.0,
+              "rain_mm": 0.8
+            },
+            "pm": {
+              "snow_cm": 0.0,
+              "temp_c": 10.8,
+              "wind_kmh": 6.6,
+              "wind_dir": "WSW",
+              "freeze_m": 3640.0,
+              "visibility_m": 12676.7,
+              "rain_mm": 2.8
+            },
+            "night": {
+              "snow_cm": 0.0,
+              "temp_c": 7.9,
+              "wind_kmh": 2.0,
+              "wind_dir": "ENE",
+              "freeze_m": 3688.3,
+              "visibility_m": 7140.0,
+              "rain_mm": 2.4
+            }
+          },
+          "condition": "Llovizna"
         }
       ]
     }
